@@ -27,8 +27,9 @@ const Swipers = () => {
         }}
       >
           {productArry?.length > 0 &&
-            productArry.map((product) => (
-              // .filter((item) => item.bestSeller === true)
+            productArry
+            .filter((item) => item.bestSeller === true)
+            .map((product) => (
               <SwiperSlide>
                 <ProductCart
                   id={product.id}

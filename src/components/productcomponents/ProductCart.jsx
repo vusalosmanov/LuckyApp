@@ -30,7 +30,7 @@ const Product = ({
                 </Link>
               </button>
             </div>
-            <div>
+            <div className="h-[200px] mb-[20px] max-w-[200px] w-full">
               <img src={imageurl} alt="" />
             </div>
             <div className="flex items-center justify-center flex-col mb-[20px] text-center w-full">
@@ -38,7 +38,7 @@ const Product = ({
                 <p>{productName}</p>
               </div>
               <div className="flex items-center justify-center flex-row">
-                <p>{price}</p>
+                <p>{price.toFixed(2)}AZN</p>
               </div>
             </div>
             <button className="max-w-[150px] py-[10px] px-[20px] text-[black] w-full border-[1px] rounded hover:bg-lime-800 hover:text-[white] transition ease-in-out duration-200">

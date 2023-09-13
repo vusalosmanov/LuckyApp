@@ -49,3 +49,17 @@
 .anima:active::after {
   width: 0;
 }
+
+.un {
+  background: 
+    linear-gradient(to right, #1068540c, #1068540c),
+    linear-gradient(to right, #106853, #106853);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.un:hover {
+  background-size: 0 0.1em, 100% 0.1em;
+}

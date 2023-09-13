@@ -14,7 +14,9 @@ import { GiRose } from "react-icons/gi";
 import { AiTwotoneGift } from "react-icons/ai";
 import { FiCoffee } from "react-icons/fi";
 import "../assets/styles/components/Header.scss";
-import "../assets/index.scss"
+import "../assets/index.scss";
+import { subcategoryArray } from "../components/productData/SubcategoryData.js";
+import { categoryArray } from "./productData/CategoryData";
 const Header = () => {
   return (
     <>
@@ -74,825 +76,243 @@ const Header = () => {
                   <Link to="">Kataqoriya</Link>
                   <div className="dropdown-menu absolute hidden left-[150px]  h-auto  mt-[65px] z-[9999] top-0 w-full  max-w-[400px] ">
                     <ul className="  bg-white shadow   flex flex-col items-start  ">
-                      <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop">
-                        <Link
-                          to=""
-                          className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans "
-                        >
-                          <ImOffice />
-                          Ofis Ləvazimatları
-                        </Link>
-                        <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                          <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-[18px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5 px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                          </div>
-                        </ul>
-                      </li>
-                      <li className="py-[4px] px-12 border-b-[1px] w-full flex twodrop">
-                        <Link
-                          to=""
-                          className=" flex gap-2 items-center py-[10px]  text-[18px] text-[#303030] font-montserrat font-sans "
-                        >
-                          <MdFoodBank />
-                          Qida və İçkilər
-                        </Link>
-                        <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden twochild ">
-                          <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                              >
-                                secenek333
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-[18px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5 px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                          </div>
-                        </ul>
-                      </li>
-                      <li className="py-[4px] px-12 border-b-[1px] w-full flex threedrop">
-                        <Link
-                          to=""
-                          className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans "
-                        >
-                          <Im500Px />
-                          Təsərrüfat Malları
-                        </Link>
-                        <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden threechild ">
-                          <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                              >
-                                secenek12345
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-[18px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5 px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                          </div>
-                        </ul>
-                      </li>
-                      <li className="py-[4px] px-12 border-b-[1px] w-full flex fourdrop">
-                        <Link
-                          to=""
-                          className="flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                        >
-                          <GrCloudComputer />
-                          Elektron Avadanlıq
-                        </Link>
-                        <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden fourchild ">
-                          <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                              >
-                                secenek154345678
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-[18px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5 px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                          </div>
-                        </ul>
-                      </li>
-                      <li className="py-[4px] px-12 border-b-[1px] w-full flex fivedrop">
-                        <Link
-                          to=""
-                          className=" flex gap-2 items-center py-[10px] text-[18px] text-[#303030]  font-montserrat font-sans "
-                        >
-                          <GiRose />
-                          Dibçək Gülləri
-                        </Link>
-                        <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden fivechild ">
-                          <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                              >
-                                secenek154323456
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-[18px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5 px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                          </div>
-                        </ul>
-                      </li>
-                      <li className="py-[4px] px-12 border-b-[1px] w-full flex sixdrop">
-                        <Link
-                          to=""
-                          className=" flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                        >
-                          <AiTwotoneGift />
-                          Hədiyyəlik
-                        </Link>
-                        <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden sixchild ">
-                          <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                              >
-                                secenek1jhgfds
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-[18px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5 px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                          </div>
-                        </ul>
-                      </li>
-                      <li className="py-[4px] px-12 border-b-[1px] w-full flex sevendrop">
-                        <Link
-                          to=""
-                          className=" flex gap-2 items-center text-[18px] text-[#303030] py-[10px]  font-montserrat font-sans   "
-                        >
-                          <FiCoffee />
-                          Coffee Shop
-                        </Link>
-                        <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden sevenchild ">
-                          <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                              >
-                                secenek1lkjhgfdssdfgh
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className=" p-[5px] text-[18px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%] ">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5 px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                            <li className="w-[32%]">
-                              <Link
-                                to=""
-                                className="text-[18px] p-[5px] font-montserrat font-sans text-black"
-                              >
-                                secenek1
-                              </Link>
-                            </li>
-                          </div>
-                        </ul>
-                      </li>
+                      {categoryArray?.length > 0 &&
+                        categoryArray
+                          .filter((item) => item.id === 1)
+                          .map((product) => (
+                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                              <Link
+                                to=""
+                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              >
+                                <img src={product.icon} alt="" />
+                                {product.name}
+                              </Link>
+                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                                  {subcategoryArray?.length > 0 &&
+                                    subcategoryArray
+                                      .filter((item) => item.categoryID === 1)
+                                      .map((product) => (
+                                        <li className="w-[32%] ">
+                                          <Link
+                                            to=""
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                          >
+                                            {product.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                </div>
+                              </ul>
+                            </li>
+                          ))}
+                      {categoryArray?.length > 0 &&
+                        categoryArray
+                          .filter((item) => item.id === 2)
+                          .map((product) => (
+                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                              <Link
+                                to=""
+                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              >
+                                <img
+                                  src={product.icon}
+                                  alt=""
+                                  className="w-[18px] h-[18px]"
+                                />
+                                {product.name}
+                              </Link>
+                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                                  {subcategoryArray?.length > 0 &&
+                                    subcategoryArray
+                                      .filter((item) => item.categoryID === 2)
+                                      .map((product) => (
+                                        <li className="w-[32%] ">
+                                          <Link
+                                            to=""
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                          >
+                                            {product.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                </div>
+                              </ul>
+                            </li>
+                          ))}
+                      {categoryArray?.length > 0 &&
+                        categoryArray
+                          .filter((item) => item.id === 3)
+                          .map((product) => (
+                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                              <Link
+                                to=""
+                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              >
+                                <img src={product.icon} alt="" />
+                                {product.name}
+                              </Link>
+                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                                  {subcategoryArray?.length > 0 &&
+                                    subcategoryArray
+                                      .filter((item) => item.categoryID === 3)
+                                      .map((product) => (
+                                        <li className="w-[32%] ">
+                                          <Link
+                                            to=""
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                          >
+                                            {product.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                </div>
+                              </ul>
+                            </li>
+                          ))}
+                      {categoryArray?.length > 0 &&
+                        categoryArray
+                          .filter((item) => item.id === 4)
+                          .map((product) => (
+                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                              <Link
+                                to=""
+                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              >
+                                <img
+                                  src={product.icon}
+                                  alt=""
+                                  className="w-[18px] h-[18px]"
+                                />
+                                {product.name}
+                              </Link>
+                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                                  {subcategoryArray?.length > 0 &&
+                                    subcategoryArray
+                                      .filter((item) => item.categoryID === 4)
+                                      .map((product) => (
+                                        <li className="w-[32%] ">
+                                          <Link
+                                            to=""
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                          >
+                                            {product.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                </div>
+                              </ul>
+                            </li>
+                          ))}
+                      {categoryArray?.length > 0 &&
+                        categoryArray
+                          .filter((item) => item.id === 5)
+                          .map((product) => (
+                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                              <Link
+                                to=""
+                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              >
+                                <img
+                                  src={product.icon}
+                                  alt=""
+                                  className="w-[18px] h-[18px]"
+                                />
+                                {product.name}
+                              </Link>
+                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                                  {subcategoryArray?.length > 0 &&
+                                    subcategoryArray
+                                      .filter((item) => item.categoryID === 5)
+                                      .map((product) => (
+                                        <li className="w-[32%] ">
+                                          <Link
+                                            to=""
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                          >
+                                            {product.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                </div>
+                              </ul>
+                            </li>
+                          ))}
+                      {categoryArray?.length > 0 &&
+                        categoryArray
+                          .filter((item) => item.id === 6)
+                          .map((product) => (
+                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                              <Link
+                                to=""
+                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              >
+                                <img
+                                  src={product.icon}
+                                  alt=""
+                                  className="w-[18px] h-[18px]"
+                                />
+                                {product.name}
+                              </Link>
+                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                                  {subcategoryArray?.length > 0 &&
+                                    subcategoryArray
+                                      .filter((item) => item.categoryID === 6)
+                                      .map((product) => (
+                                        <li className="w-[32%] ">
+                                          <Link
+                                            to=""
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                          >
+                                            {product.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                </div>
+                              </ul>
+                            </li>
+                          ))}
+                      {categoryArray?.length > 0 &&
+                        categoryArray
+                          .filter((item) => item.id === 7)
+                          .map((product) => (
+                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                              <Link
+                                to=""
+                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              >
+                                <img
+                                  src={product.icon}
+                                  alt=""
+                                  className="w-[18px] h-[18px]"
+                                />
+                                {product.name}
+                              </Link>
+                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
+                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                                  {subcategoryArray?.length > 0 &&
+                                    subcategoryArray
+                                      .filter((item) => item.categoryID === 7)
+                                      .map((product) => (
+                                        <li className="w-[32%] ">
+                                          <Link
+                                            to=""
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                          >
+                                            {product.name}
+                                          </Link>
+                                        </li>
+                                      ))}
+                                </div>
+                              </ul>
+                            </li>
+                          ))}
                     </ul>
                   </div>
                 </li>
@@ -901,30 +321,49 @@ const Header = () => {
             <div className="flex  justify-start pl-[40px]">
               <ul className="flex w-full justify-start items-center text-[white]">
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="anima relative py-[5px]">Haqqimizda </Link>
+                  <Link to="" className="anima relative py-[5px]">
+                    Haqqimizda{" "}
+                  </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="anima relative py-[5px]">Yeni</Link>
+                  <Link to="" className="anima relative py-[5px]">
+                    Yeni
+                  </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="anima relative py-[5px]">Endirimlər</Link>
+                  <Link to="" className="anima relative py-[5px]">
+                    Endirimlər
+                  </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="anima relative py-[5px]">Ən çox satılanlar </Link>
+                  <Link to="" className="anima relative py-[5px]">
+                    Ən çox satılanlar{" "}
+                  </Link>
                 </li>
                 <li className="text-[18px] mr-[50px] milidrop">
-                  <Link to="" className="flex items-center gap-2 py-[5px]  anima relative ">
+                  <Link
+                    to=""
+                    className="flex items-center gap-2 py-[5px]  anima relative "
+                  >
                     Şərtlər <BsChevronRight />
                   </Link>
                   <ul className="absolute shadow-lg bg-white top-[55px] hidden mindrop z-50 ">
                     <div className="p-[10px] text-[#000000]">
-                      <li className="p-[5px]"><Link to="">Catdirilma </Link></li>
-                      <li className="p-[5px]"><Link to="">Geri Qaytarilma ve <br /> deyisdirimle </Link></li>
+                      <li className="p-[5px]">
+                        <Link to="">Catdirilma </Link>
+                      </li>
+                      <li className="p-[5px]">
+                        <Link to="">
+                          Geri Qaytarilma ve <br /> deyisdirimle{" "}
+                        </Link>
+                      </li>
                     </div>
                   </ul>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="relative  anima py-[5px]">Əlaqə</Link> 
+                  <Link to="" className="relative  anima py-[5px]">
+                    Əlaqə
+                  </Link>
                 </li>
               </ul>
             </div>
