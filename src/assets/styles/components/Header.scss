@@ -1,0 +1,51 @@
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.onedrop:hover .onechild {
+  display: block;
+}
+.twodrop:hover .twochild {
+  display: block;
+}
+.threedrop:hover .threechild {
+  display: block;
+}
+.fourdrop:hover .fourchild {
+  display: block;
+}
+.fivedrop:hover .fivechild {
+  display: block;
+}
+.sixdrop:hover .sixchild {
+  display: block;
+}
+.sevendrop:hover .sevenchild {
+  display: block;
+}
+.milidrop:hover .mindrop {
+  display: block;
+}
+
+.anima::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  height: 1px;
+  width: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s ease-in-out;
+}
+
+.anima:hover::after {
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.anima::after {
+  transition: width 0.3s ease-in-out;
+}
+
+.anima:active::after {
+  width: 0;
+}
