@@ -1,9 +1,9 @@
 import React from "react";
 import { Navigation,  Mousewheel, Keyboard, Autoplay } from "swiper/modules"
-import Cofe from "../../assets/images/banner-slider/img-1.jpg"
-import Lucy from "../../assets/images/banner-slider/img-2.jpg"
-import Elektron from "../../assets/images/banner-slider/img-3.jpg"
-import Qida from "../../assets/images/banner-slider/img-4.jpg"
+import Cofe from "../assets/images/banner-slider/img-1.jpg"
+import Lucy from "../assets/images/banner-slider/img-2.jpg"
+import Elektron from "../assets/images/banner-slider/img-3.jpg"
+import Qida from "../assets/images/banner-slider/img-4.jpg"
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

@@ -1,11 +1,11 @@
 import React from "react";
-import { Navigation, Mousewheel, Keyboard, Autoplay } from "swiper/modules";
-import ProductCart from "../productcomponents/ProductCart";
+import { Navigation, Mousewheel, Keyboard, Autoplay, Pagination } from "swiper/modules";
+import ProductCart from "./ProductCart";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
-import { productArry } from "../../components/productData/ProductData.js";
+import { productArry } from "./productData/ProductData.js";
 const Swipers = () => {
   return (
     <>
@@ -15,8 +15,11 @@ const Swipers = () => {
         mousewheel={true}
         keyboard={true}
         autoplay={true}
-        modules={[Navigation, Mousewheel, Keyboard, Autoplay]}
-        className="w-full"
+        modules={[Navigation, Mousewheel, Keyboard, Autoplay , Pagination]}
+        className="w-full "
+        // pagination={{
+        //   clickable: true,
+        // }}
         breakpoints={{
           640: {
             slidesPerView: 4,

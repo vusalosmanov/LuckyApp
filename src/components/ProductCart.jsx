@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../assets/styles/components/Product.scss";
+import "../assets/styles/components/Product.scss";
 
 const Product = ({
   id,
@@ -30,7 +30,7 @@ const Product = ({
                 </Link>
               </button>
             </div>
-            <div className="h-[200px] mb-[20px] max-w-[200px] w-full">
+            <div className="h-[200px] mb-[20px] max-w-[200px] w-full hover:scale-[1.1] image-hover flex items-center">
               <img src={imageurl} alt="" />
             </div>
             <div className="flex items-center justify-center flex-col mb-[20px] text-center w-full">

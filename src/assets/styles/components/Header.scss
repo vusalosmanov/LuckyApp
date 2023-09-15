@@ -63,3 +63,8 @@
 .un:hover {
   background-size: 0 0.1em, 100% 0.1em;
 }
+.gridd{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 10px;
+}

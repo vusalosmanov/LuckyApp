@@ -75,7 +75,7 @@ const Header = () => {
                   <HiMenu className="text-[24px]" />
                   <Link to="">Kataqoriya</Link>
                   <div className="dropdown-menu absolute hidden left-[150px]  h-auto  mt-[65px] z-[9999] top-0 w-full  max-w-[400px] ">
-                    <ul className="  bg-white shadow   flex flex-col items-start  ">
+                    <ul className="bg-white shadow   flex flex-col items-start  ">
                       {categoryArray?.length > 0 &&
                         categoryArray
                           .filter((item) => item.id === 1)
@@ -88,16 +88,16 @@ const Header = () => {
                                 <img src={product.icon} alt="" />
                                 {product.name}
                               </Link>
-                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                              <ul className=" absolute top-0 left-[100%] h-full w-[213%]  shadow-lg bg-white  hidden onechild  ">
+                                <div className="w-full h-[264px] px-[20px] py-[20px] gridd  ">
                                   {subcategoryArray?.length > 0 &&
                                     subcategoryArray
                                       .filter((item) => item.categoryID === 1)
                                       .map((product) => (
-                                        <li className="w-[32%] ">
+                                        <li className="w-[100%]  mb-[10px] ">
                                           <Link
                                             to=""
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans capitalize "
                                           >
                                             {product.name}
                                           </Link>
@@ -124,12 +124,12 @@ const Header = () => {
                                 {product.name}
                               </Link>
                               <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
+                                <div className="w-full h-[88px] px-[20px] py-[20px] gridd  ">
                                   {subcategoryArray?.length > 0 &&
                                     subcategoryArray
                                       .filter((item) => item.categoryID === 2)
                                       .map((product) => (
-                                        <li className="w-[32%] ">
+                                        <li className="w-[100%] mb-[10px]">
                                           <Link
                                             to=""
                                             className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
