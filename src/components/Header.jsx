@@ -2,17 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo/logo-header.svg";
 import Input from "./Input.jsx";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { HiMenu } from "react-icons/hi";
+import category from "../assets/images/icon/category.svg"
+import heart from "../assets/images/icon/heart.svg"
+import shopping from "../assets/images/icon/cart.svg"
 import { BsChevronRight } from "react-icons/bs";
-import { ImOffice } from "react-icons/im";
-import { MdFoodBank } from "react-icons/md";
-import { Im500Px } from "react-icons/im";
-import { GrCloudComputer } from "react-icons/gr";
-import { GiRose } from "react-icons/gi";
-import { AiTwotoneGift } from "react-icons/ai";
-import { FiCoffee } from "react-icons/fi";
 import "../assets/styles/components/Header.scss";
 import "../assets/index.scss";
 import { subcategoryArray } from "../components/productData/SubcategoryData.js";
@@ -57,10 +50,10 @@ const Header = () => {
               <div className="icon">
                 <div className="flex gap-5">
                   <Link to="" className="relative">
-                    <FaShoppingCart className="text-[white] text-[35px]" />
+                    <img src={shopping} alt="" className="w-[50px]" />
                   </Link>
                   <Link to="" className="relative">
-                    <FaHeart className="text-[white] text-[35px]" />
+                    <img src={heart} alt="" className="w-[50px]" />
                   </Link>
                 </div>
               </div>
@@ -72,7 +65,7 @@ const Header = () => {
             <div className="w-[550px] dropdown  bg-[#106853] h-[65px] flex justify-center items-center cursor-pointer text-[20px] text-[white]">
               <ul>
                 <li className="flex items-center gap-3  px-4  cursor-pointer tracking-wide">
-                  <HiMenu className="text-[24px]" />
+                  <img src={category} alt="" />
                   <Link to="">Kataqoriya</Link>
                   <div className="dropdown-menu absolute hidden left-[150px]  h-auto  mt-[65px] z-[9999] top-0 w-full  max-w-[400px] ">
                     <ul className="bg-white shadow   flex flex-col items-start  ">

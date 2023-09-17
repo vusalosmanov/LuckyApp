@@ -2,17 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/components/Product.scss";
 
-const Product = ({
-  id,
-  productName,
-  price,
-  imageurl,
-}) => {
+const Product = ({ id, productName, price, imageurl }) => {
   return (
     <>
-      <div>
-        <div className="flex justify-center">
-          <div className="flex bg-[#fff] max-w-[280px] pt-[7px] pr-[15px] pb-[20px] pl-[15px] items-center flex-col justify-center w-full">
+      <div className="flex justify-center">
+          <div className="flex bg-[#fff] max-w-[280px] pt-[7px] pr-[15px] pb-[20px] pl-[15px] items-center flex-col justify-center w-full ">
             <div className="relative min-h-[40px] w-full flex justify-end">
               <button>
                 <Link to="">
@@ -46,7 +40,6 @@ const Product = ({
             </button>
           </div>
         </div>
-      </div>
     </>
   );
 };
