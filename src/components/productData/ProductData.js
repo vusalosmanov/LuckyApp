@@ -52,34 +52,34 @@ import officeProduct_18_2 from '../../assets/images/product/office/product-18-2.
 import officeProduct_18_3 from '../../assets/images/product/office/product-18-3.jpg'
 import officeProduct_18_4 from '../../assets/images/product/office/product-18-4.png'
 
-// import foodProduct_1_1 from '../../assets/images/product/food/product-1-1.jpg'
-// import foodProduct_1_2 from '../../assets/images/product/food/product-1-2.jpg'
-// import foodProduct_1_3 from '../../assets/images/product/food/product-1-3.jpeg'
-// import foodProduct_1_4 from '../../assets/images/product/food/product-1-4.jpg'
-// import foodProduct_1_5 from '../../assets/images/product/food/product-1-5.png'
-// import foodProduct_2_1 from '../../assets/images/product/food/product-2-1.jpg'
-// import foodProduct_2_2 from '../../assets/images/product/food/product-2-2.png'
-// import foodProduct_2_3 from '../../assets/images/product/food/product-2-3.jpg'
-// import foodProduct_3_1 from '../../assets/images/product/food/product-3-1.png'
-// import foodProduct_3_2 from '../../assets/images/product/food/product-3-2.jpg'
-// import foodProduct_3_3 from '../../assets/images/product/food/product-3-3.jpg'
-// import foodProduct_4_1 from '../../assets/images/product/food/product-4-1.jpg'
-// import foodProduct_4_2 from '../../assets/images/product/food/product-4-2.jpg'
-// import foodProduct_4_3 from '../../assets/images/product/food/product-4-3.png'
-// import foodProduct_4_4 from '../../assets/images/product/food/product-4-4.png'
-// import foodProduct_4_5 from '../../assets/images/product/food/product-4-5.jpg'
-// import foodProduct_4_6 from '../../assets/images/product/food/product-4-6.jpg'
-// import foodProduct_4_7 from '../../assets/images/product/food/product-4-7.jpeg'
-// import foodProduct_4_8 from '../../assets/images/product/food/product-4-8.jpg'
-// import foodProduct_5_1 from '../../assets/images/product/food/product-5-1.jpeg'
-// import foodProduct_5_2 from '../../assets/images/product/food/product-5-2.jpeg'
-// import foodProduct_5_3 from '../../assets/images/product/food/product-5-3.jpeg'
-// import foodProduct_6_1 from '../../assets/images/product/food/product-6-1.png'
-// import foodProduct_6_2 from '../../assets/images/product/food/product-6-2.png'
-// import foodProduct_6_3 from '../../assets/images/product/food/product-6-3.jpg'
-// import foodProduct_6_4 from '../../assets/images/product/food/product-6-4.jpg'
-// import foodProduct_6_5 from '../../assets/images/product/food/product-6-5.jpg'
-// import foodProduct_6_6 from '../../assets/images/product/food/product-6-6.jpg'
+import foodProduct_1_1 from '../../assets/images/product/food/product-1-1.jpg'
+import foodProduct_1_2 from '../../assets/images/product/food/product-1-2.jpg'
+import foodProduct_1_3 from '../../assets/images/product/food/product-1-3.jpeg'
+import foodProduct_1_4 from '../../assets/images/product/food/product-1-4.jpg'
+import foodProduct_1_5 from '../../assets/images/product/food/product-1-5.png'
+import foodProduct_2_1 from '../../assets/images/product/food/product-2-1.jpg'
+import foodProduct_2_2 from '../../assets/images/product/food/product-2-2.png'
+import foodProduct_2_3 from '../../assets/images/product/food/product-2-3.jpg'
+import foodProduct_3_1 from '../../assets/images/product/food/product-3-1.png'
+import foodProduct_3_2 from '../../assets/images/product/food/product-3-2.jpg'
+import foodProduct_3_3 from '../../assets/images/product/food/product-3-3.jpg'
+import foodProduct_4_1 from '../../assets/images/product/food/product-4-1.jpg'
+import foodProduct_4_2 from '../../assets/images/product/food/product-4-2.jpg'
+import foodProduct_4_3 from '../../assets/images/product/food/product-4-3.png'
+import foodProduct_4_4 from '../../assets/images/product/food/product-4-4.png'
+import foodProduct_4_5 from '../../assets/images/product/food/product-4-5.jpg'
+import foodProduct_4_6 from '../../assets/images/product/food/product-4-6.jpg'
+import foodProduct_4_7 from '../../assets/images/product/food/product-4-7.jpeg'
+import foodProduct_4_8 from '../../assets/images/product/food/product-4-8.jpg'
+import foodProduct_5_1 from '../../assets/images/product/food/product-5-1.jpeg'
+import foodProduct_5_2 from '../../assets/images/product/food/product-5-2.jpeg'
+import foodProduct_5_3 from '../../assets/images/product/food/product-5-3.jpeg'
+import foodProduct_6_1 from '../../assets/images/product/food/product-6-1.png'
+import foodProduct_6_2 from '../../assets/images/product/food/product-6-2.png'
+import foodProduct_6_3 from '../../assets/images/product/food/product-6-3.jpg'
+import foodProduct_6_4 from '../../assets/images/product/food/product-6-4.jpg'
+import foodProduct_6_5 from '../../assets/images/product/food/product-6-5.jpg'
+import foodProduct_6_6 from '../../assets/images/product/food/product-6-6.jpg'
 
 // import economicProduct_1_1 from '../../assets/images/product/economic/product-1-1.png'
 // import economicProduct_1_2 from '../../assets/images/product/economic/product-1-2.jpg'
@@ -172,7 +172,7 @@ export const productArry = [
     {
         id: 2,
         categoryID: 1,
-        subcategoryID: 1,
+        SbcategoryID: 1,
         name: 'Ağardıcı "Grosso" GCP05',
         price: 0.80,
         img: officeProduct_1_2,
@@ -792,5 +792,341 @@ export const productArry = [
         discount: false,
         isNew: false,
         bestSeller: false,
+    },
+    {
+        id: 53,
+        categoryID: 2,
+        subcategoryID: 19,
+        name: 'Çay "Tess" flirt 25əd',
+        price: 2.40,
+        img: foodProduct_1_1,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 54,
+        categoryID: 2,
+        subcategoryID: 19,
+        name: 'Çay "Berqa" earl grey 24əd',
+        price: 2.45,
+        img: foodProduct_1_2,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 55,
+        categoryID: 2,
+        subcategoryID: 19,
+        name: 'Çay "Tess" pleasure 25əd',
+        price: 2.55,
+        img: foodProduct_1_3,
+        oldPrice: 0,
+        discount: false,
+        isNew: true,
+        bestSeller: false,
+    },
+    {
+        id: 56,
+        categoryID: 2,
+        subcategoryID: 19,
+        name: 'Çay "Azerçay" Buket 250qr',
+        price: 7.38,
+        img: foodProduct_1_4,
+        oldPrice: 8.5,
+        discount: true,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 57,
+        categoryID: 2,
+        subcategoryID: 19,
+        name: 'Çay "Beta" 100əd',
+        price: 7.95,
+        img: foodProduct_1_5,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 57,
+        categoryID: 2,
+        subcategoryID: 20,
+        name: 'Qəhvə "Maccoffee" 3v1 1əd',
+        price: 0.29,
+        img: foodProduct_2_1,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 58,
+        categoryID: 2,
+        subcategoryID: 20,
+        name: 'Qəhvə "Nescafe" strong 20əd',
+        price: 5.90,
+        img: foodProduct_2_2,
+        oldPrice: 0,
+        discount: false,
+        isNew: true,
+        bestSeller: false,
+    },
+    {
+        id: 60,
+        categoryID: 2,
+        subcategoryID: 20,
+        name: 'Qəhvə "Nescafe" Gold 190qr',
+        price: 14.40,
+        img: foodProduct_2_3,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 61,
+        categoryID: 2,
+        subcategoryID: 21,
+        name: 'Qənd kəllə "Azərşəkər" 800qr',
+        price: 2.60,
+        img: foodProduct_3_1,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 62,
+        categoryID: 2,
+        subcategoryID: 21,
+        name: 'Qənd kəllə "Azərşəkər" 1kq',
+        price: 2.70,
+        img: foodProduct_3_2,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 63,
+        categoryID: 2,
+        subcategoryID: 21,
+        name: 'Şəkər Tozu "Richmond" 1800qr',
+        price: 4.40,
+        img: foodProduct_3_3,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 64,
+        categoryID: 2,
+        subcategoryID: 22,
+        name: 'Peçenye "Tutku" 100qr',
+        price: 1.10,
+        img: foodProduct_4_1,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 65,
+        categoryID: 2,
+        subcategoryID: 22,
+        name: 'Şokolad "Alpen Gold" südlü',
+        price: 2.17,
+        img: foodProduct_4_2,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 66,
+        categoryID: 2,
+        subcategoryID: 22,
+        name: 'Eti Adicto İntense 140qr',
+        price: 3.50,
+        img: foodProduct_4_3,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 67,
+        categoryID: 2,
+        subcategoryID: 22,
+        name: 'Konfet "Chio Rio" 500qr',
+        price: 4.20,
+        img: foodProduct_4_4,
+        oldPrice: 0,
+        discount: false,
+        isNew: true,
+        bestSeller: true,
+    },
+    {
+        id: 68,
+        categoryID: 2,
+        subcategoryID: 22,
+        name: 'Konfet "Kit-Kat" 500qr',
+        price: 10.18,
+        img: foodProduct_4_5,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 69,
+        categoryID: 2,
+        subcategoryID: 22,
+        name: 'Konfet "Bounty" 500qr',
+        price: 10.98,
+        img: foodProduct_4_6,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 70,
+        categoryID: 2,
+        subcategoryID: 22,
+        name: 'Konfet "Mars" 500qr',
+        price: 10.98,
+        img: foodProduct_4_7,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 71,
+        categoryID: 2,
+        subcategoryID: 22,
+        name: 'Konfet "Snickers" 500qr',
+        price: 10.98,
+        img: foodProduct_4_8,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 72,
+        categoryID: 2,
+        subcategoryID: 23,
+        name: 'Şəkərçörəyi 400qr',
+        price: 6.00,
+        img: foodProduct_5_1,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 73,
+        categoryID: 2,
+        subcategoryID: 23,
+        name: 'Paxlava 300qr',
+        price: 9.50,
+        img: foodProduct_5_2,
+        oldPrice: 11.50,
+        discount: true,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 74,
+        categoryID: 2,
+        subcategoryID: 23,
+        name: 'Şəkərbura 12əd',
+        price: 13.00,
+        img: foodProduct_5_3,
+        oldPrice: 16.00,
+        discount: true,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 75,
+        categoryID: 2,
+        subcategoryID: 24,
+        name: 'Su "Sirab" qazsız 0.5L',
+        price: 0.45,
+        img: foodProduct_6_1,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 76,
+        categoryID: 2,
+        subcategoryID: 24,
+        name: 'Su "Sirab" qazsız 1,5L',
+        price: 0.99,
+        img: foodProduct_6_2,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
+    },
+    {
+        id: 77,
+        categoryID: 2,
+        subcategoryID: 24,
+        name: 'Su "Badamlı" qazlı 0.6L Şüşə',
+        price: 0.90,
+        img: foodProduct_6_3,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 78,
+        categoryID: 2,
+        subcategoryID: 24,
+        name: 'Qazlı içki "Coca-Cola" 0,5L',
+        price: 1.10,
+        img: foodProduct_6_4,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 79,
+        categoryID: 2,
+        subcategoryID: 24,
+        name: 'Qazlı içki "Spritee" 0,5L',
+        price: 1.10,
+        img: foodProduct_6_5,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: false,
+    },
+    {
+        id: 80,
+        categoryID: 2,
+        subcategoryID: 24,
+        name: 'Su qazlı "Sirab" Premium 750ml',
+        price: 2.75,
+        img: foodProduct_6_6,
+        oldPrice: 0,
+        discount: false,
+        isNew: false,
+        bestSeller: true,
     },
 ]

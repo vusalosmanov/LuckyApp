@@ -1,6 +1,7 @@
 import React from "react";
 import Swiper from "../components/Swipers.jsx";
 import Swiperforoffice from "../components/Swiperforoffice.jsx";
+import Swiperforfood from "../components/Swiperforfood.jsx";
 import coverkagiz from "../assets/images/category-cover/cover-kagiz.jpg";
 import coverqelem from "../assets/images/category-cover/cover-qelem.png"
 import coverqovluq from "../assets/images/category-cover/cover-qovluq.jpg"
@@ -75,6 +76,11 @@ const Home = () => {
               </div>
             </Link>
           </div>
+        </div>
+      </section>
+      <section>
+      <div className="w-[1320px] mx-auto pr-[10px] pl-[10px]">
+          <Swiperforfood />
         </div>
       </section>
     </>
