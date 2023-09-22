@@ -1,10 +1,10 @@
-import officeIcon from '../../assets/images/icon/category-icon/office-icon.jpg'
-import foodIcon from '../../assets/images/icon/category-icon/food-icon.jpg'
-import economicIcon from '../../assets/images/icon/category-icon/economic-icon.jpg'
-import electronicIcon from '../../assets/images/icon/category-icon/electronic-icon.jpg'
-import flowerIcon from '../../assets/images/icon/category-icon/flower-icon.jpg'
-import giftIcon from '../../assets/images/icon/category-icon/gift-icon.jpg'
-import coffeeShopIcon from '../../assets/images/icon/category-icon/coffeeshop-icon.jpg'
+import officeIcon from '../src/assets/image/icon/category-icon/office-icon.jpg'
+import foodIcon from '../src/assets/image/icon/category-icon/food-icon.jpg'
+import economicIcon from '../src/assets/image/icon/category-icon/economic-icon.jpg'
+import electronicIcon from '../src/assets/image/icon/category-icon/electronic-icon.jpg'
+import flowerIcon from '../src/assets/image/icon/category-icon/flower-icon.jpg'
+import giftIcon from '../src/assets/image/icon/category-icon/gift-icon.jpg'
+import coffeeShopIcon from '../src/assets/image/icon/category-icon/coffeeshop-icon.jpg'
 
 
 

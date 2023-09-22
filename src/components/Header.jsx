@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo/logo-header.svg";
+import logo from "../assets/image/logo/logo-header.svg";
 import Input from "./Input.jsx";
-import category from "../assets/images/icon/category.svg"
-import heart from "../assets/images/icon/heart.svg"
-import shopping from "../assets/images/icon/cart.svg"
+import category from "../assets/image/icon/category.svg"
+import heart from "../assets/image/icon/heart.svg"
+import shopping from "../assets/image/icon/cart.svg"
 import { BsChevronRight } from "react-icons/bs";
 import "../assets/styles/components/Header.scss";
 import "../assets/index.scss";
-import { subcategoryArray } from "../components/productData/SubcategoryData.js";
-import { categoryArray } from "./productData/CategoryData";
+import { subcategoryArray } from "../SubcategoryData.js";
+import { categoryArray } from "../CategoryData.js";
 const Header = () => {
   return (
     <>

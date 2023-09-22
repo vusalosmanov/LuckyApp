@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/components/Product.scss";
 
-const Product = ({ id, productName, price, imageurl }) => {
+const Product = ({ productName, price, imageurl }) => {
   return (
     <>
       <div className="flex justify-center">
           <div className="flex bg-[#fff] max-w-[280px] pt-[7px] pr-[15px] pb-[20px] pl-[15px] items-center flex-col justify-center w-full ">
-            <div className="relative min-h-[40px] w-full flex justify-end">
+            <div className="relative min-h-[40px] w-full flex justify-end z-50">
               <button>
                 <Link to="">
                   <svg
@@ -27,7 +27,7 @@ const Product = ({ id, productName, price, imageurl }) => {
             <div className="h-[200px] mb-[20px] max-w-[200px] w-full hover:scale-[1.1] image-hover flex items-center">
               <img src={imageurl} alt="" />
             </div>
-            <div className="flex items-center justify-center flex-col mb-[20px] text-center w-full">
+            <div className="flex items-center justify-center flex-col mb-[20px] text-center w-full z-50">
               <div className="mb-[5px] min-h-[60px] px-[10px] flex justify-center items-center">
                 <p>{productName}</p>
               </div>
