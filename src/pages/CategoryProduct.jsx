@@ -1,8 +1,5 @@
-import React, { useEffect } from "react";
-import ProductCart from "../components/ProductCart.jsx";
+import React from "react";
 import CategoryInput from "../components/CategoryInput";
-import { useState  } from "react";
-import { useParams } from "react-router-dom";
 const CategoryProduct = () => {
 
   return (    
