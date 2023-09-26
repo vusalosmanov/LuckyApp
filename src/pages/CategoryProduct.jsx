@@ -1,13 +1,12 @@
 import React from "react";
 import CategoryInput from "../components/CategoryInput";
+import { useState } from "react";
+import ProductCart from "../components/ProductCart";
 const CategoryProduct = () => {
-
-  return (    
+  return (
+  
     <section className="bg-[#f8f8f8]">
       <div className="w-[1320px] mx-auto pl-[10px] pr-[10px] flex items-center flex-col justify-center">
-        <h1 className="mb-[55px] text-center relative capitalize text-[2.5rem]">
-          Kagiz 
-        </h1>
         <div className="w-[100%] flex flex-wrap gap-[13px]">
           <div className="flex items-start  flex-row justify-center mb-[40px] w-[33%] bg-white">
             <div className="flex  justify-center flex-col w-[100%] items-center">

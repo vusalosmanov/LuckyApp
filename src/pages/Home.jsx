@@ -2,7 +2,7 @@ import React from "react";
 import Swiper from "../components/Swipers.jsx";
 import Swiperforoffice from "../components/Swiperforoffice.jsx";
 import Swiperforfood from "../components/Swiperforfood.jsx";
-import CategoryCart from "../components/CategoryCart.jsx";
+import CategoryCartOrange from "../components/CategoryCartOrange.jsx";
 
 const Home = () => {
   return (
@@ -22,7 +22,7 @@ const Home = () => {
         </div>
       </section>
       <section className="bg-[#fc8410] py-[100px]">
-        <CategoryCart />
+        <CategoryCartOrange/>
       </section>
       <section className="bg-[#f8f8f8] py-[100px] bgimage ">
         <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] ">

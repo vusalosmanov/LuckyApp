@@ -8,8 +8,8 @@ import shopping from "../assets/image/icon/cart.svg"
 import { BsChevronRight } from "react-icons/bs";
 import "../assets/styles/components/Header.scss";
 import "../assets/index.scss";
-import { subcategoryArray } from "../SubcategoryData.js";
-import { categoryArray } from "../CategoryData.js";
+import { subcategoryArray } from "./data/SubcategoryData.js"
+import { categoryArray } from "./data/CategoryData.js";
 const Header = () => {
   return (
     <>
