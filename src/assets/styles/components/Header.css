@@ -1,0 +1,77 @@
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.onedrop:hover .onechild {
+  display: block;
+}
+
+.twodrop:hover .twochild {
+  display: block;
+}
+
+.threedrop:hover .threechild {
+  display: block;
+}
+
+.fourdrop:hover .fourchild {
+  display: block;
+}
+
+.fivedrop:hover .fivechild {
+  display: block;
+}
+
+.sixdrop:hover .sixchild {
+  display: block;
+}
+
+.sevendrop:hover .sevenchild {
+  display: block;
+}
+
+.milidrop:hover .mindrop {
+  display: block;
+}
+
+.anima::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  height: 1px;
+  width: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s ease-in-out;
+}
+
+.anima:hover::after {
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.anima::after {
+  transition: width 0.3s ease-in-out;
+}
+
+.anima:active::after {
+  width: 0;
+}
+
+.un {
+  background: linear-gradient(to right, rgba(16, 104, 84, 0.0470588235), rgba(16, 104, 84, 0.0470588235)), linear-gradient(to right, #106853, #106853);
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.un:hover {
+  background-size: 0 0.1em, 100% 0.1em;
+}
+
+.gridd {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 10px;
+}/*# sourceMappingURL=Header.css.map */

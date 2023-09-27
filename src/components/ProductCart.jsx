@@ -6,7 +6,7 @@ const Product = ({ productName, price, imageurl }) => {
   return (
     <>
       <div className="flex justify-center">
-          <div className="flex bg-[#fff] max-w-[280px] pt-[7px] pr-[15px] pb-[20px] pl-[15px] items-center flex-col justify-center w-full ">
+          <div className="flex bg-[#fff] w-[260px] pt-[7px] pr-[15px] pb-[20px] pl-[15px] items-center flex-col justify-center  ">
             <div className="relative min-h-[40px] w-full flex justify-end z-50">
               <button>
                 <Link to="">

@@ -1,5 +1,7 @@
 import React from "react";
 import "../assets/styles/pages/Category.scss"
+import Manat from "../assets/image/icon/manat.svg"
+
 const CategoryInput = () => {
       const rangeInput = document.querySelectorAll(".range-input input"),
     priceInput = document.querySelectorAll(".price-input input"),
@@ -46,13 +48,16 @@ const CategoryInput = () => {
     <>
       <div className="price-input">
         <div class="field">
-          <span>Min</span>
           <input type="number" class="input-min" value="0" />
         </div>
-        <div class="separator">-</div>
+        <div className="flex items-center justify-center">
+          <img src={Manat} alt="manat" />
+        </div>
         <div class="field">
-          <span>Max</span>
           <input type="number" class="input-max" value="100" />
+        </div>
+        <div className="flex items-center justify-center">
+          <img src={Manat} alt="manat" />
         </div>
       </div>
       <div className="slider">

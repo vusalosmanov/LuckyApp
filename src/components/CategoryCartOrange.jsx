@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { MainContext } from "./context/MainContextProvider";
+import { MainContext } from "./context/AllContextProvider";
 import SubCategoryItem from "./SubCategoryItem";
+
 const CategoryCartOrange = () => {
   
   const { orangeSectionData } = useContext(MainContext);

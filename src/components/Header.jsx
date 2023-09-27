@@ -72,27 +72,27 @@ const Header = () => {
                       {categoryArray?.length > 0 &&
                         categoryArray
                           .filter((item) => item.id === 1)
-                          .map((product) => (
+                          .map((category) => (
                             <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
                               <Link
-                                to=""
+                                to={`/products/${category.name}`}
                                 className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
                               >
-                                <img src={product.icon} alt="" />
-                                {product.name}
+                                <img src={category.icon} alt="" />
+                                {category.name}
                               </Link>
                               <ul className=" absolute top-0 left-[100%] h-full w-[213%]  shadow-lg bg-white  hidden onechild  ">
                                 <div className="w-full h-[264px] px-[20px] py-[20px] gridd  ">
                                   {subcategoryArray?.length > 0 &&
                                     subcategoryArray
                                       .filter((item) => item.categoryID === 1)
-                                      .map((product) => (
+                                      .map((subcategory) => (
                                         <li className="w-[100%]  mb-[10px] ">
                                           <Link
-                                            to=""
+                                            to={`/products/${category.name}/${subcategory.name}`}
                                             className=" p-[5px] text-black text-[18px]  font-montserrat font-sans capitalize "
                                           >
-                                            {product.name}
+                                            {subcategory.name}
                                           </Link>
                                         </li>
                                       ))}

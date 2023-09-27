@@ -6,12 +6,12 @@ import {
   Autoplay,
   Pagination,
 } from "swiper/modules";
-import ProductCart from "./ProductCart";
+import ProductCart from "../ProductCart";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
-import { productArray } from "./data/ProductData";
+import { productArray } from "../data/ProductData";
 const Swipers = () => {
   return (
     <>

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { MainContext } from "../../src/components/context/MainContextProvider";
+import { MainContext } from "../../src/components/context/AllContextProvider";
 
 function SubCategoryItem({ categoryID, subcategoryID, cover }) {
 
@@ -14,10 +14,11 @@ function SubCategoryItem({ categoryID, subcategoryID, cover }) {
     <>
       <div className="flex bg-[#fff] max-w-[400px]  pr-[15px] relative pl-[15px] items-center flex-col justify-center w-full">
         <Link
-          to={`/categoryproduct/${encodeURIComponent(category?.name)}/${encodeURIComponent(subcategory?.name)}`}>
+          to={`/products/${encodeURIComponent(category?.name)}/${encodeURIComponent(subcategory?.name)}`}>
+          {/* to="categoryproduct">  */}
           <div className="h-[300px]  max-w-[400px] w-full  flex items-center">
             <h2 className="absolute top-2">{subcategory?.name}</h2>
-            <img src={cover} alt="" />
+            <img src={cover} alt="" className="w-[100%] h-[100%] object-contain" />
           </div>
         </Link>
       </div>
