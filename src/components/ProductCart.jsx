@@ -24,9 +24,9 @@ const Product = ({ productName, price, imageurl }) => {
                 </Link>
               </button>
             </div>
-            <div className="h-[200px] mb-[20px] max-w-[200px] w-full hover:scale-[1.1] image-hover flex items-center">
-              <img src={imageurl} alt="" />
-            </div>
+            <Link to="" className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px]">
+              <img src={imageurl} alt="" className="w-[100%] h-[100%] object-contain" />
+            </Link>
             <div className="flex items-center justify-center flex-col mb-[20px] text-center w-full z-50">
               <div className="mb-[5px] min-h-[60px] px-[10px] flex justify-center items-center">
                 <p>{productName}</p>

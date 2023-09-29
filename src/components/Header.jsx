@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/image/logo/logo-header.svg";
 import Input from "./Input.jsx";
-import category from "../assets/image/icon/category.svg"
-import heart from "../assets/image/icon/heart.svg"
-import shopping from "../assets/image/icon/cart.svg"
+import category from "../assets/image/icon/category.svg";
+import heart from "../assets/image/icon/heart.svg";
+import shopping from "../assets/image/icon/cart.svg";
 import { BsChevronRight } from "react-icons/bs";
 import "../assets/styles/components/Header.scss";
 import "../assets/index.scss";
-import { subcategoryArray } from "./data/SubcategoryData.js"
-import { categoryArray } from "./data/CategoryData.js";
+import { MainContext } from "./context/AllContextProvider";
+import { useState, useEffect } from "react";
 const Header = () => {
+  const { categoryArray, subcategoryArray } = useContext(MainContext);
+
+  const [subcategories, setSubcategories] = useState([]);
+
+  useEffect(() => {
+    let filteredSubcategories = [];
+    if (category) {
+      filteredSubcategories = subcategoryArray.filter(
+        (sb) => sb.categoryID === category.id
+      );
+      filteredSubcategories = filteredSubcategories.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+    }
+    setSubcategories([...filteredSubcategories]);
+  }, [category, subcategoryArray]);
   return (
     <>
       <header className="header">
@@ -68,12 +84,51 @@ const Header = () => {
                   <img src={category} alt="" />
                   <Link to="">Kataqoriya</Link>
                   <div className="dropdown-menu absolute hidden left-[150px]  h-auto  mt-[65px] z-[9999] top-0 w-full  max-w-[400px] ">
-                    <ul className="bg-white shadow   flex flex-col items-start  ">
-                      {categoryArray?.length > 0 &&
+                    <ul className="bg-white shadow  flex flex-col items-start  ">
+                      {categoryArray.length > 0
+                        ? categoryArray.map((category) => (
+                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                              <Link
+                                to={`/products/${encodeURIComponent(
+                                  category.name
+                                )}`}
+                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              >
+                                <img
+                                  src={category.icon}
+                                  alt=""
+                                  className="w-[20px] h-[20px]"
+                                />
+
+                                <span>{category.name}</span>
+                              </Link>
+                              <ul className=" absolute top-0 left-[100%] h-full w-[213%]  shadow-lg bg-white  hidden onechild  ">
+                                <div className="w-full h-[264px] px-[20px] py-[20px] gridd  ">
+                                  {subcategories.length > 0
+                                    ? subcategories.map((subcategory) => (
+                                        <li
+                                          className="w-[100%]  mb-[10px]  "
+                                          key={subcategory.id}
+                                        >
+                                          <Link
+                                            to={`/products/${category.name}/${subcategory.name}`}
+                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans capitalize "
+                                          >
+                                            {subcategory.name}
+                                          </Link>
+                                        </li>
+                                      ))
+                                    : null}
+                                </div>
+                              </ul>
+                            </li>
+                          ))
+                        : null}
+                      {/* {categoryArray?.length > 0 &&
                         categoryArray
                           .filter((item) => item.id === 1)
                           .map((category) => (
-                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
+                            <li  className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
                               <Link
                                 to={`/products/${category.name}`}
                                 className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
@@ -99,213 +154,7 @@ const Header = () => {
                                 </div>
                               </ul>
                             </li>
-                          ))}
-                      {categoryArray?.length > 0 &&
-                        categoryArray
-                          .filter((item) => item.id === 2)
-                          .map((product) => (
-                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
-                              <Link
-                                to=""
-                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                              >
-                                <img
-                                  src={product.icon}
-                                  alt=""
-                                  className="w-[18px] h-[18px]"
-                                />
-                                {product.name}
-                              </Link>
-                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                                <div className="w-full h-[88px] px-[20px] py-[20px] gridd  ">
-                                  {subcategoryArray?.length > 0 &&
-                                    subcategoryArray
-                                      .filter((item) => item.categoryID === 2)
-                                      .map((product) => (
-                                        <li className="w-[100%] mb-[10px]">
-                                          <Link
-                                            to=""
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                                          >
-                                            {product.name}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                </div>
-                              </ul>
-                            </li>
-                          ))}
-                      {categoryArray?.length > 0 &&
-                        categoryArray
-                          .filter((item) => item.id === 3)
-                          .map((product) => (
-                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
-                              <Link
-                                to=""
-                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                              >
-                                <img src={product.icon} alt="" />
-                                {product.name}
-                              </Link>
-                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                                  {subcategoryArray?.length > 0 &&
-                                    subcategoryArray
-                                      .filter((item) => item.categoryID === 3)
-                                      .map((product) => (
-                                        <li className="w-[32%] ">
-                                          <Link
-                                            to=""
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                                          >
-                                            {product.name}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                </div>
-                              </ul>
-                            </li>
-                          ))}
-                      {categoryArray?.length > 0 &&
-                        categoryArray
-                          .filter((item) => item.id === 4)
-                          .map((product) => (
-                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
-                              <Link
-                                to=""
-                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                              >
-                                <img
-                                  src={product.icon}
-                                  alt=""
-                                  className="w-[18px] h-[18px]"
-                                />
-                                {product.name}
-                              </Link>
-                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                                  {subcategoryArray?.length > 0 &&
-                                    subcategoryArray
-                                      .filter((item) => item.categoryID === 4)
-                                      .map((product) => (
-                                        <li className="w-[32%] ">
-                                          <Link
-                                            to=""
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                                          >
-                                            {product.name}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                </div>
-                              </ul>
-                            </li>
-                          ))}
-                      {categoryArray?.length > 0 &&
-                        categoryArray
-                          .filter((item) => item.id === 5)
-                          .map((product) => (
-                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
-                              <Link
-                                to=""
-                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                              >
-                                <img
-                                  src={product.icon}
-                                  alt=""
-                                  className="w-[18px] h-[18px]"
-                                />
-                                {product.name}
-                              </Link>
-                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                                  {subcategoryArray?.length > 0 &&
-                                    subcategoryArray
-                                      .filter((item) => item.categoryID === 5)
-                                      .map((product) => (
-                                        <li className="w-[32%] ">
-                                          <Link
-                                            to=""
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                                          >
-                                            {product.name}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                </div>
-                              </ul>
-                            </li>
-                          ))}
-                      {categoryArray?.length > 0 &&
-                        categoryArray
-                          .filter((item) => item.id === 6)
-                          .map((product) => (
-                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
-                              <Link
-                                to=""
-                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                              >
-                                <img
-                                  src={product.icon}
-                                  alt=""
-                                  className="w-[18px] h-[18px]"
-                                />
-                                {product.name}
-                              </Link>
-                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                                  {subcategoryArray?.length > 0 &&
-                                    subcategoryArray
-                                      .filter((item) => item.categoryID === 6)
-                                      .map((product) => (
-                                        <li className="w-[32%] ">
-                                          <Link
-                                            to=""
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                                          >
-                                            {product.name}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                </div>
-                              </ul>
-                            </li>
-                          ))}
-                      {categoryArray?.length > 0 &&
-                        categoryArray
-                          .filter((item) => item.id === 7)
-                          .map((product) => (
-                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
-                              <Link
-                                to=""
-                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                              >
-                                <img
-                                  src={product.icon}
-                                  alt=""
-                                  className="w-[18px] h-[18px]"
-                                />
-                                {product.name}
-                              </Link>
-                              <ul className=" absolute top-0 left-[100%] w-[213%] h-full shadow-lg bg-white  hidden onechild ">
-                                <div className="flex flex-col flex-wrap w-full h-full px-[20px] py-[10px] ">
-                                  {subcategoryArray?.length > 0 &&
-                                    subcategoryArray
-                                      .filter((item) => item.categoryID === 7)
-                                      .map((product) => (
-                                        <li className="w-[32%] ">
-                                          <Link
-                                            to=""
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans "
-                                          >
-                                            {product.name}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                </div>
-                              </ul>
-                            </li>
-                          ))}
+                          ))} */}
                     </ul>
                   </div>
                 </li>

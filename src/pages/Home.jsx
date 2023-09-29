@@ -2,7 +2,8 @@ import React from "react";
 import Swiper from "../components/swiper/Swipers.jsx";
 import Swiperforoffice from "../components/swiper/Swiperforoffice.jsx";
 import Swiperforfood from "../components/swiper/Swiperforfood.jsx";
-import CategoryCartOrange from "../components/CategoryCartOrange.jsx";
+import CategoryCartOrange from "../components/category/CategoryCartOrange";
+import CategoryCartGreen from "../components/category/CategoryCartGreen.jsx";
 
 const Home = () => {
   return (
@@ -34,6 +35,9 @@ const Home = () => {
         <div className="w-[1320px] mx-auto pr-[10px] pl-[10px]">
           <Swiperforfood />
         </div>
+      </section>
+      <section className="bg-[#106853] py-[100px]">
+       <CategoryCartGreen/>
       </section>
     </>
   );
