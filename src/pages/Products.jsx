@@ -25,7 +25,8 @@ function Products() {
         );
         setProducts([...filteredProducts]);
       }
-    } else if (categoryName && subcategoryName) {
+    } 
+    else if (categoryName && subcategoryName) {
       let category = categoryArray.find(
         (category) => category.name === categoryName
       );
@@ -63,8 +64,6 @@ function Products() {
             >
               <LeftFilterAll />
             </div>
-            
-
             <div className="flex items-start flex-col justify-center mb-[40px] w-[66%]">
               <div className="inner flex  items-center flex-col justify-center w-[100%]">
                 <div className="product-row w-[100%] flex flex-wrap">

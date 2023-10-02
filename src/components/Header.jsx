@@ -124,37 +124,6 @@ const Header = () => {
                             </li>
                           ))
                         : null}
-                      {/* {categoryArray?.length > 0 &&
-                        categoryArray
-                          .filter((item) => item.id === 1)
-                          .map((category) => (
-                            <li  className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
-                              <Link
-                                to={`/products/${category.name}`}
-                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                              >
-                                <img src={category.icon} alt="" />
-                                {category.name}
-                              </Link>
-                              <ul className=" absolute top-0 left-[100%] h-full w-[213%]  shadow-lg bg-white  hidden onechild  ">
-                                <div className="w-full h-[264px] px-[20px] py-[20px] gridd  ">
-                                  {subcategoryArray?.length > 0 &&
-                                    subcategoryArray
-                                      .filter((item) => item.categoryID === 1)
-                                      .map((subcategory) => (
-                                        <li className="w-[100%]  mb-[10px] ">
-                                          <Link
-                                            to={`/products/${category.name}/${subcategory.name}`}
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans capitalize "
-                                          >
-                                            {subcategory.name}
-                                          </Link>
-                                        </li>
-                                      ))}
-                                </div>
-                              </ul>
-                            </li>
-                          ))} */}
                     </ul>
                   </div>
                 </li>
@@ -163,22 +132,22 @@ const Header = () => {
             <div className="flex  justify-start pl-[40px]">
               <ul className="flex w-full justify-start items-center text-[white]">
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="anima relative py-[5px]">
+                  <Link to="/about" className="anima relative py-[5px]">
                     Haqqimizda{" "}
                   </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="anima relative py-[5px]">
+                  <Link to="/new" className="anima relative py-[5px]">
                     Yeni
                   </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="anima relative py-[5px]">
+                  <Link to="/discount" className="anima relative py-[5px]">
                     Endirimlər
                   </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="anima relative py-[5px]">
+                  <Link to="/bestseller" className="anima relative py-[5px]">
                     Ən çox satılanlar{" "}
                   </Link>
                 </li>
@@ -192,7 +161,7 @@ const Header = () => {
                   <ul className="absolute shadow-lg bg-white top-[55px] hidden mindrop z-50 ">
                     <div className="p-[10px] text-[#000000]">
                       <li className="p-[5px]">
-                        <Link to="">Catdirilma </Link>
+                        <Link to="/terms">Catdirilma </Link>
                       </li>
                       <li className="p-[5px]">
                         <Link to="">
