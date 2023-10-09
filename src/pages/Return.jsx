@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TermLogo from '../assets/image/article/img-1.png'
-const Terms = () => {
+import ReturnLogo from '../assets/image/article/img-2.jpg'
+const Return = () => {
   return (
     <>
       <section>
         <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex justify-center items-center flex-col mt-[50px] text-[32px]">
-          <h3>Çatdırılma</h3>
-          <div className="w-[40px] h-[5px] bg-[#106853] rounded-lg mt-[px] "></div>
+          <h3>Geri Qaytarılma Və Dəyişdirilmə</h3>
+          <div className="w-[40px] h-[5px] bg-[#106853] rounded-lg mt-[10px] "></div>
         </div>
         <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex mt-[20px] justify-center items-center cursor-pointer">
           <Link to="/">Ana Seyife /</Link>
-          <span>Çatdırılma</span>
+          <span>Geri Qaytarılma Və Dəyişdirilmə</span>
         </div>
       </section>
       <section className="mt-[80px] mb-[80px]">
@@ -55,7 +55,7 @@ const Terms = () => {
             </div>
             <div className="w-[50%] flex justify-center">
               <div className="w-[100%] max-w-[500px]">
-                <img src={TermLogo} alt="" />
+                <img src={ReturnLogo} alt="" />
               </div>
             </div>
           </div>
@@ -65,4 +65,4 @@ const Terms = () => {
   );
 };
 
-export default Terms;
+export default Return;

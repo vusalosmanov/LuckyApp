@@ -10,6 +10,7 @@ import "../assets/styles/components/Header.scss";
 import "../assets/index.scss";
 import { MainContext } from "./context/AllContextProvider";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 const Header = () => {
   const { categoryArray, subcategoryArray } = useContext(MainContext);
 
@@ -19,14 +20,16 @@ const Header = () => {
     let filteredSubcategories = [];
     if (category) {
       filteredSubcategories = subcategoryArray.filter(
-        (sb) => sb.categoryID === category.id
+        (item) => item.categoryID === category.id
       );
       filteredSubcategories = filteredSubcategories.sort((a, b) =>
         a.name.localeCompare(b.name)
       );
     }
     setSubcategories([...filteredSubcategories]);
+    console.log(subcategories);
   }, [category, subcategoryArray]);
+  
   return (
     <>
       <header className="header">
@@ -34,13 +37,13 @@ const Header = () => {
           <div className="w-[1320px]  mx-auto pr-[10px] pl-[10px] ">
             <div className="flex justify-end flex-row items-center pt-[15px]  pb-[15px] w-[100%] ">
               <Link
-                to=""
+                to="/register"
                 className="mr-[20px] border-[2px] rounded-[5px] border-[white] text-[white] pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative"
               >
                 Daxil ol
               </Link>
               <Link
-                to=""
+                to="/register"
                 className=" rounded-[5px] border-[2px] border-[white] text-[black] bg-white pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative"
               >
                 Qeydiyyat
@@ -65,7 +68,7 @@ const Header = () => {
               </div>
               <div className="icon">
                 <div className="flex gap-5">
-                  <Link to="" className="relative">
+                  <Link to="/shop" className="relative">
                     <img src={shopping} alt="" className="w-[50px]" />
                   </Link>
                   <Link to="" className="relative">
@@ -164,7 +167,7 @@ const Header = () => {
                         <Link to="/terms">Catdirilma </Link>
                       </li>
                       <li className="p-[5px]">
-                        <Link to="">
+                        <Link to="/return">
                           Geri Qaytarilma ve <br /> deyisdirimle{" "}
                         </Link>
                       </li>

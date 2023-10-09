@@ -6,6 +6,7 @@ import CategoryCartOrange from "../components/category/CategoryCartOrange";
 import CategoryCartGreen from "../components/category/CategoryCartGreen.jsx";
 
 const Home = () => {
+  
   return (
     <>
       <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] mt-[30px] mb-[80px]">
