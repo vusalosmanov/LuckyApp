@@ -29,6 +29,8 @@ const Header = () => {
     setSubcategories([...filteredSubcategories]);
     console.log(subcategories);
   }, [category, subcategoryArray]);
+
+  const { list } = useSelector(state => state.cart)
   
   return (
     <>
@@ -70,9 +72,10 @@ const Header = () => {
                 <div className="flex gap-5">
                   <Link to="/shop" className="relative">
                     <img src={shopping} alt="" className="w-[50px]" />
+                    {list?.length}
                   </Link>
                   <Link to="" className="relative">
-                    <img src={heart} alt="" className="w-[50px]" />
+                    <img src={heart} alt="" className="w-[50px]"  />
                   </Link>
                 </div>
               </div>

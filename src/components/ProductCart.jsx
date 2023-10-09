@@ -1,8 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/components/Product.scss";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slice/cartSlice";
+const Product = ({ productName, price, imageurl , data}) => {
 
-const Product = ({ productName, price, imageurl }) => {
+  const dispatch = useDispatch()
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({
+        ...data,
+        quantity: 1
+    }))
+    console.log("sucssess");
+}
   return (
     <>
       <div className="flex justify-center">
@@ -35,7 +46,7 @@ const Product = ({ productName, price, imageurl }) => {
                 <p>{price.toFixed(2)}AZN</p>
               </div>
             </div>
-            <button className="max-w-[150px] py-[10px] px-[20px] text-[black] w-full border-[1px] rounded hover:bg-lime-800 hover:text-[white] transition ease-in-out duration-200">
+            <button className="max-w-[150px] py-[10px] px-[20px] text-[black] w-full border-[1px] rounded hover:bg-lime-800 hover:text-[white] transition ease-in-out duration-200" onClick={handleAddToCart} variant="success">
               Səbətə at
             </button>
           </div>

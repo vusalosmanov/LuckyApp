@@ -1,15 +1,13 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { cardReducer } from "./reducers/cart.reducers";
-import logger from "redux-logger";
+import { configureStore } from "@reduxjs/toolkit";
 
+import cartReducer from "./slice/cartSlice"
 
+const rootReducer = {
+    cart: cartReducer
+}
 
-const allReducers = combineReducers({
-  cartData: cardReducer,
-  
-});
+const store = configureStore({
+    reducer: rootReducer
+})
 
-
-
-export const store = createStore(allReducers, applyMiddleware(logger));
-
+export {store}
