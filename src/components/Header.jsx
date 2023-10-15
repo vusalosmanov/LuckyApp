@@ -11,6 +11,7 @@ import "../assets/index.scss";
 import { MainContext } from "./context/AllContextProvider";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import SubCategotyList from "./SubCategoryList";
 const Header = () => {
   const { categoryArray, subcategoryArray } = useContext(MainContext);
 
@@ -27,11 +28,25 @@ const Header = () => {
       );
     }
     setSubcategories([...filteredSubcategories]);
-    console.log(subcategories);
   }, [category, subcategoryArray]);
 
-  const { list } = useSelector(state => state.cart)
-  
+
+  const cartObject = useSelector((state) => state.user.cart);
+  const cart = Object.values(cartObject);
+
+  console.log(cart);
+
+  const [activeCategoryID, setActiveCategoryID] = useState(null);
+
+  const openSubMenu = (categoryId) => {
+    setActiveCategoryID(categoryId)
+    console.log('salam');
+  }
+  const closeSubMenu = () => {
+    setActiveCategoryID(null)
+    console.log('salam');
+  }
+
   return (
     <>
       <header className="header">
@@ -70,12 +85,12 @@ const Header = () => {
               </div>
               <div className="icon">
                 <div className="flex gap-5">
-                  <Link to="/shop" className="relative">
+                  <Link to="/shopproduct" className="relative" key={cart.id}>
                     <img src={shopping} alt="" className="w-[50px]" />
-                    {list?.length}
+                    {cart.length}
                   </Link>
                   <Link to="" className="relative">
-                    <img src={heart} alt="" className="w-[50px]"  />
+                    <img src={heart} alt="" className="w-[50px]" />
                   </Link>
                 </div>
               </div>
@@ -93,42 +108,26 @@ const Header = () => {
                     <ul className="bg-white shadow  flex flex-col items-start  ">
                       {categoryArray.length > 0
                         ? categoryArray.map((category) => (
-                            <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un">
-                              <Link
-                                to={`/products/${encodeURIComponent(
-                                  category.name
-                                )}`}
-                                className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
-                              >
-                                <img
-                                  src={category.icon}
-                                  alt=""
-                                  className="w-[20px] h-[20px]"
-                                />
+                          <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un" onMouseEnter={() => openSubMenu(category.id)} onMouseLeave={closeSubMenu}>
+                            <Link
+                              to={`/products/${encodeURIComponent(
+                                category.name
+                              )}`}
+                              className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                            >
+                              <img
+                                src={category.icon}
+                                alt=""
+                                className="w-[20px] h-[20px]"
+                              />
 
-                                <span>{category.name}</span>
-                              </Link>
-                              <ul className=" absolute top-0 left-[100%] h-full w-[213%]  shadow-lg bg-white  hidden onechild  ">
-                                <div className="w-full h-[264px] px-[20px] py-[20px] gridd  ">
-                                  {subcategories.length > 0
-                                    ? subcategories.map((subcategory) => (
-                                        <li
-                                          className="w-[100%]  mb-[10px]  "
-                                          key={subcategory.id}
-                                        >
-                                          <Link
-                                            to={`/products/${category.name}/${subcategory.name}`}
-                                            className=" p-[5px] text-black text-[18px]  font-montserrat font-sans capitalize "
-                                          >
-                                            {subcategory.name}
-                                          </Link>
-                                        </li>
-                                      ))
-                                    : null}
-                                </div>
-                              </ul>
-                            </li>
-                          ))
+                              <span>{category.name}</span>
+                              <div className={`${activeCategoryID === category.id ? 'flex absolute bottom-0 left-[400px] top-0' : 'hidden absolute bottom-0 left-[500px]'}`}>
+                                <SubCategotyList category={category} />
+                              </div>
+                            </Link>
+                          </li>
+                        ))
                         : null}
                     </ul>
                   </div>

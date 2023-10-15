@@ -1,0 +1,16 @@
+.subcategory-item {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  position: relative;
+  background-color: #fff;
+}
+.subcategory-item img {
+  transform: scale(0.8);
+}
+
+@media only screen and (min-width: 768px) {
+  .subcategory-item {
+    height: 300px;
+  }
+}/*# sourceMappingURL=subcategory.css.map */

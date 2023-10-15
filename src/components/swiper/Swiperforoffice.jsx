@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import { productArray } from "../data/ProductData";
 const Swipers = () => {
+
   return (
     <>
       <Swiper

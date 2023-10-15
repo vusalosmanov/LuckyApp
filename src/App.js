@@ -9,8 +9,8 @@ import Discount from "./pages/Discount";
 import BestSeller from "./pages/BestSeller";
 import Terms from "./pages/Terms";
 import Return from "./pages/Return";
-import Shop from "./pages/Shop";
 import Register from "./pages/Register";
+import ShopProduct from "./pages/ShopProduct"
 
 
 function App() {
@@ -26,8 +26,8 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/return" element={<Return />} />
         <Route path="/products" element={<Products/>} />
-        <Route path="/shop" element={<Shop/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/shopproduct" element={<ShopProduct/>} />
         {/* <Route path="/products/:new" element={<Products/>} /> */}
         <Route path="/products/:categoryName" element={<Products/>} />
         <Route path="/products/:categoryName/:subcategoryName" element={<Products/>} />
