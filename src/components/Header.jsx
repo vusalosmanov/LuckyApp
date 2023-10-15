@@ -31,21 +31,19 @@ const Header = () => {
   }, [category, subcategoryArray]);
 
 
+  const wishlistProducts = useSelector(state => state.user.wishlist);
   const cartObject = useSelector((state) => state.user.cart);
   const cart = Object.values(cartObject);
-
-  console.log(cart);
 
   const [activeCategoryID, setActiveCategoryID] = useState(null);
 
   const openSubMenu = (categoryId) => {
     setActiveCategoryID(categoryId)
-    console.log('salam');
   }
   const closeSubMenu = () => {
     setActiveCategoryID(null)
-    console.log('salam');
   }
+
 
   return (
     <>
@@ -86,11 +84,16 @@ const Header = () => {
               <div className="icon">
                 <div className="flex gap-5">
                   <Link to="/shopproduct" className="relative" key={cart.id}>
-                    <img src={shopping} alt="" className="w-[50px]" />
-                    {cart.length}
+                    <img src={shopping} alt="" className="w-[50px] " />
+                    <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
+                      {cart.length}
+                    </div>
                   </Link>
                   <Link to="" className="relative">
                     <img src={heart} alt="" className="w-[50px]" />
+                    <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
+                      {wishlistProducts.length}
+                    </div>
                   </Link>
                 </div>
               </div>
@@ -123,7 +126,9 @@ const Header = () => {
 
                               <span>{category.name}</span>
                               <div className={`${activeCategoryID === category.id ? 'flex absolute bottom-0 left-[400px] top-0' : 'hidden absolute bottom-0 left-[500px]'}`}>
-                                <SubCategotyList category={category} />
+                                <div className="grid grid-cols-3 gap-4">
+                                  <SubCategotyList category={category} />
+                                </div>
                               </div>
                             </Link>
                           </li>
@@ -141,6 +146,11 @@ const Header = () => {
                     Haqqimizda{" "}
                   </Link>
                 </li>
+                {/* <li className="text-[18px] mr-[50px]">
+                  <Link to="/product/new" className="anima relative py-[5px]">
+                    Yeni
+                  </Link>
+                </li> */}
                 <li className="text-[18px] mr-[50px]">
                   <Link to="/new" className="anima relative py-[5px]">
                     Yeni

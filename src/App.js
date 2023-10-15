@@ -28,7 +28,7 @@ function App() {
         <Route path="/products" element={<Products/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/shopproduct" element={<ShopProduct/>} />
-        {/* <Route path="/products/:new" element={<Products/>} /> */}
+        {/* <Route path="/products/new" element={<Products/>} /> */}
         <Route path="/products/:categoryName" element={<Products/>} />
         <Route path="/products/:categoryName/:subcategoryName" element={<Products/>} />
         {/* <Route path="/404" element={<NoPage />} />
