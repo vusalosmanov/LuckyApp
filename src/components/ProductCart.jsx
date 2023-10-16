@@ -12,7 +12,6 @@ const Product = ({ quantity, id, productName, price, imageurl, product }) => {
 
   const dispatch = useDispatch()
 
-  const [isIconClicked, setIsIconClicked] = useState(false);
   const handleClick = () => {
     dispatch(
       AddCart({
@@ -24,10 +23,13 @@ const Product = ({ quantity, id, productName, price, imageurl, product }) => {
       })
     )
   };
+  const wishlistProducts = useSelector((state) => state.user.wishlist)
+  const isWishlist = Object.values(wishlistProducts)
+  const wishlist = isWishlist.find(item => item.id === id)
 
 
   const iconHandleClick = () => {
-    if (isIconClicked) {
+    if (wishlist) {
       dispatch(
         RemoveFromWishlist(id)
       );
@@ -42,7 +44,6 @@ const Product = ({ quantity, id, productName, price, imageurl, product }) => {
         })
       );
     }
-    setIsIconClicked(!isIconClicked);
   };
 
   return (
@@ -57,7 +58,7 @@ const Product = ({ quantity, id, productName, price, imageurl, product }) => {
             </div>
             <button className='icon-button' onClick={iconHandleClick}>
               <img
-                src={isIconClicked ? heartIconFilled : heartIconOutline}
+                src={wishlist ? heartIconFilled : heartIconOutline}
                 alt="heart-icon"
               />
             </button>
