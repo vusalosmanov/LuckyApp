@@ -10,6 +10,7 @@ import BestSeller from "./pages/BestSeller";
 import Terms from "./pages/Terms";
 import Return from "./pages/Return";
 import Register from "./pages/Register";
+import Like from "./pages/Like"
 import ShopProduct from "./pages/ShopProduct"
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/return" element={<Return />} />
         <Route path="/products" element={<Products/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/like" element={<Like/>} />
         <Route path="/shopproduct" element={<ShopProduct/>} />
         {/* <Route path="/products/new" element={<Products/>} /> */}
         <Route path="/products/:categoryName" element={<Products/>} />

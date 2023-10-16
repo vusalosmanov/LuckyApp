@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import SubCategotyList from "./SubCategoryList";
 const Header = () => {
   const { categoryArray, subcategoryArray } = useContext(MainContext);
-
+  const [activeCategoryID, setActiveCategoryID] = useState(null);
   const [subcategories, setSubcategories] = useState([]);
 
   useEffect(() => {
@@ -35,7 +35,6 @@ const Header = () => {
   const cartObject = useSelector((state) => state.user.cart);
   const cart = Object.values(cartObject);
 
-  const [activeCategoryID, setActiveCategoryID] = useState(null);
 
   const openSubMenu = (categoryId) => {
     setActiveCategoryID(categoryId)
@@ -43,8 +42,6 @@ const Header = () => {
   const closeSubMenu = () => {
     setActiveCategoryID(null)
   }
-
-
   return (
     <>
       <header className="header">
@@ -89,7 +86,7 @@ const Header = () => {
                       {cart.length}
                     </div>
                   </Link>
-                  <Link to="" className="relative">
+                  <Link to="/like" className="relative">
                     <img src={heart} alt="" className="w-[50px]" />
                     <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
                       {wishlistProducts.length}

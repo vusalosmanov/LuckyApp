@@ -29,7 +29,7 @@ const Product = ({ quantity, id, productName, price, imageurl, product }) => {
   const iconHandleClick = () => {
     if (isIconClicked) {
       dispatch(
-        RemoveFromWishlist(id) 
+        RemoveFromWishlist(id)
       );
     } else {
       dispatch(
@@ -37,6 +37,7 @@ const Product = ({ quantity, id, productName, price, imageurl, product }) => {
           id,
           productName,
           imageurl,
+          price,
           quantity
         })
       );
