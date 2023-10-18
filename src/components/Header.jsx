@@ -86,7 +86,7 @@ const Header = () => {
                       {cart.length}
                     </div>
                   </Link>
-                  <Link to="/like" className="relative">
+                  <Link to="/wishlist" className="relative">
                     <img src={heart} alt="" className="w-[50px]" />
                     <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
                       {wishlistProducts.length}

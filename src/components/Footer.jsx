@@ -15,12 +15,12 @@ const Footer = () => {
             </div>
             <div className=" flex gap-[12px]">
               <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200 ">
-                <AiOutlineInstagram />
+                <BiLogoFacebook />
               </div>
 
               <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200">
+                <AiOutlineInstagram />
                 {" "}
-                <BiLogoFacebook />
               </div>
             </div>
           </div>
@@ -77,18 +77,18 @@ const Footer = () => {
                 {" "}
                 <Link>
                   {" "}
-                  <span> Tel:(994) 99 770 11 70</span>{" "}
+                  <span> Tel:(994) 55 960 58 50</span>{" "}
                 </Link>
               </li>
               <li className="font-thin text-[#303030] unf">
                 <Link>
-                  <span>info@Los.az</span>
+                  <span> Email: vusal.osmanov66@gmail.com</span>
                 </Link>
               </li>
               <li className="font-thin text-[#303030] unf">
                 <Link>
                   {" "}
-                  <span>Ünvan:Ziya Bünyadov, Çinar Plaza </span>
+                  <span>Ünvan: Ziya Bünyadov pr, 1965. Çinar <br /> Park Biznes Mərkəzi </span>
                 </Link>
               </li>
             </ul>
@@ -104,7 +104,7 @@ const Footer = () => {
           </p>
           <p className="text-[18px] text-[#212529]">
             Powered by{" "}
-            <span className=" text-[18px] text-[#fc8410]">Lucky</span>{" "}
+            <span className=" text-[18px] text-[#fc8410]">Vüsal</span>{" "}
           </p>
         </div>
       </div>

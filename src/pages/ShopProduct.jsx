@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector } from "react-redux";
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+// import '../assets/styles/pages/ShopProduct.scss'
 import { AddCart, DecreaseCart, RemoveFromCart } from '../redux/cartSystem';
 import { useDispatch } from 'react-redux';
 const ShopProduct = () => {
@@ -27,10 +29,39 @@ const ShopProduct = () => {
     const handleRemoveFromCart = (productId) => {
         dispatch(RemoveFromCart({ id: productId }));
     };
+
+
+    const [alert, setAlert] = useState(false)
+    const [alertText, setAlertText] = useState('')
+
+    let minOrder = 5
+
+    useEffect(() => {
+        if (sumPrice < minOrder && sumPrice !== 0) {
+            setAlert(false);
+            setAlertText(`Sifarişi təstiqləmək üçün minimum ${minOrder} Azn olmalıdır.`);
+        } else {
+            setAlert(false);
+        }
+    }, [sumPrice, minOrder])
+
+    const orderHandleClick = () => {
+        if (sumPrice === 0) {
+            setAlert(true);
+            setAlertText('Sifarişi təsdiqləmək üçün səbətinizdə ən az bir məhsul olmalıdır.');
+
+        } else {
+            setAlert(true);
+        }
+    };
     return (
         <>
             {cart.length > 0 ? (
+
                 <div className='lg:w-[1170px] w-full  my-0 mx-auto  pr-[15px] pl-[15px] lg:block md:block hidden  mb-[20px]'>
+                    <div className={`${alert ? 'w-[700px] h-[50px] bg-orange-500 flex items-center justify-center  text-[white] text-[18px] mt-[20px] mb-[20px]' : 'hidden'}`} >
+                        <p>{alertText}</p>
+                    </div>
                     <table id='customers' className='lg:w-[1170px]'>
                         <thead className="text-center bg-[#f7f7f7] text-[16px]">
                             <tr className="border-b-[1px] text-[#4d4d4d]">
@@ -74,15 +105,46 @@ const ShopProduct = () => {
                                         </td>
                                     </tr>
                                 </table>
-                                {/* {sumPrice.toFixed(2)} */}
                             </>
 
                         ))}
                     </table >
-
                 </div >
             ) : null}
-           
+            <div className='w-[1320px] mx-auto pr-[10px] pl-[10px] flex justify-end items-center mb-[20px]'>
+                {cart.length > 0 ? (
+                    <div className='flex flex-col justify-center max-w-[450px] min-h-[220px] py-[20px] px-[15px] w-full shadow-lg'>
+                        <h4 className='text-[1.5rem] py-[10px]'>Səbət</h4>
+                        <hr />
+                        <div className='flex  items-center  flex-row  justify-between mb-[30px] py-[15px] w-[100%]'>
+                            <span className='text-[18px]'>Cəmi</span>
+                            <span className='text-[22px]'>{sumPrice.toFixed(2)} Azn</span>
+                        </div>
+                        <div className='flex justify-center'>
+                            <Link className='flex items-center justify-center bg-orange-500 rounded-lg text-white text-xl max-w-[250px]  w-full py-[15px] px-[20px]'> <button onClick={orderHandleClick}>Sifarişi təstiqlə</button></Link>
+                        </div>
+                    </div>
+                ) : (
+                    <>
+                        <div className='w-[1320px] mx-auto pr-[10px] pl-[10px] flex justify-center items-center mb-[20px] flex-col '>
+                            <div className={`${alert ? 'w-[700px] h-[50px] bg-orange-500 flex items-center justify-center  text-[white] text-[18px] mt-[20px] mb-[20px]' : 'hidden'}`} >
+                                <p>{alertText}</p>
+                            </div>
+                            <div className='flex flex-col justify-center max-w-[450px] min-h-[220px] py-[20px] px-[15px] w-full shadow-lg'>
+                                <h4 className='text-[1.5rem] py-[10px]'>Səbət</h4>
+                                <hr />
+                                <div className='flex  items-center  flex-row  justify-between mb-[30px] py-[15px] w-[100%]'>
+                                    <span className='text-[18px]'>Cəmi</span>
+                                    <span className='text-[22px]'>{sumPrice.toFixed(2)} Azn</span>
+                                </div>
+                                <div className='flex justify-center'>
+                                    <Link className='flex items-center justify-center bg-orange-500 rounded-lg text-white text-xl max-w-[250px]  w-full py-[15px] px-[20px]'> <button onClick={orderHandleClick}>Sifarişi təstiqlə</button></Link>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )}
+            </div>
         </>
     )
 }

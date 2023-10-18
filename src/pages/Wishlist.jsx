@@ -9,8 +9,12 @@ function Wishlist() {
 
     return (
         <>
+          <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex items-center justify-center mt-[20px]  flex-col mb-[40px]">
+          <h1 className="text-[2.5rem] capitalize">istək siyahısı</h1>
+          <div className="w-[40px] mt-[10px] h-[5px] rounded-lg bg-[#106853] "></div>
+        </div>
             {wishlist.length > 0 ? (
-                <div className='lg:w-[1170px] w-full  my-0 mx-auto  pr-[15px] pl-[15px] lg:block md:block hidden  mb-[20px]'>
+                <div className='lg:w-[1320px] w-full  my-0 mx-auto  pr-[10px] pl-[10px] mt-[20px] flex justify-start flex-wrap mb-[40px] '>
                     {wishlist.map(product => (
                         <>
                             <ProductCart
