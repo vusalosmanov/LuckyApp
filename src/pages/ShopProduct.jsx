@@ -32,18 +32,21 @@ const ShopProduct = () => {
 
     const [alert, setAlert] = useState(false);
     const [alertText, setAlertText] = useState('');
+    const [orderLinkPath, setOrderLinkPath] = useState('')
 
     let minOrder = 5;
 
     useEffect(() => {
-        if (sumPrice < minOrder && sumPrice !== 0) {
-            setAlert(false);
-            setAlertText(`Sifarişi təstiqləmək üçün minimum ${minOrder} Azn olmalıdır.`);
-
-        } else {
-            setAlert(false);
+        if (sumPrice > minOrder) {
+            setAlert(false)
+            setOrderLinkPath('/shopproduct/order')
         }
-    }, [sumPrice, minOrder]);
+        else {
+            setOrderLinkPath('')
+        }
+    }, [sumPrice, minOrder, alert])
+
+    console.log(sumPrice);
 
     const orderHandleClick = () => {
         if (sumPrice === 0) {
@@ -53,8 +56,8 @@ const ShopProduct = () => {
             setAlert(true);
             setAlertText(`Sifarişi təstiqləmək üçün minimum ${minOrder} Azn olmalıdır.`);
         } else {
-            setAlert(true);
-            setAlertText('tesdiqlendi');
+            setAlert(false);
+            setOrderLinkPath('/shopproduct/order');
 
         }
     };
@@ -124,7 +127,7 @@ const ShopProduct = () => {
                             <span className='text-[22px]'>{sumPrice.toFixed(2)} Azn</span>
                         </div>
                         <div className='flex justify-center'>
-                            <Link className='flex items-center justify-center bg-orange-500 rounded-lg text-white text-xl max-w-[250px]  w-full py-[15px] px-[20px]'> <button onClick={orderHandleClick}>Sifarişi təstiqlə</button></Link>
+                        <Link onClick={() => { orderHandleClick() }} to={orderLinkPath} className='flex items-center justify-center bg-orange-500 rounded-lg text-white text-xl max-w-[250px] w-full py-[15px] px-[20px]'>Sifarişi təsdiqlə</Link>
                         </div>
                     </div>
                 ) : (
@@ -141,7 +144,7 @@ const ShopProduct = () => {
                                     <span className='text-[22px]'>{sumPrice.toFixed(2)} Azn</span>
                                 </div>
                                 <div className='flex justify-center'>
-                                    <Link className='flex items-center justify-center bg-orange-500 rounded-lg text-white text-xl max-w-[250px]  w-full py-[15px] px-[20px]'> <button onClick={orderHandleClick}>Sifarişi təstiqlə</button></Link>
+                                    <Link onClick={() => { orderHandleClick() }} className='flex items-center justify-center bg-orange-500 rounded-lg text-white text-xl max-w-[250px] w-full py-[15px] px-[20px]'>Sifarişi təsdiqlə</Link>
                                 </div>
                             </div>
                         </div>

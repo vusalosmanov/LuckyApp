@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation  } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -12,9 +12,15 @@ import Return from "./pages/Return";
 import Register from "./pages/Register";
 import ShopProduct from "./pages/ShopProduct"
 import Wishlist from "./pages/Wishlist";
+import { useEffect } from "react";
+import BasketFormSection from "./pages/BasketFormSection";
 
 
 function App() {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location])
   return (
     <>
       <Header />
@@ -30,7 +36,9 @@ function App() {
         <Route path="/register" element={<Register/>} />
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/shopproduct" element={<ShopProduct/>} />
+        <Route path="/shopproduct/:order" element={<BasketFormSection/>} />
         {/* <Route path="/products/new" element={<Products/>} /> */}
+        <Route path="/products" element={<Products/>} />
         <Route path="/products/:categoryName" element={<Products/>} />
         <Route path="/products/:categoryName/:subcategoryName" element={<Products/>} />
         {/* <Route path="/404" element={<NoPage />} />

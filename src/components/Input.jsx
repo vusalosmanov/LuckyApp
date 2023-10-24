@@ -1,81 +1,39 @@
 import React, { useState, useContext, useEffect } from "react";
-// import { useNavigate, useLocation } from "react-router-dom";
-// import { MainContext } from "./context/AllContextProvider";
+import { useNavigate, useLocation } from "react-router-dom";
+import { MainContext } from "./context/AllContextProvider";
 const Input = () => {
-  // const navigate = useNavigate();
-  // const location = useLocation();
-  // const { categoryArray, subcategoryArray, productArray, searchValues } =
-  //   useContext(MainContext);
-  // const { searchInputValue, setSearchInputValue } = useState("");
+  
+  const navigate = useNavigate();
+  const location = useLocation()
 
-  // useEffect(() => {
-  //   setSearchInputValue("");
-  // }, [Location]);
+  const { categoryArray, subcategoryArray, productArray, searchValues } = useContext(MainContext);
+  const [searchInputValues, setSearchInputValue] = useState('')
 
-  // const handleSearchFormSubmit = (e) => {
-  //   e.preventDefualt();
+  useEffect(() => {
+    setSearchInputValue('')
+  }, [location])
 
-  //   const category = categoryArray.find((category) =>
-  //     category.name
-  //       .trim()
-  //       .toLocaleLowerCase()
-  //       .includes(searchInputValue.trim().toLocaleLowerCase())
-  //   );
-  //   const subcategory = subcategoryArray.find((subcategory) =>
-  //     subcategory.name
-  //       .trim()
-  //       .toLocaleLowerCase()
-  //       .includes(searchInputValue.trim().toLocaleLowerCase())
-  //   );
-  //   const product = productArray.find((product) =>
-  //     product.name
-  //       .trim()
-  //       .toLocaleLowerCase()
-  //       .includes(searchInputValue.trim().toLocaleLowerCase())
-  //   );
-  //   const searchResult = searchValues.find((result) =>
-  //     result.name
-  //       .trim()
-  //       .toLocaleLowerCase()
-  //       .includes(searchInputValue.trim().toLocaleLowerCase())
-  //   );
+  const handleSearchFormSubmit = (e) => {
+    e.prevetDefault();
 
-  //   if (searchResult) {
-  //     navigate(searchResult.path);
-  //   } else if (category) {
-  //     navigate(`/products/${encodeURIComponent(category?.name)}`);
-  //   } else if (subcategory) {
-  //     const category = categoryArray.find(
-  //       (category) => category.id === subcategory.categoryID
-  //     );
-  //     navigate(
-  //       `/products/${encodeURIComponent(category?.name)}/${encodeURIComponent(
-  //         subcategory?.name
-  //       )}`
-  //     );
-  //   } else if (product) {
-  //     const category = categoryArray.find(
-  //       (category) => category.id === product.categoryID
-  //     );
-  //     const subcategory = subcategoryArray.find(
-  //       (subcategory) => subcategory.id === product.subcategoryID
-  //     );
-  //     navigate(
-  //       `/products/${encodeURIComponent(category?.name)}/${encodeURIComponent(
-  //         subcategory?.name
-  //       )}/${encodeURIComponent(product?.name)}`
-  //     );
-  //   } else {
-  //     navigate("/404");
-  //   }
-  // };
+    const category = categoryArray.find((category) => category.name.trim().toLocaleLoweCase().includes(searchInputValues.trim().toLocaleLowerCase()));
+    const subcategory = subcategoryArray.find((subcategory) => subcategory.name.trim().toLocaleLoweCase().includes(searchInputValues.trim().toLocaleLowerCase()));
+    const product = productArray.find((product) => product.name.trim().toLocaleLoweCase().includes(searchInputValues.trim().toLocaleLowerCase()));
+    const searchResult = searchValues.find((result) => result.name.trim().toLocaleLowerCase().includes(searchInputValues.trim().toLocaleLowerCase()))
 
+    if(searchResult){
+      navigate(searchResult.path)
+    }else if (category){
+      navigate(`/products/${encodeURIComponent(category?.name)}`)
+    }
+  }
+///PAGESLERI DEYIS
   return (
     <>
       <form
         action=""
         className="w-[650px] relative"
-        // onSubmit={handleSearchFormSubmit}
+        onSubmit={handleSearchFormSubmit}
       >
         <label
           htmlFor="search"
@@ -107,8 +65,8 @@ const Input = () => {
               type="text"
               name="search"
               placeholder="Axtar"
-              // value={searchInputValue}
-              // onChange={(e) => setSearchInputValue(e.target.value)}
+              value={searchInputValues}
+            onChange={(e) => setSearchInputValue(e.target.value)}
             />
           </div>
         </div>
