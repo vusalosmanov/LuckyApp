@@ -67,7 +67,7 @@ function Products() {
             <div className="flex items-start flex-col justify-center mb-[40px] w-[66%]">
               <div className="inner flex  items-center flex-col justify-center w-[100%]">
                 <div className="product-row w-[100%] flex flex-wrap">
-                  <TopFilter />
+                  <TopFilter products={products} setProducts={setProducts}  />
                   <div className="flex flex-row flex-wrap   gap-x-[30px] gap-y-[10px] items-start  mb-[40px] w-[100%] ">
                     {products.map((product) => (
                       <ProductCart

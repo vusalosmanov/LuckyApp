@@ -37,12 +37,9 @@ function App() {
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/shopproduct" element={<ShopProduct/>} />
         <Route path="/shopproduct/:order" element={<BasketFormSection/>} />
-        {/* <Route path="/products/new" element={<Products/>} /> */}
         <Route path="/products" element={<Products/>} />
         <Route path="/products/:categoryName" element={<Products/>} />
         <Route path="/products/:categoryName/:subcategoryName" element={<Products/>} />
-        {/* <Route path="/404" element={<NoPage />} />
-        <Route path="*" element={<Navigate to='/404' />} /> */}
       </Routes>
       <Footer />
     </>

@@ -583,7 +583,7 @@ export const productArray = [
         bestSeller: true,
     },
     {
-        id: 35,
+        id: 1035,
         categoryID: 1,
         subcategoryID: 13,
         name: 'Qayçı “Maped” CB-499',
@@ -847,7 +847,7 @@ export const productArray = [
         bestSeller: false,
     },
     {
-        id: 57,
+        id: 1057,
         categoryID: 2,
         subcategoryID: 19,
         name: 'Çay "Beta" 100əd',

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { subcategoryArray } from "./data/SubcategoryData";
 
-function SubCategotyList({ category }) {
+function SubCategotyList({ category , closeSumMenu }) {
     const [subcategories, setSubcategories] = useState([]);
     useEffect(() => {
         let filteredSubcategories = [];
@@ -18,7 +18,7 @@ function SubCategotyList({ category }) {
             <ul className="grid grid-cols-3 gap-4">
                 {subcategories.length > 0 ? (
                     subcategories.map((subcategory) => (
-                        <li key={subcategory.id}>
+                        <li key={subcategory.id} onClick={closeSumMenu} >
                             <Link to={`/products/${encodeURIComponent(category.name)}/${encodeURIComponent(subcategory.name)}`}>{subcategory.name}</Link>
                         </li>
                     ))

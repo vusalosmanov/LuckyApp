@@ -17,48 +17,78 @@ const BasketFormSection = () => {
     );
     return (
         <>
-            <section>
-                <div className='w-[1320px] mx-auto my-0  pr-[10px] pl-[10px] flex items-center justify-center'>
+            <section className='flex items-center flex-col justify-center py-[40px] w-[100%]'>
+                <div className="flex items-center flex-col justify-center max-w-[1320px] mx-auto  pl-[10px] pr-[10px] w-[100%]">
                     {
                         sumPrice > 5 ? (
-                            <form action="#" className='w-[100%]'>
-                                <h2 className=' text-center mb-[30px] text-[2rem]'>Məlumatlar</h2>
-                                <div className='flex  flex-wrap justify-around'>
-                                    <div className='flex flex-col justify-center mb-[40px] items-start'>
-                                        <div className="flex items-center flex-col justify-start  mb-[25px] w-[100%] ">
-                                            <label htmlFor="company" className='text-[18px] mb-[10px] py-[0px] px-[30px] '>Şirkət adı*</label>
-                                            <input type="text" className="p-[15px] w-[100%] appearance-none  bg-[white] text-[#212529] text-[1rem] border-[1px] " id="company" placeholder="Şirkət adı*" />
+                            <form action="#" className="flex flex-col justify-center items-center">
+                                <h2 className="mb-[30px] text-[2rem]">Məlumatlar</h2>
+                                <div className="w-[100%] flex flex-wrap mx-[1.5rem]">
+                                    <div className="flex flex-row justify-center mb-[40px] items-center">
+                                        <div className="flex flex-col justify-center w-[100%] items-center">
+                                            <div className="mb-[25px] items-start flex flex-col justify-center w-[100%]">
+                                                <label htmlFor="company" className='text-[18px] mb-[10px] px-[3px]'>Şirkət adı*</label>
+                                                <input type="text" className="p-[15px] w-[100%] appearance-none bg-[white] border-[1px] rounded-lg text-[#212529] block text-[1rem]   " id="company" placeholder="Şirkət adı*" />
+                                            </div>
+                                            {/* <div className="mb-[25px] items-start flex flex-col justify-center w-[100%]">
+                                            <label htmlFor="fullname" className='text-[18px] mb-[10px] px-[3px]'>Ad, Soyad*</label>
+                                            <input type="text" className="p-[15px] w-[100%] appearance-none bg-[white] border-[1px] rounded-lg text-[#212529] block text-[1rem]   " id="fullname" placeholder="Ad, Soyad*" />
                                         </div>
-                                        <div className="flex items-center flex-col justify-start ">
-                                            <label htmlFor="fullname">Ad, Soyad*</label>
-                                            <input type="text" className="form-control" id="fullname" placeholder="Ad, Soyad*" />
+                                        <div className="mb-[25px] items-start flex flex-col justify-center w-[100%]">
+                                            <label htmlFor="location" className='text-[18px] mb-[10px] px-[3px]'>Ünvan*</label>
+                                            <input type="text" className="p-[15px] w-[100%] appearance-none bg-[white] border-[1px] rounded-lg text-[#212529] block text-[1rem]   " id="location" placeholder="Ünvan*" />
                                         </div>
-                                        <div className="flex items-center flex-col justify-start ">
-                                            <label htmlFor="location">Ünvan*</label>
-                                            <input type="text" className="form-control" id="location" placeholder="Ünvan*" />
+                                        <div className="mb-[25px] items-start flex flex-col justify-center w-[100%]">
+                                            <label htmlFor="city" className='text-[18px] mb-[10px] px-[3px]'>Şəhər*</label>
+                                            <input type="text" className="p-[15px] w-[100%] appearance-none bg-[white] border-[1px] rounded-lg text-[#212529] block text-[1rem]   " id="city" placeholder="Şəhər*" />
                                         </div>
-                                        <div className="flex items-center flex-col justify-start ">
-                                            <label htmlFor="city">Şəhər*</label>
-                                            <input type="text" className="form-control" id="city" placeholder="Şəhər*" />
+                                        <div className="mb-[25px] items-start flex flex-col justify-center w-[100%]">
+                                            <label htmlFor="phone" className='text-[18px] mb-[10px] px-[3px]'>Telefon*</label>
+                                            <input type="number" className="p-[15px] w-[100%] appearance-none bg-[white] border-[1px] rounded-lg text-[#212529] block text-[1rem]   " id="phone" placeholder="Telefon*" />
                                         </div>
-                                        <div className="flex items-center flex-col justify-start ">
-                                            <label htmlFor="phone">Telefon*</label>
-                                            <input type="number" className="form-control" id="phone" placeholder="Telefon*" />
-                                        </div>
-                                        <div className="flex items-center flex-col justify-start ">
-                                            <label htmlFor="email">Email*</label>
-                                            <input type="email" className="form-control" id="email" placeholder="Email*" />
+                                        <div className="mb-[25px] items-start flex flex-col justify-center w-[100%]">
+                                            <label htmlFor="email" className='text-[18px] mb-[10px] px-[3px]'>Email*</label>
+                                            <input type="email" className="p-[15px] w-[100%] appearance-none bg-[white] border-[1px] rounded-lg text-[#212529] block text-[1rem]   " id="email" placeholder="Email*" />
+                                        </div> */}
                                         </div>
                                     </div>
-
-
-                                    <div className='flex flex-row justify-center mb-[40px] items-center'>
-                                        <h2>fjdkldfds</h2>
-                                    </div>
+                                    {/* <div className="flex flex-row justify-center mb-[40px] items-start">
+                                        <div className="flex flex-col justify-center items-center w-[100% mt-[20px] max-w-[550px]">
+                                            <div className="bg-[white] shadow-lg mb-[40px] px-[20px] py-[30px] flex flex-col justify-center items-center w-[100%] ">
+                                                <div className='inner-row'>
+                                                    <h4 className='info-title'>Sifariş</h4>
+                                                </div>
+                                                <div className='inner-row'>
+                                                    <span className='label'>Cəmi</span>
+                                                    <span className="value">{basketTotal.total.toFixed(2)} Azn</span>
+                                                </div>
+                                                <div className='inner-row'>
+                                                    <span className='label'>Çatdırılma</span>
+                                                    <span className="value">{deliveryValue.toFixed(2)} Azn</span>
+                                                </div>
+                                                <div className='inner-row'>
+                                                    <span className='label'>Ümumi</span>
+                                                    <span className="value">{total.toFixed(2)} Azn</span>
+                                                </div>
+                                            </div>
+                                            <div className='payment-radiobuttons'>
+                                                <label htmlFor="radio-1">
+                                                    Nağd <input className='form-check-input' name='payment' type="radio" id='radio-1' />
+                                                </label>
+                                                <label htmlFor="radio-2">
+                                                    Online ödəniş <input className='form-check-input' name='payment' type="radio" id='radio-2' />
+                                                </label>
+                                                <label htmlFor="radio-3">
+                                                    Köçürmə yolu <input className='form-check-input' name='payment' type="radio" id='radio-3' />
+                                                </label>
+                                            </div>
+                                            <button type='submit' className="submit-button orange">Sifarişi təsdiqlə</button>
+                                        </div>
+                                    </div> */}
                                 </div>
                             </form>
-                        )
-                            : null}
+                        ) : (null)
+                    }
                 </div>
             </section>
         </>

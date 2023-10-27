@@ -104,27 +104,33 @@ const Header = () => {
                 <li className="flex items-center gap-3  px-4  cursor-pointer tracking-wide">
                   <img src={category} alt="" />
                   <Link to="">Kataqoriya</Link>
-                  <div className="dropdown-menu absolute hidden left-[150px]  h-auto  mt-[65px] z-[9999] top-0 w-full  max-w-[400px] ">
-                    <ul className="bg-white shadow  flex flex-col items-start  ">
+                  <div className="dropdown-menu absolute hidden left-[150px] h-auto mt-[65px] z-[9999] top-0 w-full max-w-[400px]">
+                    <ul className="bg-white shadow flex flex-col items-start">
                       {categoryArray.length > 0
                         ? categoryArray.map((category) => (
-                          <li className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un" onMouseEnter={() => openSubMenu(category.id)} onMouseLeave={closeSubMenu}>
+                          <li
+                            className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un clas"
+                            onClick={() => closeSubMenu()}
+                            onMouseEnter={() => openSubMenu(category.id)}
+                            onMouseLeave={closeSubMenu}
+                          >
                             <Link
-                              to={`/products/${encodeURIComponent(
-                                category.name
-                              )}`}
-                              className="  flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans  "
+                              to={`/products/${encodeURIComponent(category.name)}`}
+                              className="flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans"
                             >
-                              <img
-                                src={category.icon}
-                                alt=""
-                                className="w-[20px] h-[20px]"
-                              />
-
+                              <img src={category.icon} alt="" className="w-[20px] h-[20px]" />
                               <span>{category.name}</span>
-                              <div className={`${activeCategoryID === category.id ? 'flex absolute bottom-0 left-[400px] top-0' : 'hidden absolute bottom-0 left-[500px]'}`}>
+                              <div
+                                className={`${activeCategoryID === category.id
+                                  ? "flex absolute bottom-0 left-[400px] top-0"
+                                  : "hidden absolute bottom-0 left-[500px]"
+                                  }`}
+                              >
                                 <div className="grid grid-cols-3 gap-4">
-                                  <SubCategotyList category={category} />
+                                  <SubCategotyList
+                                    category={category}
+                                    closeSumMenu={closeSubMenu}
+                                  />
                                 </div>
                               </div>
                             </Link>
@@ -133,6 +139,7 @@ const Header = () => {
                         : null}
                     </ul>
                   </div>
+
                 </li>
               </ul>
             </div>
@@ -143,11 +150,6 @@ const Header = () => {
                     Haqqimizda{" "}
                   </Link>
                 </li>
-                {/* <li className="text-[18px] mr-[50px]">
-                  <Link to="/product/new" className="anima relative py-[5px]">
-                    Yeni
-                  </Link>
-                </li> */}
                 <li className="text-[18px] mr-[50px]">
                   <Link to="/new" className="anima relative py-[5px]">
                     Yeni
