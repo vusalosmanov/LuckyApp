@@ -1,0 +1,32 @@
+.product-pagination{
+    margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    li{
+        list-style: none;
+        margin-right: 10px;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    button{
+        width: 30px;
+        height: 30px;
+        border: 1px solid #106853;
+        color: #106853;
+        border-radius: 5px;
+        i{
+            font-size: 14px;
+        }
+        &.active{
+            background-color: #fc8410;
+            border-color: #fc8410;
+            color: #fff;
+        }
+    }
+}
