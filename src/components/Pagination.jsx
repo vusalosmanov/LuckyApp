@@ -1,5 +1,4 @@
 import React from 'react'
-import '../assets/styles/components/Pagination.scss'
 const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
 
     const pageNumbers = [...Array(nPages + 1).keys()].slice(1)

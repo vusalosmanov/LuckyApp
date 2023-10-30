@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MainContext } from "../context/AllContextProvider";
-import "../../assets/styles/components/category/subcategory.scss"
 
 function SubCategoryItem({ categoryID, subcategoryID, cover }) {
 

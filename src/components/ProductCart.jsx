@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../assets/styles/components/Product.scss";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { AddCart, AddToWishlist, RemoveFromWishlist } from "../redux/cartSystem";
 import heartIconFilled from '../assets/image/icon/heart-filled.svg'

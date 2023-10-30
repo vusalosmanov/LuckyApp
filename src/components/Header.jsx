@@ -6,8 +6,6 @@ import category from "../assets/image/icon/category.svg";
 import heart from "../assets/image/icon/heart.svg";
 import shopping from "../assets/image/icon/cart.svg";
 import { BsChevronRight } from "react-icons/bs";
-import "../assets/styles/components/Header.scss";
-import "../assets/index.scss";
 import { MainContext } from "./context/AllContextProvider";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -41,6 +39,16 @@ const Header = () => {
   }
   const closeSubMenu = () => {
     setActiveCategoryID(null)
+  }
+  // const closeSubCategory = () => setSubcategories(null)
+
+  const [isDropdownVisible , setIsDropdownVisible] = useState(null)
+
+  const closeCatMenu = () =>{
+    setIsDropdownVisible(true)
+  }
+  const openCatMenu = () => {
+    setIsDropdownVisible(false)
   }
   return (
     <>
@@ -101,18 +109,18 @@ const Header = () => {
           <div className="flex">
             <div className="w-[550px] dropdown  bg-[#106853] h-[65px] flex justify-center items-center cursor-pointer text-[20px] text-[white]">
               <ul>
-                <li className="flex items-center gap-3  px-4  cursor-pointer tracking-wide">
+                <li className="flex items-center gap-3  px-4  cursor-pointer tracking-wide" onMouseEnter={openCatMenu}>
                   <img src={category} alt="" />
                   <Link to="">Kataqoriya</Link>
-                  <div className="dropdown-menu absolute hidden left-[150px] h-auto mt-[65px] z-[9999] top-0 w-full max-w-[400px]">
+                  <div className={`dropdown-menu absolute hidden left-[150px] h-auto mt-[65px] z-[9999] top-0 w-full max-w-[400px] ${isDropdownVisible ? 'z-[-10]' : ''}`}>
                     <ul className="bg-white shadow flex flex-col items-start">
                       {categoryArray.length > 0
                         ? categoryArray.map((category) => (
                           <li
                             className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un clas"
-                            onClick={() => closeSubMenu()}
+                            onClick={closeCatMenu}
                             onMouseEnter={() => openSubMenu(category.id)}
-                            onMouseLeave={closeSubMenu}
+                            onMouseLeave={() => {closeSubMenu()}}
                           >
                             <Link
                               to={`/products/${encodeURIComponent(category.name)}`}
