@@ -33,7 +33,7 @@ const LeftFilterAll = ({ category }) => {
           <div className="w-full h-[1px] bg-gray-400"></div>
           {subcategories.length > 0 ? (
             <div className="subcategory-filter">
-              <h4 className="section-title">Alt kategoriya</h4>
+              <h4 className="flex items-start w-[100%] mb-[55px] relative  capitalize text-[1.5rem] mt-[10px]">alt kategoriya</h4>
               {
                 subcategories.map(subcategory => (
                   <div key={subcategory.id} className="form-check">

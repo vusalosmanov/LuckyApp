@@ -1,17 +1,15 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
-
 }
 
 ::-webkit-scrollbar-thumb {
@@ -23,28 +21,29 @@
   background-color: #fff;
 }
 
-.header{
-    background-color: #fc8410;
-    background-image: url('../assets/image/pattern/leaf-header-1.png');
-    background-size: 700px 400px;
-    background-position: right;
-    background-repeat: no-repeat;
-  
-  }
-  .bgimage{
-    background-image: url('../assets//image/pattern/leaf-office-left-1.png') , url(../assets/image/pattern/leaf-office-right-1.png) ;
-    background-position-x: left , right;
-    background-position-y: 90% , 50%;
-    background-repeat:no-repeat;  
-  }
+.header {
+  width: 100%;
+  background-color: #fc8410;
+  background-image: url("../assets/image/pattern/leaf-header-1.png");
+  background-size: 700px 400px;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+.bgimage {
+  background-image: url("../assets//image/pattern/leaf-office-left-1.png"),
+    url(../assets/image/pattern/leaf-office-right-1.png);
+  background-position-x: left, right;
+  background-position-y: 90%, 50%;
+  background-repeat: no-repeat;
+}
 
-.swiper-button-prev{
-  color: black
-} 
-.swiper-button-next{
-  color: black
-} 
-.swiper-wrapper{
+.swiper-button-prev {
+  color: black;
+}
+.swiper-button-next {
+  color: black;
+}
+.swiper-wrapper {
   display: flex;
   justify-content: space-between;
 }

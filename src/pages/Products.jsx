@@ -77,7 +77,7 @@ function Products() {
   return (
     <>
       <section className="bg-[#dfdfdf]">
-        <div className="w-[1320px] mx-auto pl-[10px] pr-[10px] flex items-center flex-col justify-center ">
+        <div className="max-w-[1320px] w-full mx-auto pl-[10px] pr-[10px] flex items-center flex-col justify-center ">
           <div className="mt-[20px] text-[35px] capitalize  ">{subcategoryName}</div>
           <div className="w-[100%] flex flex-wrap gap-[13px] mt-[60px]">
             <div

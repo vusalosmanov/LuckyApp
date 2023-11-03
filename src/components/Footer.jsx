@@ -7,11 +7,26 @@ import logo from "../assets/image/logo/logo-footer.png";
 const Footer = () => {
   return (
     <div className="bg-[#f2f2f2]">
-      <div className="w-[1320px] mx-auto pr-[10px] pl-[10px]">
-        <div className="flex justify-between mb-[40px] pt-[35px] ">
-          <div className=" flex flex-col gap-[12px] items-center justify-center">
+        <div className=" flex flex-col gap-[12px] mt-[20px] items-center justify-center lg:hidden  ">
+          <div className="logo w-28  h-28 flex items-center ">
+            <img src={logo} alt="" />
+          </div>
+          <div className=" flex gap-[12px]">
+            <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200 ">
+              <BiLogoFacebook />
+            </div>
+
+            <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200">
+              <AiOutlineInstagram />
+              {" "}
+            </div>
+          </div>
+        </div>
+      <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px]">
+        <div className="flex justify-between mb-[40px] pt-[35px]">
+          <div className=" flex flex-col gap-[12px] items-center justify-center lg:block hidden ">
             <div className="logo w-28  h-28 flex items-center ">
-                <img src={logo} alt="" />
+              <img src={logo} alt="" />
             </div>
             <div className=" flex gap-[12px]">
               <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200 ">
@@ -24,7 +39,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
           <div>
             <h4 className=" text-[#fc8410] mb-[15px] text-[24px]">
               Kategoriyalar

@@ -42,9 +42,9 @@ const Header = () => {
   }
   // const closeSubCategory = () => setSubcategories(null)
 
-  const [isDropdownVisible , setIsDropdownVisible] = useState(null)
+  const [isDropdownVisible, setIsDropdownVisible] = useState(null)
 
-  const closeCatMenu = () =>{
+  const closeCatMenu = () => {
     setIsDropdownVisible(true)
   }
   const openCatMenu = () => {
@@ -54,7 +54,7 @@ const Header = () => {
     <>
       <header className="header">
         <nav>
-          <div className="w-[1320px]  mx-auto pr-[10px] pl-[10px] ">
+          <div className="max-w-[1320px] w-full  mx-auto pr-[10px] pl-[10px] ">
             <div className="flex justify-end flex-row items-center pt-[15px]  pb-[15px] w-[100%] ">
               <Link
                 to="/register"
@@ -72,8 +72,8 @@ const Header = () => {
           </div>
         </nav>
         <nav>
-          <div className="w-[1320px]  mx-auto  pr-[10px] pl-[10px]">
-            <div className="flex justify-between items-center py-[15px]">
+          <div className="max-w-[1320px] w-full  mx-auto  pr-[10px] pl-[10px]">
+            <div className="flex lg:justify-between items-center py-[15px] justify-center">
               <div className="relative">
                 <Link to="">
                   <img
@@ -83,10 +83,10 @@ const Header = () => {
                   />
                 </Link>
               </div>
-              <div className="flex items-center justify-center w-[100%]">
+              <div className="w-full flex justify-center hidden">
                 <Input />
               </div>
-              <div className="icon">
+              <div className="icon lg:block hidden">
                 <div className="flex gap-5">
                   <Link to="/shopproduct" className="relative" key={cart.id}>
                     <img src={shopping} alt="" className="w-[50px] " />
@@ -103,14 +103,80 @@ const Header = () => {
                 </div>
               </div>
             </div>
+            <div className="nav-responsive lg:hidden block">
+              <div className="w-full flex justify-between items-center">
+                <div className="hamburger">
+
+                </div>
+                <div className="icon lg:hidden block">
+                  <div className="flex gap-5">
+                    <Link to="/shopproduct" className="relative" key={cart.id}>
+                      <img src={shopping} alt="" className="w-[50px] " />
+                      <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
+                        {cart.length}
+                      </div>
+                    </Link>
+                    <Link to="/wishlist" className="relative">
+                      <img src={heart} alt="" className="w-[50px]" />
+                      <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
+                        {wishlistProducts.length}
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </nav>
-        <nav className="relative mt-[20px]">
+        <nav className="responsive kategory lg:hidden relative ">
+          <div className=" flex w-full dropdown bg-[#106853] h-[65px] justify-center items-center cursor-pointer text-[20px] text-[white]">
+            <ul>
+              <li className="flex items-center gap-3 px-4 cursor-pointer tracking-wide" onMouseEnter={openCatMenu}>
+                <img src={category} alt="category" />
+                <Link to="">Kataqoriya</Link>
+                <div className={`dropdown-menu absolute hidden  h-auto mt-[65px] z-[9999] top-0 w-full left-0  ${isDropdownVisible ? 'z-[-10]' : ''}`}>
+                  <ul className=" bg-[#106853] shadow flex flex-col items-start px-[40px]">
+                    {categoryArray.length > 0
+                      ? categoryArray.map((category) => (
+                        <li
+                          className="py-[4px] px-12 w-full flex onedrop  "
+                          onClick={closeCatMenu}
+                          onMouseEnter={() => openSubMenu(category.id)}
+                          onMouseLeave={() => { closeSubMenu() }}
+                        >
+                          <Link
+                            to={`/products/${encodeURIComponent(category.name)}`}
+                            className="flex justify-between w-full items-center py-[5px]  text-[14px] text-white capitalize "> 
+                            <span>{category.name}</span>
+                            <BsChevronRight />
+                            <div
+                              className={`${activeCategoryID === category.id
+                                ? "flex absolute bottom-0 left-[400px] top-0"
+                                : "hidden absolute bottom-0 left-[500px]"
+                                }`}>
+                              <div className="grid grid-cols-3 gap-4">
+                                <SubCategotyList
+                                  category={category}
+                                  closeSumMenu={closeSubMenu}
+                                />
+                              </div>
+                            </div>
+                          </Link>
+                        </li>
+                      ))
+                      : null}
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <nav className="relative mt-[20px] lg:block hidden">
           <div className="flex">
             <div className="w-[550px] dropdown  bg-[#106853] h-[65px] flex justify-center items-center cursor-pointer text-[20px] text-[white]">
               <ul>
                 <li className="flex items-center gap-3  px-4  cursor-pointer tracking-wide" onMouseEnter={openCatMenu}>
-                  <img src={category} alt="" />
+                  <img src={category} alt="category" />
                   <Link to="">Kataqoriya</Link>
                   <div className={`dropdown-menu absolute hidden left-[150px] h-auto mt-[65px] z-[9999] top-0 w-full max-w-[400px] ${isDropdownVisible ? 'z-[-10]' : ''}`}>
                     <ul className="bg-white shadow flex flex-col items-start">
@@ -120,7 +186,7 @@ const Header = () => {
                             className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un clas"
                             onClick={closeCatMenu}
                             onMouseEnter={() => openSubMenu(category.id)}
-                            onMouseLeave={() => {closeSubMenu()}}
+                            onMouseLeave={() => { closeSubMenu() }}
                           >
                             <Link
                               to={`/products/${encodeURIComponent(category.name)}`}
@@ -147,7 +213,6 @@ const Header = () => {
                         : null}
                     </ul>
                   </div>
-
                 </li>
               </ul>
             </div>

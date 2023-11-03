@@ -7,13 +7,13 @@ const Discount = () => {
   return (
     <>
       <section className="bg-[#f8f8f8]">
-        <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex items-center justify-center mt-[20px]  flex-col">
+        <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex items-center justify-center mt-[20px]  flex-col">
           <h1 className="text-[2.5rem]">Endirimli Məhsullar</h1>
           <div className="w-[40px] mt-[10px] h-[5px] rounded-lg bg-[#106853] "></div>
         </div>
         <div className="mt-[60px]">
           {productArray.length > 0 ? (
-            <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex items-center flex-wrap gap-y-10 gap-x-5 justify-center ">
+            <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex items-center flex-wrap gap-y-10 gap-x-5 justify-center ">
               {productArray
                 .filter((item) => item.discount === true)
                 .map((product) => (

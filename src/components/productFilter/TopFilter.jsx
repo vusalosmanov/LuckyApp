@@ -1,7 +1,7 @@
 
 import React from "react";
 
-const TopFilter = ({ products, setProducts , changeProductsPerPage }) => {
+const TopFilter = ({ products, setProducts, changeProductsPerPage }) => {
   const handleSortChange = (e) => {
     const selectedValue = e.target.value;
     const sortedProducts = [...products];
@@ -17,19 +17,19 @@ const TopFilter = ({ products, setProducts , changeProductsPerPage }) => {
 
   return (
     <>
-      <div className="flex items-start flex-row justify-center mb-[40px] w-[100%]">
-        <div className="product-top-filter flex flex-row justify-between px-[15px] mb-[30px] shadow-lg h-auto py-[25px] w-[100%] bg-[white]">
-          <div className="w-[100%]">
-            <span className="mr-[10px]">Saya Gore</span>
-            <select defaultValue={12} onChange={(e) => changeProductsPerPage(e.target.value)}
-              className="rounded-lg border-[#106853] border-[1px] max-w-[200px] py-[5px] px-[10px] w-[100%]">
-              <option value={12}>12</option>
-              <option value={18}>18</option>
-              <option value={24}>24</option>
-              <option value={30}>30</option>
-            </select>
+      <div className="lg:flex items-start flex-row justify-center mb-[40px] w-[100%]">
+        <div className="product-top-filter flex lg:flex-row lg:justify-between flex-col justify-center px-[15px] mb-[30px] shadow-lg h-auto py-[25px] w-[100%] bg-[white]">
+          <div className="w-[100%] flex justify-center items-center">
+              <span className="mr-[10px]">Saya Gore</span>
+              <select defaultValue={12} onChange={(e) => changeProductsPerPage(e.target.value)}
+                className="rounded-lg border-[#106853] border-[1px] max-w-[200px] py-[5px] px-[10px] w-[100%]">
+                <option value={12}>12</option>
+                <option value={18}>18</option>
+                <option value={24}>24</option>
+                <option value={30}>30</option>
+              </select>
           </div>
-          <div className="flex justify-end items-center w-[100%]">
+          <div className="flex lg:justify-end items-center justify-center w-[100%]">
             <span className="mr-[10px]">Qiymete Gore</span>
             <select
               onChange={handleSortChange}

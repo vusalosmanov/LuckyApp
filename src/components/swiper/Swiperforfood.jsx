@@ -24,12 +24,9 @@ const Swipers = () => {
         autoplay={true}
         modules={[Navigation, Mousewheel, Keyboard, Autoplay, Pagination]}
         className="w-full "
-        // pagination={{
-        //   clickable: true,
-        // }}
         breakpoints={{
           640: {
-            slidesPerView: 4,
+            slidesPerView: 2,
           },
           1024: {
             slidesPerView: 4,

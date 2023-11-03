@@ -5,20 +5,20 @@ const Terms = () => {
   return (
     <>
       <section>
-        <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex justify-center items-center flex-col mt-[50px] text-[32px]">
+        <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex justify-center items-center flex-col mt-[50px] text-[32px]">
           <h3>Çatdırılma</h3>
           <div className="w-[40px] h-[5px] bg-[#106853] rounded-lg mt-[px] "></div>
         </div>
-        <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex mt-[20px] justify-center items-center cursor-pointer">
+        <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex mt-[20px] justify-center items-center cursor-pointer">
           <Link to="/">Ana Seyife /</Link>
           <span>Çatdırılma</span>
         </div>
       </section>
       <section className="mt-[80px] mb-[80px]">
-        <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex justify-center items-center">
+        <div className="max-w-[1320px] w-full mx-auto lg:px-[10px] px-[20px] flex justify-center items-center">
           {/* <PageTitle title="Haqqımızda" /   > */}
-          <div className="flex justify-center items-center w-[100%]">
-            <div className="w-[50%]">
+          <div className="lg:flex lg:justify-center lg:items-center w-[100%]">
+            <div className="lg:w-[50%] w-full">
               <div className="text-[18px] gap-y-[10px]  leading-8 ">
                 <div className="content">
                   <p>
@@ -53,7 +53,7 @@ const Terms = () => {
                 </div>
               </div>
             </div>
-            <div className="w-[50%] flex justify-center">
+            <div className="lg:w-[50%] flex justify-center w-full">
               <div className="w-[100%] max-w-[500px]">
                 <img src={TermLogo} alt="" />
               </div>
