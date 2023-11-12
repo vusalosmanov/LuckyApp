@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const CategoryInput = () => {
-  return (
+
+  const [ priceFilter , setPriceFilter ] = useState(2000);
+
+
+  const handleInputPrice = (e) =>{
+    setPriceFilter(e.target.value)
+  }
+
+   return (
     <div>CategoryInput</div>
   )
 }

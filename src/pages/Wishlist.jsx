@@ -9,7 +9,7 @@ function Wishlist() {
 
     return (
         <>
-          <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex items-center justify-center mt-[20px]  flex-col mb-[40px]">
+          <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex items-center justify-center mt-[20px]  flex-col mb-[40px]">
           <h1 className="text-[2.5rem] capitalize">istək siyahısı</h1>
           <div className="w-[40px] mt-[10px] h-[5px] rounded-lg bg-[#106853] "></div>
         </div>

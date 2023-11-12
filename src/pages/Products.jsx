@@ -1,5 +1,5 @@
-import React, { useEffect, useState , } from "react";
-import { useNavigate , useLocation } from "react-router-dom";
+import React, { useEffect, useState, } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { categoryArray } from "../components/data/CategoryData";
 import { productArray } from "../components/data/ProductData";
@@ -13,9 +13,11 @@ import LeftFilterAll from "../components/productFilter/LeftFilterAll";
 function Products() {
   const { categoryName, subcategoryName } = useParams();
   const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState()
+  const [subCategoryFilterActive, setSubCategoryFilterActive] = useState(false)
 
-  const [category , setCategory] = useState()
-
+  const subCategory = subcategoryName && subcategoryArray.find((subcategory) => subcategory.name === subcategoryName);
+  
   useEffect(() => {
     if (categoryName && !subcategoryName) {
       let category = categoryArray.find((category) => category.name === categoryName);
@@ -24,7 +26,7 @@ function Products() {
         setProducts(filteredProducts);
       }
       setCategory(category)
-    } 
+    }
     else if (categoryName && subcategoryName) {
       let category = categoryArray.find((category) => category.name === categoryName);
       let subcategory = subcategoryArray.find((subcategory) => subcategory.name === subcategoryName);
@@ -35,7 +37,7 @@ function Products() {
     }
   }, [categoryName, subcategoryName]);
 
-  
+
   const location = useLocation()
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [leftFilterParams, setLeftFilterParams] = useState([])
@@ -58,6 +60,16 @@ function Products() {
       setFilterActive(false);
       setProductsTitle('new product');
       updatedFilteredProducts = allProducts.filter((product) => product.isNew);
+    } else if (subCategory) {
+      setFilterActive(true);
+      setProductsTitle(subCategory?.name);
+      setSubCategoryFilterActive(false);
+      filteredProducts = allProducts.filter((product) => product.subcategoryID === subCategory.id);
+    } else if (!subCategory && category) {
+      setFilterActive(true);
+      setProductsTitle(category?.name);
+      setSubCategoryFilterActive(true);
+      filteredProducts = allProducts.filter((product) => product.categoryID === category.id);
     }
     setFilteredProducts(updatedFilteredProducts);
   }, [location]);
@@ -88,7 +100,7 @@ function Products() {
             <div
               className={`flex items-start flex-row justify-center mb-[40px] w-[33%] ${categoryName && !subcategoryName ? "block" : "hidden"}`}
             >
-              <LeftFilterAll category={category} />
+              <LeftFilterAll category={category} products={products} setProducts={setProducts} subCategoryFilterActive={subCategoryFilterActive} />
             </div>
             <div className="flex items-start flex-col justify-center mb-[40px] w-[66%]">
               <div className="inner flex  items-center flex-col justify-center w-[100%]">
