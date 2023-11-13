@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/image/logo/logo-header.svg";
-import Input from "./Input.jsx";
+import Input from "../components/search/Input";
 import category from "../assets/image/icon/category.svg";
 import heart from "../assets/image/icon/heart.svg";
 import shopping from "../assets/image/icon/cart.svg";
@@ -57,7 +57,7 @@ const Header = () => {
           <div className="max-w-[1320px] w-full  mx-auto pr-[10px] pl-[10px] ">
             <div className="flex justify-end flex-row items-center pt-[15px]  pb-[15px] w-[100%] ">
               <Link
-                to="/register"
+                to="/login"
                 className="mr-[20px] border-[2px] rounded-[5px] border-[white] text-[white] pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative"
               >
                 Daxil ol
@@ -83,7 +83,7 @@ const Header = () => {
                   />
                 </Link>
               </div>
-              <div className="w-full flex justify-center hidden">
+              <div className="w-full flex justify-center ">
                 <Input />
               </div>
               <div className="icon lg:block hidden">

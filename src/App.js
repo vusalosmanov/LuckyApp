@@ -14,6 +14,7 @@ import ShopProduct from "./pages/ShopProduct"
 import Wishlist from "./pages/Wishlist";
 import { useEffect } from "react";
 import BasketFormSection from "./pages/BasketFormSection";
+import Login from "./pages/Login";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/products" element={<Products/>} />
         <Route path="/products/new" element={<Products/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/shopproduct" element={<ShopProduct/>} />
         <Route path="/shopproduct/:order" element={<BasketFormSection/>} />

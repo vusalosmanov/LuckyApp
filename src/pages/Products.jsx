@@ -14,16 +14,16 @@ function Products() {
   const { categoryName, subcategoryName } = useParams();
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState()
-  const [subCategoryFilterActive, setSubCategoryFilterActive] = useState(false)
+  // const [subCategoryFilterActive, setSubCategoryFilterActive] = useState(false)
 
-  const subCategory = subcategoryName && subcategoryArray.find((subcategory) => subcategory.name === subcategoryName);
-  
+  // const subCategory = subcategoryName && subcategoryArray.find((subcategory) => subcategory.name === subcategoryName);
+
   useEffect(() => {
     if (categoryName && !subcategoryName) {
       let category = categoryArray.find((category) => category.name === categoryName);
       if (category) {
         let filteredProducts = productArray.filter((product) => product.categoryID === category.id);
-        setProducts(filteredProducts);
+        setProducts([...filteredProducts]);
       }
       setCategory(category)
     }
@@ -32,7 +32,7 @@ function Products() {
       let subcategory = subcategoryArray.find((subcategory) => subcategory.name === subcategoryName);
       if (category && subcategory) {
         let filteredProducts = productArray.filter((product) => product.subcategoryID === subcategory.id);
-        setProducts(filteredProducts);
+        setProducts([...filteredProducts]);
       }
     }
   }, [categoryName, subcategoryName]);
@@ -60,16 +60,6 @@ function Products() {
       setFilterActive(false);
       setProductsTitle('new product');
       updatedFilteredProducts = allProducts.filter((product) => product.isNew);
-    } else if (subCategory) {
-      setFilterActive(true);
-      setProductsTitle(subCategory?.name);
-      setSubCategoryFilterActive(false);
-      filteredProducts = allProducts.filter((product) => product.subcategoryID === subCategory.id);
-    } else if (!subCategory && category) {
-      setFilterActive(true);
-      setProductsTitle(category?.name);
-      setSubCategoryFilterActive(true);
-      filteredProducts = allProducts.filter((product) => product.categoryID === category.id);
     }
     setFilteredProducts(updatedFilteredProducts);
   }, [location]);
@@ -86,6 +76,8 @@ function Products() {
   const currentRecords = products.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(products.length / recordsPerPage);
 
+  console.log(currentRecords);
+
   return (
     <>
       <section className="bg-[#dfdfdf]">
@@ -100,7 +92,7 @@ function Products() {
             <div
               className={`flex items-start flex-row justify-center mb-[40px] w-[33%] ${categoryName && !subcategoryName ? "block" : "hidden"}`}
             >
-              <LeftFilterAll category={category} products={products} setProducts={setProducts} subCategoryFilterActive={subCategoryFilterActive} />
+              <LeftFilterAll category={category} products={products} setProducts={setProducts}  />
             </div>
             <div className="flex items-start flex-col justify-center mb-[40px] w-[66%]">
               <div className="inner flex  items-center flex-col justify-center w-[100%]">
