@@ -58,13 +58,13 @@ const Header = () => {
             <div className="flex justify-end flex-row items-center pt-[15px]  pb-[15px] w-[100%] ">
               <Link
                 to="/login"
-                className="mr-[20px] border-[2px] rounded-[5px] border-[white] text-[white] pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative"
+                className="mr-[20px] border-[2px] rounded-[5px] border-[white] text-[white] pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative hover:bg-[#106853]"
               >
                 Daxil ol
               </Link>
               <Link
                 to="/register"
-                className=" rounded-[5px] border-[2px] border-[white] text-[black] bg-white pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative"
+                className=" rounded-[5px]  border-[white] text-[#106853] bg-white pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative hover:bg-[#106853] hover:text-white"
               >
                 Qeydiyyat
               </Link>

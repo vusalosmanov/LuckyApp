@@ -43,20 +43,20 @@ const LeftFilterAll = ({ category,  setProducts }) => {
       )
     }
   };
-  // const location = useLocation();
+  const location = useLocation();
 
   //  Range filter
-  // let [rangeMin, setRangeMin] = useState(0)
-  // let [rangeMax, setRangeMax] = useState(2000)
+  let [rangeMin, setRangeMin] = useState(0)
+  let [rangeMax, setRangeMax] = useState(2000)
 
-  // useEffect(() => {
-  //   resetFilters();
-  // }, [location.pathname])
+  useEffect(() => {
+    resetFilters();
+  }, [location.pathname])
 
-  // const resetFilters = () => {
-  //   setRangeMin(0);
-  //   setRangeMax(2000)
-  // }
+  const resetFilters = () => {
+    setRangeMin(0);
+    setRangeMax(2000)
+  }
 
 
   return (
@@ -74,7 +74,7 @@ const LeftFilterAll = ({ category,  setProducts }) => {
             Qitmət Filteri
           </h4>
           <div className="w-[40px] h-[5px] bg-green-700 mt-[10px] rounded-lg"></div>
-          {/* <div className="range-filter  ">
+          <div className="range-filter  ">
             <div className="range-inputs">
               <input type="range" value={rangeMin} onChange={(e) => { setRangeMin(e.target.value) }} min={0} max={2000} step={1} />
               <input type="range" value={rangeMax} onChange={(e) => { setRangeMax(e.target.value) }} min={0} max={2000} step={1} />
@@ -89,7 +89,7 @@ const LeftFilterAll = ({ category,  setProducts }) => {
                 <img src={ManatIcon} alt="icon" />
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
 
         <div className="w-full h-[1px] bg-gray-400"></div>

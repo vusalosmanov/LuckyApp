@@ -105,3 +105,9 @@ section.account {
         }
     }
 }
+/* Add this to your CSS */
+input:focus {
+    border-color: #fc8410;
+    outline: none;
+  }
+  
