@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { subcategoryArray } from "./data/SubcategoryData";
+import { subcategoryArray } from "../data/SubcategoryData";
 
-function SubCategotyList({ category , closeSumMenu }) {
+function SubCategotyList({ category , closeSumMenu ,}) {
     const [subcategories, setSubcategories] = useState([]);
     useEffect(() => {
         let filteredSubcategories = [];

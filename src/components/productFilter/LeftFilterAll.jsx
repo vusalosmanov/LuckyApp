@@ -6,7 +6,7 @@ import { productArray } from "../data/ProductData";
 import { useLocation } from "react-router-dom";
 import ManatIcon from "../../assets/image/icon/manat.svg"
 
-const LeftFilterAll = ({ category,  setProducts }) => {
+const LeftFilterAll = ({ category, setProducts }) => {
   const { subcategoryArray } = useContext(MainContext);
   const [subcategories, setSubCategories] = useState([]);
   const [selectedSubCategoryID, setSelectedSubCategoryID] = useState([]);
@@ -21,14 +21,25 @@ const LeftFilterAll = ({ category,  setProducts }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let combinedFilteredResults = productArray;
+    // Filter by selected subcategories
     if (selectedSubCategoryID.length > 0) {
-      const filteredResult = productArray.filter(
+      combinedFilteredResults = combinedFilteredResults.filter(
         (product) => selectedSubCategoryID.includes(product.subcategoryID)
       );
-      setProducts(filteredResult);
-    } else {
-      setProducts([...productArray]);
     }
+    // Add filtering by selected category
+    if (category) {
+      combinedFilteredResults = combinedFilteredResults.filter(
+        (product) => product.categoryID === category.id
+      );
+    }
+    // Filter by price range
+    combinedFilteredResults = combinedFilteredResults.filter((product) =>
+      Number(rangeMin) <= product.price && product.price <= Number(rangeMax)
+    );
+    // Set the filtered results to the state
+    setProducts(combinedFilteredResults);
   };
 
   const filterBySubcategory = (e) => {
@@ -57,7 +68,6 @@ const LeftFilterAll = ({ category,  setProducts }) => {
     setRangeMin(0);
     setRangeMax(2000)
   }
-
 
   return (
     <div className="flex justify-center flex-col w-full items-center bg-white">
@@ -91,7 +101,6 @@ const LeftFilterAll = ({ category,  setProducts }) => {
             </div>
           </div>
         </div>
-
         <div className="w-full h-[1px] bg-gray-400"></div>
         {subcategories.length > 0 ? (
           <div className="subcategory-filter">
