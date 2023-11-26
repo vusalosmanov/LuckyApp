@@ -1,21 +1,36 @@
 import React, { useState } from "react";
 import CategoryInput from "../CategoryInput";
 import ManatIcon from "../../assets/image/icon/manat.svg";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-const LeftFilter = () => {
+const LeftFilter = ({ products, setProducts }) => {
   const [rangeMin, setRangeMin] = useState(0);
   const [rangeMax, setRangeMax] = useState(2000);
 
   const handleRangeChange = (e, setRange) => {
     setRange(e.target.value);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform filtering logic here
-    console.log("Filtering with range:", rangeMin, "-", rangeMax);
-  };
+    let combinedFilteredResults = [...products];
 
+    // Filter by price range
+    combinedFilteredResults = combinedFilteredResults.filter(
+      (product) =>
+        Number(rangeMin) <= product.price && product.price <= Number(rangeMax)
+    );
+    setProducts(combinedFilteredResults)
+  }
+  const location = useLocation();
+  useEffect(() => {
+    resetFilters();
+  }, [location.pathname])
+
+  const resetFilters = () => {
+    setRangeMin(0);
+    setRangeMax(2000)
+  }
   return (
     <div className="flex justify-center flex-col w-[100%] items-center bg-white">
       <button className="bg-[#fc8410] text-[18px] mb-[30px] p-[15px] w-[100%] cursor-pointer rounded-lg text-[#fff] hidden">
@@ -27,45 +42,25 @@ const LeftFilter = () => {
         onSubmit={handleSubmit}
       >
         <div className="w-[100%] h-[1px] bg-gray-400 "></div>
-        <div className="range-filter mb-[50px] w-[100%]">
-          <h4 className="text-start w-[100%] relative capitalize text-[black] text-[1.5rem]">
+        <div className="price-filter mb-[50px] w-full">
+          <h4 className="text-start w-full relative capitalize text-[black] text-[1.5rem]">
             Qitmət Filteri
           </h4>
           <div className="w-[40px] h-[5px] bg-green-700 mt-[10px] rounded-lg"></div>
-          <div className="range-inputs">
-            <input
-              type="range"
-              value={rangeMin}
-              onChange={(e) => handleRangeChange(e, setRangeMin)}
-              min={0}
-              max={2000}
-              step={1}
-            />
-            <input
-              type="range"
-              value={rangeMax}
-              onChange={(e) => handleRangeChange(e, setRangeMax)}
-              min={0}
-              max={2000}
-              step={1}
-            />
-          </div>
-          <div className="result-inputs">
-            <div className="item">
-              <input
-                type="number"
-                value={rangeMin}
-                onChange={(e) => handleRangeChange(e, setRangeMin)}
-              />
-              <img src={ManatIcon} alt="icon" />
+          <div className="range-filter mt-[20px]  ">
+            <div className="range-inputs">
+              <input type="range" value={rangeMin} onChange={(e) => { setRangeMin(e.target.value) }} min={0} max={2000} step={1} />
+              <input type="range" value={rangeMax} onChange={(e) => { setRangeMax(e.target.value) }} min={0} max={2000} step={1} />
             </div>
-            <div className="item">
-              <input
-                type="number"
-                value={rangeMax}
-                onChange={(e) => handleRangeChange(e, setRangeMax)}
-              />
-              <img src={ManatIcon} alt="icon" />
+            <div className='result-inputs'>
+              <div className="item">
+                <input type="number" value={rangeMin} onChange={(e) => { setRangeMin(e.target.value) }} />
+                <img src={ManatIcon} alt="icon" />
+              </div>
+              <div className="item">
+                <input type="number" value={rangeMax} onChange={(e) => { setRangeMax(e.target.value) }} />
+                <img src={ManatIcon} alt="icon" />
+              </div>
             </div>
           </div>
         </div>

@@ -84,7 +84,7 @@ const LeftFilterAll = ({ category, setProducts }) => {
             Qitmət Filteri
           </h4>
           <div className="w-[40px] h-[5px] bg-green-700 mt-[10px] rounded-lg"></div>
-          <div className="range-filter  ">
+          <div className="range-filter mt-[20px]  ">
             <div className="range-inputs">
               <input type="range" value={rangeMin} onChange={(e) => { setRangeMin(e.target.value) }} min={0} max={2000} step={1} />
               <input type="range" value={rangeMax} onChange={(e) => { setRangeMax(e.target.value) }} min={0} max={2000} step={1} />

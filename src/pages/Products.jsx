@@ -87,7 +87,7 @@ function Products() {
             <div
               className={`flex items-start flex-row justify-center mb-[40px] w-[33%] ${categoryName && !subcategoryName ? "hidden" : "block"}`}
             >
-              <LeftFilter />
+              <LeftFilter products={products}  setProducts={setProducts}/>
             </div>
             <div
               className={`flex items-start flex-row justify-center mb-[40px] w-[33%] ${categoryName && !subcategoryName ? "block" : "hidden"}`}

@@ -15,6 +15,7 @@ import Wishlist from "./pages/Wishlist";
 import { useEffect } from "react";
 import BasketFormSection from "./pages/BasketFormSection";
 import Login from "./pages/Login";
+import Detailes from "./pages/Detailes";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
         <Route path="/shopproduct" element={<ShopProduct/>} />
         <Route path="/shopproduct/:order" element={<BasketFormSection/>} />
         <Route path="/products" element={<Products/>} />
+        <Route path="/products:categoryName/:subcategoryName/:id" element={<Detailes/>} />
         <Route path="/products/:categoryName" element={<Products/>} />
         <Route path="/products/:categoryName/:subcategoryName" element={<Products/>} />
       </Routes>

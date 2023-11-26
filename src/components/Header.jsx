@@ -33,8 +33,7 @@ const Header = () => {
   const cart = Object.values(cartObject);
 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false)
-  console.log(isDropdownVisible);
-
+  
   const closeCatMenu = () => {
     setIsDropdownVisible(false)
   }
