@@ -1,7 +1,23 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 const BasketFormSection = () => {
+
+    const Alert = () => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Sifarişiniz təsdiqləndi",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      };
+
+     const handleClick = () => {
+        Alert()
+     }  
+
     const cartObject = useSelector((state) => state.user.cart);
     const cart = Object.values(cartObject);
     const sumAllProducts = cart.map((product) => {
@@ -80,8 +96,8 @@ const BasketFormSection = () => {
                                                     Köçürmə yolu <input className=' appearance-none bg-white bg-center bg-no-repeat bg-contain border border-solid border-rgba-0-0-0-25 h-4 mt-1 print-exact align-top w-4 rounded-[50%]' name='payment' type="radio" id='radio-3' />
                                                 </label>
                                             </div>
-                                            <button type='submit' className="rounded-[5px] text-white text-18 font-semibold min-w-150 px-[25px] py-[15px] w-full bg-[#fc8410]">Sifarişi təsdiqlə</button>
-                                        </div>
+                                            <button type='submit' onClick={handleClick} className="rounded-[5px] text-white text-18 font-semibold min-w-150 px-[25px] py-[15px] w-full bg-[#fc8410]">Sifarişi təsdiqlə</button>
+                                        </div> 
                                     </div>
                                 </div>
                             </form>

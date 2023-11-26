@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AddCart, DecreaseCart, RemoveFromCart } from '../redux/cartSystem';
 import { useDispatch } from 'react-redux';
+import Swal from 'sweetalert2';
 const ShopProduct = () => {
     const cartObject = useSelector((state) => state.user.cart);
     const cart = Object.values(cartObject);
@@ -47,6 +48,16 @@ const ShopProduct = () => {
 
     console.log(sumPrice);
 
+    const Alert = () => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Sifarişiniz təsdiqləndi",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      };
+
     const orderHandleClick = () => {
         if (sumPrice === 0) {
             setAlert(true);
@@ -55,6 +66,7 @@ const ShopProduct = () => {
             setAlert(true);
             setAlertText(`Sifarişi təstiqləmək üçün minimum ${minOrder} Azn olmalıdır.`);
         } else {
+            Alert()
             setAlert(false);
             setOrderLinkPath('/shopproduct/order');
 
