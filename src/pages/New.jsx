@@ -28,6 +28,7 @@ const New = () => {
                       price={product.price}
                       imageurl={product.img}
                       key={product.id}
+                      isNew={product.isNew}
                     />
                   </div>
                 </div>

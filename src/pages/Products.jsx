@@ -104,6 +104,10 @@ function Products() {
                         price={product.price}
                         imageurl={product.img}
                         key={product.id}
+                        discount={product.discount}
+                        isNew={product.isNew}
+                        bestSeller={product.bestSeller}
+                        oldPrice={product.oldPrice}
                       />
                     ))}
                     <Pagination nPages={nPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />

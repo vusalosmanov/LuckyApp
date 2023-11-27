@@ -25,6 +25,7 @@ const BestSeller = () => {
                         price={product.price}
                         imageurl={product.img}
                         key={product.id}
+                        bestSeller={product.bestSeller}
                       />
                     </div>
                   </div>

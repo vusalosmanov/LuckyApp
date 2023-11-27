@@ -7,7 +7,7 @@ import heartIconFilled from '../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../assets/image/icon/heart-outline.svg';
 import Swal from "sweetalert2";
 
-const Product = ({ quantity, id, productName, price, imageurl, product }) => {
+const Product = ({ quantity, id, productName, price, imageurl, product, isNew, discount, oldPrice, bestSeller }) => {
 
   const Alert = () => {
     Swal.fire({
@@ -57,7 +57,11 @@ const Product = ({ quantity, id, productName, price, imageurl, product }) => {
     <div className="flex justify-center">
       <div className="flex bg-[#fff] w-[260px] pt-[7px] pr-[15px] pb-[20px] pl-[15px] items-center flex-col justify-center">
         <div className="relative min-h-[40px] w-full flex justify-end z-50">
-          {product?.isNew && <span className="product-badge">Yeni</span>}
+          <div className="flex justify-start items-center w-full">
+            {isNew && <span className=" bg-[#fc8410] rounded-[8px] text-[white] px-[8px] py-[3px] text-[14px]">Yeni</span>}
+            {bestSeller && <span className=" bg-[#fc8410] rounded-[8px] text-[white] px-[8px] py-[3px] text-[14px]">Ən çox satilan</span>}
+            {discount && <span className=" bg-[#fc8410] rounded-[8px] text-[white] px-[8px] py-[3px] text-[14px]">Endirimli</span>}
+          </div>
           <button className='icon-button' onClick={iconHandleClick}>
             <img
               src={wishlist ? heartIconFilled : heartIconOutline}
@@ -73,7 +77,16 @@ const Product = ({ quantity, id, productName, price, imageurl, product }) => {
             <p>{productName}</p>
           </div>
           <div className="flex items-center justify-center flex-row">
-            <p>{price.toFixed(2)}AZN</p>
+            {
+              discount ? (
+                <>
+                  <p>{price.toFixed(2)}AZN</p>
+                  <p className=" line-through">{oldPrice.toFixed(2)}AZN</p>
+                </>
+              ) : (
+                <p>{price.toFixed(2)}AZN</p>
+              )
+            }
           </div>
         </div>
         <button className="max-w-[150px] py-[10px] px-[20px] text-[black] w-full border-[1px] rounded hover:bg-lime-800 hover:text-[white] transition ease-in-out duration-200"

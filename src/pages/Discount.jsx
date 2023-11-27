@@ -25,6 +25,8 @@ const Discount = () => {
                         price={product.price}
                         imageurl={product.img}
                         key={product.id}
+                        discount={product.discount}
+                        oldPrice={product.oldPrice}
                       />
                     </div>
                   </div>
