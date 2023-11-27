@@ -44,6 +44,7 @@ const Swipers = () => {
                   price={product.price}
                   imageurl={product.img}
                   key={product.id}
+                  isNew={product.isNew}
                 />
               </SwiperSlide>
             ))}

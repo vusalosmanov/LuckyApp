@@ -10,6 +10,17 @@ const LeftFilterAll = ({ category, setProducts }) => {
   const { subcategoryArray } = useContext(MainContext);
   const [subcategories, setSubCategories] = useState([]);
   const [selectedSubCategoryID, setSelectedSubCategoryID] = useState([]);
+  const [propertyFilter, setPropertyFilter] = useState('no-filter')
+
+
+  const handlePropertyCheckboxChange = (e) => {
+    if (e.target.checked) {
+      setPropertyFilter(e.target.value)
+    } else {
+      setPropertyFilter('no-filter')
+    }
+  }
+  console.log(propertyFilter);
 
   // Seçili kategoriye bağlı olarak alt kategorileri filtreleme
   useEffect(() => {
@@ -38,6 +49,16 @@ const LeftFilterAll = ({ category, setProducts }) => {
     combinedFilteredResults = combinedFilteredResults.filter((product) =>
       Number(rangeMin) <= product.price && product.price <= Number(rangeMax)
     );
+    if (propertyFilter !== 'no-filter') {
+      if (propertyFilter === 'isNew') {
+        combinedFilteredResults = combinedFilteredResults.filter((product) => product.isNew)
+      } else if (propertyFilter === 'discount') {
+        combinedFilteredResults = combinedFilteredResults.filter((product) => product.discount)
+      } else if (propertyFilter === 'bestSeller') {
+        combinedFilteredResults = combinedFilteredResults.filter((product) => product.bestSeller)
+      }
+    }
+
     // Set the filtered results to the state
     setProducts(combinedFilteredResults);
   };
@@ -121,20 +142,20 @@ const LeftFilterAll = ({ category, setProducts }) => {
         ) : null}
         <div className="propert-filter flex items-center justify-start mb-[30px] w-full flex-col mt-[25px]">
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" />
-            <label htmlFor="" className="capitalize pl-[5px]">
+            <input type="radio" className="border-[50%] float-left" name='property-filter'  id="new" value='isNew' onClick={handlePropertyCheckboxChange} />
+            <label htmlFor="new" className="capitalize pl-[5px]">
               Yeni
             </label>
           </div>
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" />
-            <label htmlFor="" className="capitalize pl-[5px]">
+            <input type="radio" className="border-[50%] float-left" name='property-filter'  id="discount" value='discount' onClick={handlePropertyCheckboxChange} />
+            <label htmlFor="discount" className="capitalize pl-[5px]">
               Endirimli
             </label>
           </div>
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" />
-            <label htmlFor="" className="capitalize pl-[5px]">
+            <input type="radio" className="border-[50%] float-left" name='property-filter'  id="best-seller" value='bestSeller' onClick={handlePropertyCheckboxChange} />
+            <label htmlFor="best-seller" className="capitalize pl-[5px]">
               Ən Çox Satılan
             </label>
           </div>
