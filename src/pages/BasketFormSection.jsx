@@ -37,7 +37,7 @@ const BasketFormSection = () => {
                         sumPrice > 5 ? (
                             <form action="#" className="flex flex-col justify-center items-center w-[100%]">
                                 <h2 className="mb-[30px] text-[2rem]">Məlumatlar</h2>
-                                <div className="w-[100%] flex  mx-[1.5rem] justify-between">
+                                <div className="w-[100%] lg:flex  mx-[1.5rem] lg:justify-between">
                                     <div className="flex flex-row justify-center mb-[40px] items-center w-[100%]">
                                         <div className="flex flex-col justify-center items-center w-[100%]">
                                             <div className="mb-[25px] items-start flex flex-col justify-center w-[100%]">

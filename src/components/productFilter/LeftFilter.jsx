@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CategoryInput from "../CategoryInput";
 import ManatIcon from "../../assets/image/icon/manat.svg";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";

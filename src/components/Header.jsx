@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import CategoryMenu from "./menuCategory/CategoryMenu";
 const Header = () => {
-  const {  subcategoryArray } = useContext(MainContext);
+  const { subcategoryArray } = useContext(MainContext);
   const [subcategories, setSubcategories] = useState([]);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Header = () => {
   const cart = Object.values(cartObject);
 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false)
-  
+
   const closeCatMenu = () => {
     setIsDropdownVisible(false)
   }
@@ -45,26 +45,37 @@ const Header = () => {
       <header className="header">
         <nav>
           <div className="max-w-[1320px] w-full  mx-auto pr-[10px] pl-[10px] ">
-            <div className="flex justify-end flex-row items-center pt-[15px]  pb-[15px] w-[100%] ">
-              <Link
-                to="/login"
-                className="mr-[20px] border-[2px] rounded-[5px] border-[white] text-[white] pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative hover:bg-[#106853]"
-              >
-                Daxil ol
-              </Link>
-              <Link
-                to="/register"
-                className=" rounded-[5px]  border-[white] text-[#106853] bg-white pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative hover:bg-[#106853] hover:text-white"
-              >
-                Qeydiyyat
-              </Link>
+            <div className="flex justify-between lg:justify-end flex-row items-center pt-[15px]  pb-[15px] w-[100%] ">
+              <div className="relative  lg:hidden">
+                <Link to="">
+                  <img
+                    src={logo}
+                    alt=""
+                    className="max-w-[125px] object-contain w-[100%]"
+                  />
+                </Link>
+              </div>
+              <div>
+                <Link
+                  to="/login"
+                  className="mr-[20px] border-[2px] rounded-[5px] border-[white] text-[white] pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative hover:bg-[#106853]"
+                >
+                  Daxil ol
+                </Link>
+                <Link
+                  to="/register"
+                  className=" rounded-[5px]  border-[white] text-[#106853] bg-white pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative hover:bg-[#106853] hover:text-white"
+                >
+                  Qeydiyyat
+                </Link>
+              </div>
             </div>
           </div>
         </nav>
         <nav>
           <div className="max-w-[1320px] w-full  mx-auto  pr-[10px] pl-[10px]">
             <div className="flex lg:justify-between items-center py-[15px] justify-center">
-              <div className="relative">
+              <div className="relative lg:block hidden">
                 <Link to="">
                   <img
                     src={logo}
@@ -86,7 +97,7 @@ const Header = () => {
                   </Link>
                   <Link to="/wishlist" className="relative">
                     <img src={heart} alt="" className="w-[50px]" />
-                    <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
+                    <div className="absolute top-[-9px] left-6   w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
                       {wishlistProducts.length}
                     </div>
                   </Link>
@@ -96,7 +107,6 @@ const Header = () => {
             <div className="nav-responsive lg:hidden block">
               <div className="w-full flex justify-between items-center">
                 <div className="hamburger">
-
                 </div>
                 <div className="icon lg:hidden block">
                   <div className="flex gap-5">
@@ -169,7 +179,7 @@ const Header = () => {
                   <img src={category} alt="category" />
                   <Link to="">Kataqoriya</Link>
                 </li>
-                <CategoryMenu openCatMenu={openCatMenu} isDropdownVisible={isDropdownVisible} closeCatMenu={closeCatMenu}/>
+                <CategoryMenu openCatMenu={openCatMenu} isDropdownVisible={isDropdownVisible} closeCatMenu={closeCatMenu} />
               </ul>
             </div>
             <div className="flex  justify-start pl-[40px]">

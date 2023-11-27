@@ -7,22 +7,22 @@ import logo from "../assets/image/logo/logo-footer.png";
 const Footer = () => {
   return (
     <div className="bg-[#f2f2f2]">
-        <div className=" flex flex-col gap-[12px] mt-[20px] items-center justify-center lg:hidden  ">
-          <div className="logo w-28  h-28 flex items-center ">
-            <img src={logo} alt="" />
+      <div className=" flex flex-col gap-[12px] mt-[20px] items-center justify-center lg:hidden  ">
+        <div className="logo w-28  h-28 flex items-center ">
+          <img src={logo} alt="" />
+        </div>
+        <div className=" flex gap-[12px]">
+          <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200 ">
+            <BiLogoFacebook />
           </div>
-          <div className=" flex gap-[12px]">
-            <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200 ">
-              <BiLogoFacebook />
-            </div>
 
-            <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200">
-              <AiOutlineInstagram />
-              {" "}
-            </div>
+          <div className="bg-[#106853] text-white w-[35px] h-[35px] text-xl rounded-full flex justify-center items-center hover:bg-[#fc8410] transition ease-in-out duration-200">
+            <AiOutlineInstagram />
+            {" "}
           </div>
         </div>
-      <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px]">
+      </div>
+      <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex  flex-col ">
         <div className="flex justify-between mb-[40px] pt-[35px]">
           <div className=" flex flex-col gap-[12px] items-center justify-center lg:block hidden ">
             <div className="logo w-28  h-28 flex items-center ">
@@ -39,73 +39,73 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div>
-            <h4 className=" text-[#fc8410] mb-[15px] text-[24px]">
-              Kategoriyalar
-            </h4>
-            <ul className=" flex flex-col gap-[15px]">
-              <li className="font-thin text-[#303030] unf">
-                <Link>Ofis Ləvazimatları</Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link> Qida və İçkilər</Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link>Təsərüffat Malları</Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link> Elektron Avadanlıq</Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link>Dibçək Gülləri</Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link> Hədiyyəlik </Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link> Coffee Shop </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className=" text-[#fc8410] mb-[14px] text-[24px]">Menyular</h4>
-            <ul className=" flex flex-col gap-[15px]">
-              <li className="font-thin text-[#303030] unf">Haqqımızda</li>
-              <li className="font-thin text-[#303030] unf">
-                <Link> Geri qaytarılma</Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link>Çatdırılma</Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link> Əlaqə</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className=" text-[#fc8410] mb-[14px] text-[24px]">Əlaqə</h4>
-            <ul className=" flex flex-col gap-[15px]">
-              <li className="font-thin text-[#303030] unf">
-                {" "}
-                <Link>
+          <div className="lg:flex lg:justify-evenly w-full ">
+            <div>
+              <h4 className=" text-[#fc8410] mb-[15px] text-[24px]">
+                Kategoriyalar
+              </h4>
+              <ul className=" flex flex-col gap-[15px]">
+                <li className="font-thin text-[#303030] unf">
+                  <Link>Ofis Ləvazimatları</Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link> Qida və İçkilər</Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link>Təsərüffat Malları</Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link> Elektron Avadanlıq</Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link>Dibçək Gülləri</Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link> Hədiyyəlik </Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link> Coffee Shop </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className=" text-[#fc8410] mb-[14px] text-[24px]">Menyular</h4>
+              <ul className=" flex flex-col gap-[15px]">
+                <li className="font-thin text-[#303030] unf">Haqqımızda</li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link> Geri qaytarılma</Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link>Çatdırılma</Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link> Əlaqə</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className=" text-[#fc8410] mb-[14px] text-[24px]">Əlaqə</h4>
+              <ul className=" flex flex-col gap-[15px]">
+                <li className="font-thin text-[#303030] unf">
                   {" "}
-                  <span> Tel:(994) 55 960 58 50</span>{" "}
-                </Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link>
-                  <span> Email: vusal.osmanov66@gmail.com</span>
-                </Link>
-              </li>
-              <li className="font-thin text-[#303030] unf">
-                <Link>
-                  {" "}
-                  <span>Ünvan: Ziya Bünyadov pr, 1965. Çinar <br /> Park Biznes Mərkəzi </span>
-                </Link>
-              </li>
-            </ul>
+                  <Link>
+                    {" "}
+                    <span> Tel:(994) 55 960 58 50</span>{" "}
+                  </Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link>
+                    <span> Email: vusal.osmanov66@gmail.com</span>
+                  </Link>
+                </li>
+                <li className="font-thin text-[#303030] unf">
+                  <Link>
+                    {" "}
+                    <span>Ünvan: Ziya Bünyadov pr, 1965. Çinar <br /> Park Biznes Mərkəzi </span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 

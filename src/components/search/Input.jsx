@@ -22,7 +22,6 @@ const Input = () => {
     overflowY: "scroll",
     display: searchInputValues.length === 0 ? "none" : "block",
   };
-  console.log(searchInputValues);
   return (
     <form action="" className="w-[650px] relative">
       <label

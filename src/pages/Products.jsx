@@ -76,8 +76,6 @@ function Products() {
   const currentRecords = products.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(products.length / recordsPerPage);
 
-  console.log(currentRecords);
-
   return (
     <>
       <section className="bg-[#dfdfdf]">
@@ -90,15 +88,15 @@ function Products() {
               <LeftFilter products={products}  setProducts={setProducts}/>
             </div>
             <div
-              className={`flex items-start flex-row justify-center mb-[40px] w-[33%] ${categoryName && !subcategoryName ? "block" : "hidden"}`}
+              className={`flex items-start flex-row justify-center mb-[40px] lg:w-[33%] w-full ${categoryName && !subcategoryName ? "block" : "hidden"}`}
             >
               <LeftFilterAll category={category} products={products} setProducts={setProducts}  />
             </div>
-            <div className="flex items-start flex-col justify-center mb-[40px] w-[66%]">
+            <div className="flex items-start flex-col justify-center mb-[40px] lg:w-[66%] w-full flex-wrap">
               <div className="inner flex  items-center flex-col justify-center w-[100%]">
-                <div className="product-row w-[100%] flex flex-wrap">
+                <div className="product-row  flex flex-wrap justify-center w-full">
                   <TopFilter products={products} setProducts={setProducts} changeProductsPerPage={changeProductsPerPage} />
-                  <div className="flex flex-row flex-wrap gap-x-[30px] gap-y-[10px] items-start  mb-[40px] w-[100%] ">
+                  <div className="flex flex-row flex-wrap gap-x-[30px] gap-y-[10px] items-start  mb-[40px] w-[100%] justify-center ">
                     {currentRecords.map((product) => (
                       <ProductCart
                         id={product.id}

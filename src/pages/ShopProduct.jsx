@@ -76,7 +76,7 @@ const ShopProduct = () => {
     return (
         <>
             {cart.length > 0 ? (
-                <div className='w-[1320px] my-0 mx-auto pr-[10px] pl-[10px] flex justify-center items-center'>
+                <div className='max-w-[1320px] w-full my-0 mx-auto pr-[10px] pl-[10px] flex justify-center items-center '>
                     <div className='mb-[40px] w-[100%] overflow-auto'>
                         <div className='w-[100%] min-w-[1200px] flex items-center justify-center'>
                             <div className={`${alert ? 'min-w-[1200px]  h-[50px] bg-orange-500 flex items-center justify-center rounded-lg  text-[white] text-[18px] mt-[20px] mb-[20px]' : 'hidden'}`} >
@@ -128,7 +128,7 @@ const ShopProduct = () => {
                     </div>
                 </div>
             ) : null}
-            <div className='w-[1320px] mx-auto pr-[10px] pl-[10px] flex justify-end items-center mb-[20px]'>
+            <div className='max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex justify-end items-center mb-[20px]'>
                 {cart.length > 0 ? (
                     <div className='flex flex-col justify-center max-w-[450px] min-h-[220px] py-[20px] px-[15px] w-full shadow-lg'>
                         <h4 className='text-[1.5rem] py-[10px]'>Səbət</h4>
