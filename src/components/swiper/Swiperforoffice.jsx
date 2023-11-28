@@ -18,7 +18,6 @@ const Swipers = () => {
     <>
       <Swiper
         cssMode={true}
-        navigation={true}
         mousewheel={true}
         keyboard={true}
         autoplay={true}

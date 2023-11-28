@@ -142,19 +142,19 @@ const LeftFilterAll = ({ category, setProducts }) => {
         ) : null}
         <div className="propert-filter flex items-center justify-start mb-[30px] w-full flex-col mt-[25px]">
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" name='property-filter'  id="new" value='isNew' onClick={handlePropertyCheckboxChange} />
+            <input type="radio" className="border-[50%] float-left" name='property-filter' id="new" value='isNew' onClick={handlePropertyCheckboxChange} />
             <label htmlFor="new" className="capitalize pl-[5px]">
               Yeni
             </label>
           </div>
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" name='property-filter'  id="discount" value='discount' onClick={handlePropertyCheckboxChange} />
+            <input type="radio" className="border-[50%] float-left" name='property-filter' id="discount" value='discount' onClick={handlePropertyCheckboxChange} />
             <label htmlFor="discount" className="capitalize pl-[5px]">
               Endirimli
             </label>
           </div>
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" name='property-filter'  id="best-seller" value='bestSeller' onClick={handlePropertyCheckboxChange} />
+            <input type="radio" className="border-[50%] float-left" name='property-filter' id="best-seller" value='bestSeller' onClick={handlePropertyCheckboxChange} />
             <label htmlFor="best-seller" className="capitalize pl-[5px]">
               Ən Çox Satılan
             </label>
@@ -165,7 +165,7 @@ const LeftFilterAll = ({ category, setProducts }) => {
           className="bg-[#fc8410] cursor-pointer rounded-lg text-[#fff] text-[18px] font-bold min-w-[150px] py-[15px] px-[25px] w-full"
         >
           Filterlə
-        </button>
+        </button> 
       </form>
     </div>
   );
