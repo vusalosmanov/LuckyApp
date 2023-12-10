@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { MainContext } from '../context/AllContextProvider';
-import { useDispatch } from "react-redux";
-import { productArray } from "../data/ProductData";
 import { useLocation } from "react-router-dom";
 import ManatIcon from "../../assets/image/icon/manat.svg"
+import { productArray } from "../data/ProductData";
 
-const LeftFilterAll = ({ category, setProducts }) => {
+const LeftFilterAll = ({ products, category, setProducts }) => {
+
   const { subcategoryArray } = useContext(MainContext);
   const [subcategories, setSubCategories] = useState([]);
   const [selectedSubCategoryID, setSelectedSubCategoryID] = useState([]);
@@ -32,6 +32,7 @@ const LeftFilterAll = ({ category, setProducts }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // let combinedFilteredResults = [...products];
     let combinedFilteredResults = productArray;
     // Filter by selected subcategories
     if (selectedSubCategoryID.length > 0) {

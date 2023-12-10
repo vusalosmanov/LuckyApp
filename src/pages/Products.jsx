@@ -1,5 +1,5 @@
 import React, { useEffect, useState, } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { categoryArray } from "../components/data/CategoryData";
 import { productArray } from "../components/data/ProductData";
@@ -13,10 +13,9 @@ import LeftFilterAll from "../components/productFilter/LeftFilterAll";
 function Products() {
   const { categoryName, subcategoryName } = useParams();
   const [products, setProducts] = useState([]);
+  const [filterProducts , setFilterProducts] = useState([])
   const [category, setCategory] = useState()
-  // const [subCategoryFilterActive, setSubCategoryFilterActive] = useState(false)
 
-  // const subCategory = subcategoryName && subcategoryArray.find((subcategory) => subcategory.name === subcategoryName);
 
   useEffect(() => {
     if (categoryName && !subcategoryName) {
@@ -73,8 +72,8 @@ function Products() {
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = products.slice(indexOfFirstRecord, indexOfLastRecord);
-  const nPages = Math.ceil(products.length / recordsPerPage);
+  const currentRecords = filterProducts.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(filterProducts.length / recordsPerPage);
 
   return (
     <>
@@ -85,7 +84,7 @@ function Products() {
             <div
               className={`flex items-start flex-row justify-center mb-[40px] w-[33%] ${categoryName && !subcategoryName ? "hidden" : "block"}`}
             >
-              <LeftFilter products={products}  setProducts={setProducts}/>
+              <LeftFilter products={products}  setFilterProducts={setFilterProducts}/>
             </div>
             <div
               className={`flex items-start flex-row justify-center mb-[40px] lg:w-[33%] w-full ${categoryName && !subcategoryName ? "block" : "hidden"}`}

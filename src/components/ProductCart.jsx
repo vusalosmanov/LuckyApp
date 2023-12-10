@@ -7,7 +7,7 @@ import heartIconFilled from '../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../assets/image/icon/heart-outline.svg';
 import Swal from "sweetalert2";
 
-const Product = ({ quantity, id, productName, price, imageurl, product, isNew, discount, oldPrice, bestSeller }) => {
+const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, oldPrice, bestSeller }) => {
 
   const Alert = () => {
     Swal.fire({

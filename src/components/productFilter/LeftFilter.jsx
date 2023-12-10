@@ -3,9 +3,7 @@ import ManatIcon from "../../assets/image/icon/manat.svg";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const LeftFilter = ({ products, setProducts }) => {
-  const [rangeMin, setRangeMin] = useState(0);
-  const [rangeMax, setRangeMax] = useState(2000);
+const LeftFilter = ({ products ,  setFilterProducts }) => {
   const [propertyFilter, setPropertyFilter] = useState('no-filter')
 
 
@@ -16,15 +14,14 @@ const LeftFilter = ({ products, setProducts }) => {
       setPropertyFilter('no-filter')
     }
   }
-  console.log(propertyFilter);
 
-  const handleRangeChange = (e, setRange) => {
-    setRange(e.target.value);
-  };
+  React.useEffect(() =>{
+    setFilterProducts([...products])
+  }, [products])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let combinedFilteredResults = [...products];
-
     // Filter by price range
     combinedFilteredResults = combinedFilteredResults.filter(
       (product) =>
@@ -39,9 +36,12 @@ const LeftFilter = ({ products, setProducts }) => {
         combinedFilteredResults = combinedFilteredResults.filter((product) => product.bestSeller)
       }
     }
-    setProducts(combinedFilteredResults)
+    setFilterProducts(combinedFilteredResults)
 
   }
+  const [rangeMin, setRangeMin] = useState(0);
+  const [rangeMax, setRangeMax] = useState(2000);
+
   const location = useLocation();
   useEffect(() => {
     resetFilters();
@@ -69,8 +69,9 @@ const LeftFilter = ({ products, setProducts }) => {
           <div className="w-[40px] h-[5px] bg-green-700 mt-[10px] rounded-lg"></div>
           <div className="range-filter mt-[20px]  ">
             <div className="range-inputs">
-              <input type="range" value={rangeMin} onChange={(e) => { setRangeMin(e.target.value) }} min={0} max={2000} step={1} />
-              <input type="range" value={rangeMax} onChange={(e) => { setRangeMax(e.target.value) }} min={0} max={2000} step={1} />
+              <input type="range" value={rangeMin} onChange={(e) => { setRangeMin(e.target.value) }} onBlur={(e) => { setRangeMin(e.target.value) }} min={0} max={2000} step={1} />
+              <input type="range" value={rangeMax} onChange={(e) => { setRangeMax(e.target.value) }} onBlur={(e) => { setRangeMax(e.target.value) }} min={0} max={2000} step={1} />
+
             </div>
             <div className='result-inputs'>
               <div className="item">
