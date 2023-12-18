@@ -42,7 +42,8 @@ function App() {
         <Route path="/shopproduct" element={<ShopProduct/>} />
         <Route path="/shopproduct/:order" element={<BasketFormSection/>} />
         <Route path="/products" element={<Products/>} />
-        {/* <Route path="/products:categoryName/:subcategoryName/:id" element={<Detailes/>} /> */}
+        <Route path="/products/:id" element={<Detailes/>} />  
+        {/* <Route path="/products/:categoryName/:subcategoryName/:productName" element={<Detailes/>} /> */}
         <Route path="/products/:categoryName" element={<Products/>} />
         <Route path="/products/:categoryName/:subcategoryName" element={<Products/>} />
       </Routes>

@@ -9,11 +9,12 @@ import TopFilter from "../components/productFilter/TopFilter";
 import ProductCart from "../components/ProductCart";
 import Pagination from "../components/Pagination";
 import LeftFilterAll from "../components/productFilter/LeftFilterAll";
+import Detailes from "./Detailes";
 
 function Products() {
   const { categoryName, subcategoryName } = useParams();
   const [products, setProducts] = useState([]);
-  const [filterProducts , setFilterProducts] = useState([])
+  const [filterProducts, setFilterProducts] = useState([])
   const [category, setCategory] = useState()
 
 
@@ -84,12 +85,12 @@ function Products() {
             <div
               className={`flex items-start flex-row justify-center mb-[40px] w-[33%] ${categoryName && !subcategoryName ? "hidden" : "block"}`}
             >
-              <LeftFilter products={products}  setFilterProducts={setFilterProducts}/>
+              <LeftFilter products={products} setFilterProducts={setFilterProducts} />
             </div>
             <div
               className={`flex items-start flex-row justify-center mb-[40px] lg:w-[33%] w-full ${categoryName && !subcategoryName ? "block" : "hidden"}`}
             >
-              <LeftFilterAll category={category} products={products} setProducts={setProducts}  />
+              <LeftFilterAll category={category} products={products} setProducts={setProducts} />
             </div>
             <div className="flex items-start flex-col justify-center mb-[40px] lg:w-[66%] w-full flex-wrap">
               <div className="inner flex  items-center flex-col justify-center w-[100%]">
@@ -98,6 +99,7 @@ function Products() {
                   <div className="flex flex-row flex-wrap gap-x-[30px] gap-y-[10px] items-start  mb-[40px] w-[100%] justify-center ">
                     {currentRecords.map((product) => (
                       <ProductCart
+                        product={product}
                         id={product.id}
                         productName={product.name}
                         price={product.price}
