@@ -20,7 +20,7 @@ const LeftFilterAll = ({ products, category, setProducts }) => {
       setPropertyFilter('no-filter')
     }
   }
-  console.log(propertyFilter);
+  // console.log(propertyFilter);
 
   // Seçili kategoriye bağlı olarak alt kategorileri filtreleme
   useEffect(() => {

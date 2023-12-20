@@ -20,7 +20,7 @@ const ShopProduct = () => {
 
     const handleIncreaseQuantity = (productId) => {
         dispatch(AddCart({ id: productId }));
-    };
+   };
 
     const handleDecreaseQuantity = (productId) => {
         dispatch(DecreaseCart({ id: productId }));
@@ -28,7 +28,7 @@ const ShopProduct = () => {
 
     const handleRemoveFromCart = (productId) => {
         dispatch(RemoveFromCart({ id: productId }));
-    };
+    }; 
 
     const [alert, setAlert] = useState(false);
     const [alertText, setAlertText] = useState('');
