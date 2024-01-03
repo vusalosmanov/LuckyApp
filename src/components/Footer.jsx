@@ -3,7 +3,7 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { BiLogoFacebook } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import logo from "../assets/image/logo/logo-footer.png";
-
+import { categoryArray } from "./data/CategoryData";
 const Footer = () => {
   return (
     <div className="bg-[#f2f2f2]">
@@ -44,42 +44,26 @@ const Footer = () => {
               <h4 className=" text-[#fc8410] mb-[15px] text-[24px]">
                 Kategoriyalar
               </h4>
-              <ul className=" flex flex-col gap-[15px]">
-                <li className="font-thin text-[#303030] unf">
-                  <Link>Ofis Ləvazimatları</Link>
-                </li>
-                <li className="font-thin text-[#303030] unf">
-                  <Link> Qida və İçkilər</Link>
-                </li>
-                <li className="font-thin text-[#303030] unf">
-                  <Link>Təsərüffat Malları</Link>
-                </li>
-                <li className="font-thin text-[#303030] unf">
-                  <Link> Elektron Avadanlıq</Link>
-                </li>
-                <li className="font-thin text-[#303030] unf">
-                  <Link>Dibçək Gülləri</Link>
-                </li>
-                <li className="font-thin text-[#303030] unf">
-                  <Link> Hədiyyəlik </Link>
-                </li>
-                <li className="font-thin text-[#303030] unf">
-                  <Link> Coffee Shop </Link>
-                </li>
+              <ul className=" flex flex-col gap-[15px]  capitalize  ">
+              {
+                  categoryArray.map(category => (
+                    <Link key={category.id} to={`/products/${encodeURIComponent(category.name)}`}>{category.name}</Link>
+                  ))
+                }
               </ul>
             </div>
             <div>
               <h4 className=" text-[#fc8410] mb-[14px] text-[24px]">Menyular</h4>
               <ul className=" flex flex-col gap-[15px]">
-                <li className="font-thin text-[#303030] unf">Haqqımızda</li>
+                <Link to='/about' className="font-thin text-[#303030] unf">Haqqımızda</Link>
                 <li className="font-thin text-[#303030] unf">
-                  <Link> Geri qaytarılma</Link>
+                  <Link to='/return '> Geri qaytarılma</Link>
                 </li>
                 <li className="font-thin text-[#303030] unf">
-                  <Link>Çatdırılma</Link>
+                  <Link to='/terms'>Çatdırılma</Link>
                 </li>
                 <li className="font-thin text-[#303030] unf">
-                  <Link> Əlaqə</Link>
+                  <Link to='/contact'> Əlaqə</Link>
                 </li>
               </ul>
             </div>
