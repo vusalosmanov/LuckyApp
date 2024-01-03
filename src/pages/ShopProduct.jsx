@@ -27,6 +27,7 @@ const ShopProduct = () => {
     };
 
     const handleRemoveFromCart = (productId) => {
+        RemoveAlert()
         dispatch(RemoveFromCart({ id: productId }));
     }; 
 
@@ -53,6 +54,15 @@ const ShopProduct = () => {
           position: "top-end",
           icon: "success",
           title: "Sifarişiniz təsdiqləndi",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      };
+    const RemoveAlert = () => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Məhsul silindi",
           showConfirmButton: false,
           timer: 1500,
         });

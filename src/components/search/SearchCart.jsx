@@ -2,21 +2,32 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { AddCart } from "../../redux/cartSystem";
 import { useDispatch } from 'react-redux';
-const SearchCart = ({ productName, imageurl, price, id }) => {
+import Swal from "sweetalert2";
 
+const SearchCart = ({ productName, imageurl, price, id }) => {
     const dispatch = useDispatch()
 
     const handleClick = () => {
+        Alert()
         dispatch(
-          AddCart({
-            id,
-            productName,
-            imageurl,
-            price,
-          })
+            AddCart({
+                id,
+                productName,
+                imageurl,
+                price,
+            })
         )
-      };
+    };
 
+    const Alert = () => {
+        Swal.fire({
+            position: "bottom-end",
+            icon: "success",
+            title: "Səbətə əlavə olundu",
+            showConfirmButton: false,
+            timer: 1500,
+        });
+    };
     return (
         <>
             <div className="border-t-[1px] pb-[5px] h-auto ">
