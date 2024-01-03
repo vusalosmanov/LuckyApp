@@ -1,7 +1,8 @@
-
 import React from "react";
 
+
 const TopFilter = ({ products, setProducts, changeProductsPerPage }) => {
+
   const handleSortChange = (e) => {
     const selectedValue = e.target.value;
     const sortedProducts = [...products];

@@ -19,6 +19,8 @@ const LeftFilter = ({ products ,  setFilterProducts }) => {
     setFilterProducts([...products])
   }, [products])
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let combinedFilteredResults = [...products];

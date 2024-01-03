@@ -5,14 +5,12 @@ import { useLocation } from "react-router-dom";
 import ManatIcon from "../../assets/image/icon/manat.svg"
 import { productArray } from "../data/ProductData";
 
-const LeftFilterAll = ({ products, category, setProducts }) => {
+const LeftFilterAll = ({category, setProducts }) => {
 
   const { subcategoryArray } = useContext(MainContext);
   const [subcategories, setSubCategories] = useState([]);
   const [selectedSubCategoryID, setSelectedSubCategoryID] = useState([]);
   const [propertyFilter, setPropertyFilter] = useState('no-filter')
-
-
   const handlePropertyCheckboxChange = (e) => {
     if (e.target.checked) {
       setPropertyFilter(e.target.value)
@@ -32,7 +30,6 @@ const LeftFilterAll = ({ products, category, setProducts }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // let combinedFilteredResults = [...products];
     let combinedFilteredResults = productArray;
     // Filter by selected subcategories
     if (selectedSubCategoryID.length > 0) {

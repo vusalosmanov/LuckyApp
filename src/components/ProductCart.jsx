@@ -6,8 +6,15 @@ import { AddCart, AddToWishlist, RemoveFromWishlist } from "../redux/cartSystem"
 import heartIconFilled from '../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../assets/image/icon/heart-outline.svg';
 import Swal from "sweetalert2";
+import { categoryArray } from "./data/CategoryData";
+import { subcategoryArray } from "./data/SubcategoryData";
 
-const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, oldPrice, bestSeller }) => {
+const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, oldPrice, bestSeller , product }) => {
+
+
+  const category = categoryArray.find((c) => c.id === categoryArray.categoryID)
+  const subcategory = subcategoryArray.find((c) => c.id === subcategoryArray.categoryID)
+
 
   const Alert = () => {
     Swal.fire({
@@ -69,7 +76,7 @@ const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, 
             />
           </button>
         </div>
-        <Link to={`/products/${id}`} className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px]">
+        <Link to={`/products/${encodeURIComponent(category?.name)}`} className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px]">
           <img src={imageurl} alt="" className="w-[100%] h-[100%] object-contain" />
         </Link>
         <div className="flex items-center justify-center flex-col mb-[20px] text-center w-full z-50">
