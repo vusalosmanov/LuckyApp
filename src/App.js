@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import BasketFormSection from "./pages/BasketFormSection";
 import Login from "./pages/Login";
 import Detailes from "./pages/Detailes";
+import Contact from "./pages/Contact";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/discount" element={<Discount />} />
         <Route path="/bestseller" element={<BestSeller />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/return" element={<Return />} />
         <Route path="/products" element={<Products/>} />
         <Route path="/products/new" element={<Products/>} />

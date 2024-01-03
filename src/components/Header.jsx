@@ -225,7 +225,7 @@ const Header = () => {
                   </ul>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="" className="relative  anima py-[5px]">
+                  <Link to="/contact" className="relative  anima py-[5px]">
                     Əlaqə
                   </Link>
                 </li>
