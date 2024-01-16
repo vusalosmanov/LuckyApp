@@ -3,7 +3,6 @@ import ManatIcon from "../../assets/image/icon/manat.svg";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { subcategoryArray } from "../data/SubcategoryData";
-import { useDispatch } from "react-redux";
 
 const LeftFilter = ({products, category, subCategoryFilterActive , setProducts }) => {
 

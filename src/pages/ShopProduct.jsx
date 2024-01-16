@@ -47,7 +47,6 @@ const ShopProduct = () => {
         }
     }, [sumPrice, minOrder, alert])
 
-    console.log(sumPrice);
 
     const Alert = () => {
         Swal.fire({

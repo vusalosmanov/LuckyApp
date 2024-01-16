@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-// import { useSelector } from "react-redux";
 import LeftFilter from "../components/productFilter/LeftFilter";
 import TopFilter from "../components/productFilter/TopFilter";
 import ProductCart from "../components/ProductCart";
@@ -87,7 +86,6 @@ function Products() {
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecord = products.slice(indexOfFirstRecord, indexOfLastRecord);
-  // const nPage = Math.ceil(products.length / recordsPerPage)
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);

@@ -6,11 +6,10 @@ import { AddCart, AddToWishlist, RemoveFromWishlist } from "../redux/cartSystem"
 import heartIconFilled from '../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../assets/image/icon/heart-outline.svg';
 import Swal from "sweetalert2";
-import { productArray } from "./data/ProductData";
 
-const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, oldPrice, bestSeller , product }) => {
+const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, oldPrice, bestSeller , products }) => {
 
-  // console.log(product);
+  console.log(products);
   const Alert = () => {
     Swal.fire({
       position: "top-end",
