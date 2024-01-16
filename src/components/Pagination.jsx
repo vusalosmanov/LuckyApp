@@ -1,31 +1,27 @@
 import React from 'react'
-const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
 
-    const pageNumbers = [...Array(nPages + 1).keys()].slice(1)
-
-
-
-    const goToNextPage = () => {
-        if (currentPage !== nPages) setCurrentPage(currentPage + 1)
+function Pagination({ totalProducts, recordsPerPage , currentPage, onPageChange, prev, next }) {
+    const pageNumbers = [];
+  
+    for (let i = 1; i <= Math.ceil(totalProducts / recordsPerPage); i++) {
+      pageNumbers.push(i);
     }
-    const goToPrevPage = () => {
-        if (currentPage !== 1) setCurrentPage(currentPage - 1)
-    }
+  
     return (
-        <ul className='product-pagination '>
-            <li>
-                <button onClick={goToPrevPage}><i className='fa-solid fa-chevron-left'></i></button>
-            </li>
-            {pageNumbers.map((number) => (
-                <li key={number}>
-                    <button className={currentPage === number ? 'active' : ''} onClick={() => setCurrentPage(number)} >{number}</button>
-                </li>
-            ))}
-            <li>
-                <button onClick={goToNextPage}><i className='fa-solid fa-chevron-right'></i></button>
-            </li>
-        </ul>
-    )
-}
+      <ul className='product-pagination'>
+        <li>
+            <button onClick={prev}><i className='fa-solid fa-chevron-left'></i></button>
+        </li>
+        {pageNumbers.map((number) => (
+          <li key={number}>
+            <button className={currentPage === number ? 'active' : ''} onClick={() => onPageChange(number)}>{number}</button>
+          </li>
+        ))}
+        <li>
+            <button onClick={next}><i className='fa-solid fa-chevron-right'></i></button>
+        </li>
+      </ul>
+    );
+  }
 
 export default Pagination

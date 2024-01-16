@@ -84,11 +84,8 @@ const LeftFilter = ({products, category, subCategoryFilterActive , setProducts }
         combinedFilteredResults = combinedFilteredResults.filter((product) => product.bestSeller)
       }
     }
-
-
     // Set the filtered results to the state
     setProducts(combinedFilteredResults);
-    console.log(combinedFilteredResults);
   };
 
   const location = useLocation();
@@ -144,7 +141,6 @@ const LeftFilter = ({products, category, subCategoryFilterActive , setProducts }
         {
           subCategoryFilterActive && subcategories.length > 0 ? (
             <div className="subcategory-filter">
-              <h4 className="section-title">Alt kategoriya</h4>
               {
                 subcategories.map(subcategory => (
                   <div key={subcategory.id} className="form-check">

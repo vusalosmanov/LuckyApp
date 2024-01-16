@@ -73,37 +73,12 @@ function Products() {
       updatedFilteredProducts.sort((a, b) => b.price - a.price);
     }
 
-    // if (leftFilterParams.length > 0) {
-    //   let rangeMin = leftFilterParams[0].rangeMin;
-    //   let rangeMax = leftFilterParams[0].rangeMax;
-    //   let selectedSubcategoryIDs = leftFilterParams[0].selectedSubcategoryIDs;
-    //   let propertyFilter = leftFilterParams[0].propertyFilter;
-
-    //   if (rangeMax > 0) {
-    //     updatedFilteredProducts = updatedFilteredProducts.filter((product) => rangeMin <= product.price && product.price <= rangeMax);
-    //   }
-
-    //   if (selectedSubcategoryIDs.length > 0) {
-    //     updatedFilteredProducts = updatedFilteredProducts.filter((product) => selectedSubcategoryIDs.includes(product.subcategoryID));
-    //   }
-
-    //   if (propertyFilter !== 'no-filter') {
-    //     if (propertyFilter === 'filter-new') {
-    //       updatedFilteredProducts = updatedFilteredProducts.filter((product) => product.isNew);
-    //     } else if (propertyFilter === 'filter-discounts') {
-    //       updatedFilteredProducts = updatedFilteredProducts.filter((product) => product.discount);
-    //     } else if (propertyFilter === 'filter-best-seller') {
-    //       updatedFilteredProducts = updatedFilteredProducts.filter((product) => product.bestSeller);
-    //     }
-    //   }
-    // }
-
     setProducts([...updatedFilteredProducts]);
   }, [location, productArray, category, subCategory, priceSortValue, navigate]);
 
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage, setRecordsPerPage] = useState(12);
+  const [recordsPerPage, setRecordsPerPage] = useState(6);
 
   const changeProductsPerPage = (value) => {
     setRecordsPerPage(value);
@@ -112,26 +87,27 @@ function Products() {
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecord = products.slice(indexOfFirstRecord, indexOfLastRecord);
+  // const nPage = Math.ceil(products.length / recordsPerPage)
 
-  // const handlePageChange = (pageNumber) => {
-  //   setCurrentPage(pageNumber);
-  //   window.scrollTo(0, 0);
-  // };
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
+  };
 
-  // const handlePrevPage = () => {
-  //   if (currentPage > 1) {
-  //     setCurrentPage(currentPage - 1);
-  //     window.scrollTo(0, 0);
-  //   }
-  // };
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+      window.scrollTo(0, 0);
+    }
+  };
 
-  // const handleNextPage = () => {
-  //   let lastPage = Math.ceil(products.length / recordsPerPage);
-  //   if (currentPage < lastPage) {
-  //     setCurrentPage(currentPage + 1);
-  //     window.scrollTo(0, 0);
-  //   }
-  // };
+  const handleNextPage = () => {
+    let lastPage = Math.ceil(products.length / recordsPerPage);
+    if (currentPage < lastPage) {
+      setCurrentPage(currentPage + 1);
+      window.scrollTo(0, 0);
+    }
+  };
 
   useEffect(() => {
     setCurrentPage(1);
@@ -155,18 +131,30 @@ function Products() {
                     <TopFilter changeProductsPerPage={changeProductsPerPage} setPriceSortValue={setPriceSortValue} />
                   ) : null}
                   <div className="flex flex-row flex-wrap gap-x-[30px] gap-y-[10px] items-start  mb-[40px] w-[100%] justify-center ">
-                    {currentRecord.map((product) => (
-                      <div key={product.id}>
-                        <ProductCart products={products}
-                          productName={product.name}
-                          imageurl={product.img}
-                          price={product.price}
-                          isNew={product.isNew}
-                          discount={product.discount}
-                          bestSeller={product.bestSeller} />
-                      </div>
-                    ))}
-                    {/* {products.length > recordsPerPage && <Pagination totalProducts={products.length} recordsPerPage={recordsPerPage} currentPage={currentPage} onPageChange={handlePageChange} prev={handlePrevPage} next={handleNextPage} />} */}
+                    {
+                      products.length > 0 ? (
+                        <>
+                          {currentRecord.map((product) => (
+                            <div key={product.id}>
+                              <ProductCart
+                                products={products}
+                                productName={product.name}
+                                imageurl={product.img}
+                                price={product.price}
+                                isNew={product.isNew}
+                                discount={product.discount}
+                                bestSeller={product.bestSeller} />
+                            </div>
+                          ))}
+                        </>
+                      ) : (
+                        <div className="container">
+                          <h1 className="section-title">Məhsul Tapılmadı</h1>
+                        </div>
+                      )
+                    }
+
+                    {products.length > recordsPerPage && <Pagination totalProducts={products.length} recordsPerPage={recordsPerPage} currentPage={currentPage} onPageChange={handlePageChange} prev={handlePrevPage} next={handleNextPage}  />}
                   </div>
                 </div>
               </div>
