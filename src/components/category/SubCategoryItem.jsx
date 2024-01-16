@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { MainContext } from "../context/AllContextProvider";
+import { AllContext } from "../context/AllContextProvider";
 
 function SubCategoryItem({ categoryID, subcategoryID, cover }) {
 
-  const { categoryArray, subcategoryArray } = useContext(MainContext);
+  const { categoryArray, subcategoryArray } = useContext(AllContext);
 
   const category = categoryID && categoryArray.find((item) => item.id === categoryID);
 

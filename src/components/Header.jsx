@@ -6,12 +6,12 @@ import category from "../assets/image/icon/category.svg";
 import heart from "../assets/image/icon/heart.svg";
 import shopping from "../assets/image/icon/cart.svg";
 import { BsChevronRight } from "react-icons/bs";
-import { MainContext } from "./context/AllContextProvider";
+import { AllContext } from "./context/AllContextProvider";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import CategoryMenu from "./menuCategory/CategoryMenu";
 const Header = () => {
-  const { subcategoryArray } = useContext(MainContext);
+  const { subcategoryArray } = useContext(AllContext);
   const [subcategories, setSubcategories] = useState([]);
 
   useEffect(() => {
@@ -190,17 +190,17 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="/new" className="anima relative py-[5px]">
+                  <Link className="anima relative py-[5px]"  to='/products/new'>
                     Yeni
                   </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="/discount" className="anima relative py-[5px]">
+                  <Link to="/products/discounts" className="anima relative py-[5px]">
                     Endirimlər
                   </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link to="/bestseller" className="anima relative py-[5px]">
+                  <Link to="/products/best-sellers" className="anima relative py-[5px]">
                     Ən çox satılanlar{" "}
                   </Link>
                 </li>

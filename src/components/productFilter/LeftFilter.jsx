@@ -2,10 +2,50 @@ import React, { useState } from "react";
 import ManatIcon from "../../assets/image/icon/manat.svg";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { subcategoryArray } from "../data/SubcategoryData";
+import { useDispatch } from "react-redux";
 
-const LeftFilter = ({ products ,  setFilterProducts }) => {
+const LeftFilter = ({products, category, subCategoryFilterActive , setProducts }) => {
+
+  const [subcategories, setSubCategorie] = useState([])
+  const [copyPoducts , setCopyProducts] = useState(products)
+
+
+  useEffect(() => {
+    if (category) {
+      let filteredSubcategories = subcategoryArray.filter((sb) => sb.categoryID === category.id)
+      setSubCategorie([...filteredSubcategories])
+    }
+  }, [category, subcategoryArray])
+
+  const [filterActive, setFilterActive] = useState(false)
+  const toggleFilter = () => {
+    setFilterActive(!filterActive)
+  }
+
+
+  //range filter
+  const [rangeMin, setRangeMin] = useState(0);
+  const [rangeMax, setRangeMax] = useState(2000);
+
+
+  const [selectedSubcategoryIDs, setSelectedSubcategoryIDs] = useState([])
   const [propertyFilter, setPropertyFilter] = useState('no-filter')
 
+  const handleSubCategoryCheckboxChange = (e) => {
+    let subCategoryID = e.target.value;
+    subCategoryID = parseInt(subCategoryID);
+    if (e.target.checked) {
+      setSelectedSubcategoryIDs((prevSelectedSubcategoryIDs) => [
+        ...prevSelectedSubcategoryIDs,
+        subCategoryID
+      ])
+    } else {
+      setSelectedSubcategoryIDs((prevSelectedSubcategoryIDs) =>
+        prevSelectedSubcategoryIDs.filter((name) => name !== subCategoryID)
+      );
+    }
+  }
 
   const handlePropertyCheckboxChange = (e) => {
     if (e.target.checked) {
@@ -15,47 +55,61 @@ const LeftFilter = ({ products ,  setFilterProducts }) => {
     }
   }
 
-  React.useEffect(() =>{
-    setFilterProducts([...products])
-  }, [products])
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let combinedFilteredResults = [...products];
+    let combinedFilteredResults = copyPoducts;
+    // Filter by selected subcategories
+    if (selectedSubcategoryIDs.length > 0) {
+      combinedFilteredResults = combinedFilteredResults.filter(
+        (product) => selectedSubcategoryIDs.includes(product.subcategoryID)
+      );
+    }
+    // Add filtering by selected category
+    if (category) {
+      combinedFilteredResults = combinedFilteredResults.filter(
+        (product) => product.categoryID === category.id
+      );
+    }
     // Filter by price range
-    combinedFilteredResults = combinedFilteredResults.filter(
-      (product) =>
-        Number(rangeMin) <= product.price && product.price <= Number(rangeMax)
+    combinedFilteredResults = combinedFilteredResults.filter((product) =>
+      Number(rangeMin) <= product.price && product.price <= Number(rangeMax)
     );
     if (propertyFilter !== 'no-filter') {
-      if (propertyFilter === 'isNew') {
+      if (propertyFilter === 'filter-new') {
         combinedFilteredResults = combinedFilteredResults.filter((product) => product.isNew)
-      } else if (propertyFilter === 'discount') {
+      } else if (propertyFilter === 'filter-discounts') {
         combinedFilteredResults = combinedFilteredResults.filter((product) => product.discount)
-      } else if (propertyFilter === 'bestSeller') {
+      } else if (propertyFilter === 'filter-best-seller') {
         combinedFilteredResults = combinedFilteredResults.filter((product) => product.bestSeller)
       }
     }
-    setFilterProducts(combinedFilteredResults)
 
-  }
-  const [rangeMin, setRangeMin] = useState(0);
-  const [rangeMax, setRangeMax] = useState(2000);
+
+    // Set the filtered results to the state
+    setProducts(combinedFilteredResults);
+    console.log(combinedFilteredResults);
+  };
 
   const location = useLocation();
+
   useEffect(() => {
     resetFilters();
-  }, [location.pathname])
+  }, [location.pathname]);
 
   const resetFilters = () => {
     setRangeMin(0);
-    setRangeMax(2000)
-  }
+    setRangeMax(2000);
+    setSelectedSubcategoryIDs([]);
+    setPropertyFilter('no-filter');
+  };
+
+
+
+
   return (
     <div className="flex justify-center flex-col w-[100%] items-center bg-white">
-      <button className="bg-[#fc8410] text-[18px] mb-[30px] p-[15px] w-[100%] cursor-pointer rounded-lg text-[#fff] hidden">
+      <button className="bg-[#fc8410] text-[18px] mb-[30px] p-[15px] w-[100%] cursor-pointer rounded-lg text-[#fff] hidden" onClick={toggleFilter}>
         <span>Filterle</span>
       </button>
       <form
@@ -87,21 +141,36 @@ const LeftFilter = ({ products ,  setFilterProducts }) => {
             </div>
           </div>
         </div>
+        {
+          subCategoryFilterActive && subcategories.length > 0 ? (
+            <div className="subcategory-filter">
+              <h4 className="section-title">Alt kategoriya</h4>
+              {
+                subcategories.map(subcategory => (
+                  <div key={subcategory.id} className="form-check">
+                    <input type="checkbox" className='form-check-input' id={subcategory.id} value={subcategory.id} onChange={handleSubCategoryCheckboxChange} />
+                    <label className='form-check-label' htmlFor={subcategory.id}>{subcategory.name}</label>
+                  </div>
+                ))
+              }
+            </div>
+          ) : null
+        }
         <div className="propert-filter flex items-center justify-start mb-[30px] w-full flex-col mt-[25px]">
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" name='property-filter' id="new" value='isNew' onClick={handlePropertyCheckboxChange} />
+            <input type="radio" className="border-[50%] float-left" name='property-filter' id="new" value='filter-new' onClick={handlePropertyCheckboxChange} />
             <label htmlFor="new" className="capitalize pl-[5px]">
               Yeni
-            </label>
+            </label>  
           </div>
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" name='property-filter' id="discount" value='discount' onClick={handlePropertyCheckboxChange} />
-            <label htmlFor="discount" className="capitalize pl-[5px]">
+            <input type="radio" className="border-[50%] float-left" name='property-filter' id="discounts" value='filter-discounts' onClick={handlePropertyCheckboxChange} />
+            <label htmlFor="discounts" className="capitalize pl-[5px]">
               Endirimli
             </label>
           </div>
           <div className="form-check mb-[10px] w-full flex items-center">
-            <input type="radio" className="border-[50%] float-left" name='property-filter' id="best-seller" value='bestSeller' onClick={handlePropertyCheckboxChange} />
+            <input type="radio" className="border-[50%] float-left" name='property-filter' id="best-seller" value='filter-best-seller' onClick={handlePropertyCheckboxChange} />
             <label htmlFor="best-seller" className="capitalize pl-[5px]">
               Ən Çox Satılan
             </label>

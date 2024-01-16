@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
-import { MainContext } from "../context/AllContextProvider";
+import { AllContext } from "../context/AllContextProvider";
 import SearchCart from "./SearchCart";
 
 const Input = () => {
-  const { productArray } = useContext(MainContext);
+  const { productArray } = useContext(AllContext);
   const [searchInputValues, setSearchInputValues] = useState([]);
 
   const searchData = (e) => {

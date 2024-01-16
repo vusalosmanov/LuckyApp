@@ -108,10 +108,10 @@ const ShopProduct = () => {
                                 {cart.map(product => (
                                     <tr className='border-b-[2px]'>
                                         <td className=" w-[100px]  h-[100px] py-[10px]">
-                                            <img src={product.imageurl} alt="" className='w-[100%] h-[100%] object-contain' />
+                                            <img src={product.img} alt="" className='w-[100%] h-[100%] object-contain' />
                                         </td>
                                         <td className='py-[10px] px-[0px] text-[18px] text-center'>
-                                            <p>{product.productName}</p>
+                                            <p>{product.name}</p>
                                         </td>
                                         <td className="py-[10px] text-[20px] text-center min-w-[150px] capitalize font-[400]">
                                             <p>{product.price.toFixed(2)} AZN</p>

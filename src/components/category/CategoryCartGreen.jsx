@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import SubCategoryItem from "./SubCategoryItem";
-import { MainContext } from "../../components/context/AllContextProvider";
+import { AllContext } from "../../components/context/AllContextProvider";
 
 function SubCategoryGreen() {
-  const { greenSectionData } = useContext(MainContext);
+  const { greenSectionData } = useContext(AllContext);
   return (
     <>
       {greenSectionData.length > 0 ? (

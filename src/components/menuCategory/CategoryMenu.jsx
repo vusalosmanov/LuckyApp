@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState, useContext } from 'react';
-import { MainContext } from "../context/AllContextProvider";
+import { AllContext } from "../context/AllContextProvider";
 import SubCategotyList from "./SubCategoryList";
 import { Link } from 'react-router-dom';
 const CategoryMenu = ({ isDropdownVisible, closeCatMenu }) => {
-    const { categoryArray, } = useContext(MainContext);
+
+    const { categoryArray } = useContext(AllContext);
     const [activeCategoryID, setActiveCategoryID] = useState(null);
 
     const openSubMenu = (categoryId) => {

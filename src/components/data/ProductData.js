@@ -1372,7 +1372,7 @@ export const productArray = [
         oldPrice: 5.35,
         discount: true,
         isNew: false,
-        bestSeller: true,
+        bestSeller: false,
     },
     {
         id: 101,

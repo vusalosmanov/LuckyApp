@@ -1,18 +1,18 @@
 import React, { createContext } from 'react'
-import { categoryArray } from '../data/CategoryData';
-import { subcategoryArray } from '../data/SubcategoryData';
-import { productArray } from '../data/ProductData';
-import { orangeSectionData, greenSectionData } from '../data/CategorySectionData';
-import { searchValues } from '../data/SearchValues';
+import { categoryArray } from '../../components/data/CategoryData';
+import { subcategoryArray } from '../../components/data/SubcategoryData';
+import { productArray } from '../../components/data/ProductData';
+import { orangeSectionData, greenSectionData } from '../../components/data/CategorySectionData';
+import { searchValues } from '../../components/data/SearchValues';
 
-export const MainContext = createContext();
+export const AllContext = createContext();
 
-function MainContextProvider({children}) {
+function AllContextProvider({ children }) {
   return (
-    <MainContext.Provider value={{categoryArray, subcategoryArray, productArray, orangeSectionData, greenSectionData, searchValues}}>
-        {children}
-    </MainContext.Provider>
+    <AllContext.Provider value={{ categoryArray, subcategoryArray, productArray, orangeSectionData, greenSectionData, searchValues }}>
+      {children}
+    </AllContext.Provider>
   )
 }
 
-export default MainContextProvider
+export default AllContextProvider

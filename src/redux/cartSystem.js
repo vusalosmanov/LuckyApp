@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const REMOVE_FROM_WISHLIST = 'REMOVE_FROM_WISHLIST';
+const REMOVE_FROM_WISHLIST = "REMOVE_FROM_WISHLIST";
 
 export const removeFromWishlist = (productId) => {
-    return {
-        type: REMOVE_FROM_WISHLIST,
-        payload: productId,
-    }
-}
+  return {
+    type: REMOVE_FROM_WISHLIST,
+    payload: productId,
+  };
+};
 
 const initialState = {
   cart: [],

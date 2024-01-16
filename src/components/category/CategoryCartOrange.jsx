@@ -1,11 +1,11 @@
 import React from "react";
 import { useContext } from "react";
-import { MainContext } from "../../components/context/AllContextProvider";
+import { AllContext } from "../../components/context/AllContextProvider";
 import SubCategoryItem from "./SubCategoryItem";
 
 const CategoryCartOrange = () => {
   
-  const { orangeSectionData } = useContext(MainContext);
+  const { orangeSectionData } = useContext(AllContext);
   return (
     <>
       {orangeSectionData.length > 0 ? (
