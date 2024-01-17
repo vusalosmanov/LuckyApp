@@ -5,11 +5,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AddCart, AddToWishlist, RemoveFromWishlist } from "../redux/cartSystem";
 import heartIconFilled from '../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../assets/image/icon/heart-outline.svg';
+import { productArray } from "./data/ProductData";
 import Swal from "sweetalert2";
 
-const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, oldPrice, bestSeller , products }) => {
+const Product = ({ id, isNew, productName }) => {
 
-  console.log(products);
   const Alert = () => {
     Swal.fire({
       position: "top-end",
@@ -25,15 +25,12 @@ const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, 
     Alert()
     dispatch(
       AddCart({
-        id,
-        productName,
-        imageurl,
-        price,
-        quantity
+        ...product
       })
     );
   };
 
+  const product = productArray.find((product) => product.name === productName);
   const wishlistProducts = useSelector((state) => state.user.wishlist);
   const isWishlist = Object.values(wishlistProducts);
   const wishlist = isWishlist.find(item => item.id === id);
@@ -44,11 +41,7 @@ const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, 
     } else {
       dispatch(
         AddToWishlist({
-          id,
-          productName,
-          imageurl,
-          price,
-          quantity
+          ...product
         })
       );
     }
@@ -60,8 +53,6 @@ const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, 
         <div className="relative min-h-[40px] w-full flex justify-end z-50">
           <div className="flex justify-start items-center w-full">
             {isNew && <span className=" bg-[#fc8410] rounded-[8px] text-[white] px-[8px] py-[3px] text-[14px]">Yeni</span>}
-            {bestSeller && <span className=" bg-[#fc8410] rounded-[8px] text-[white] px-[8px] py-[3px] text-[14px]">Ən çox satilan</span>}
-            {discount && <span className=" bg-[#fc8410] rounded-[8px] text-[white] px-[8px] py-[3px] text-[14px]">Endirimli</span>}
           </div>
           <button className='icon-button' onClick={iconHandleClick}>
             <img
@@ -71,21 +62,21 @@ const Product = ({ quantity, id, productName, price, imageurl, isNew, discount, 
           </button>
         </div>
         <Link to={`/detailes/${encodeURIComponent(productName)}`} className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px]">
-          <img src={imageurl} alt="" className="w-[100%] h-[100%] object-contain" />
+          <img src={product.img} alt="" className="w-[100%] h-[100%] object-contain" />
         </Link>
         <div className="flex items-center justify-center flex-col mb-[20px] text-center w-full z-50">
           <div className="mb-[5px] min-h-[60px] px-[10px] flex justify-center items-center">
-            <p>{productName}</p>
+            <p>{product.name}</p>
           </div>
           <div className="flex items-center justify-center flex-row">
             {
-              discount ? (
+              product.discount ? (
                 <>
-                  <p>{price}AZN</p>
-                  <p className=" line-through">{oldPrice}AZN</p>
+                  <p>{product.price.toFixed(2)}AZN</p>
+                  <p className=" line-through">{product.oldPrice.toFixed(2)}AZN</p>
                 </>
               ) : (
-                <p>{price}AZN</p>
+                <p>{product.price.toFixed(2)}AZN</p>
               )
             }
           </div>

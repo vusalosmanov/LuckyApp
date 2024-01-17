@@ -1,9 +1,11 @@
 import React from "react";
-import Swiper from "../components/swiper/Swipers.jsx";
-import Swiperforoffice from "../components/swiper/Swiperforoffice.jsx";
-import Swiperforfood from "../components/swiper/Swiperforfood.jsx";
+import Swiper from "../components/slider/Swipers.jsx";
+import Swiperforoffice from "../components/slider/Swiperforoffice.jsx";
+import Swiperforfood from "../components/slider/Swiperforfood.jsx";
 import CategoryCartOrange from "../components/category/CategoryCartOrange";
 import CategoryCartGreen from "../components/category/CategoryCartGreen.jsx";
+
+
 
 const Home = () => {
   

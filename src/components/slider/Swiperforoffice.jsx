@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Navigation,
-  Mousewheel,
-  Keyboard,
-  Autoplay,
-  Pagination,
-} from "swiper/modules";
+import { Navigation, Mousewheel, Keyboard, Autoplay, Pagination,} from "swiper/modules";
 import ProductCart from "../ProductCart";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";

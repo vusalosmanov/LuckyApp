@@ -124,7 +124,7 @@ function Products() {
             ) : null}
             <div className="flex items-start flex-col justify-center mb-[40px] lg:w-[66%] w-full flex-wrap">
               <div className="inner flex  items-center flex-col justify-center w-[100%]">
-                <div className="product-row  flex flex-wrap justify-center w-full">
+                <div className="product-row  flex flex-wrap justify-center w-full top-0">
                   {filterActive ? (
                     <TopFilter changeProductsPerPage={changeProductsPerPage} setPriceSortValue={setPriceSortValue} />
                   ) : null}
@@ -135,24 +135,21 @@ function Products() {
                           {currentRecord.map((product) => (
                             <div key={product.id}>
                               <ProductCart
-                                products={products}
+                                product={product}
                                 productName={product.name}
-                                imageurl={product.img}
-                                price={product.price}
                                 isNew={product.isNew}
-                                discount={product.discount}
-                                bestSeller={product.bestSeller} />
+                              />
                             </div>
                           ))}
                         </>
                       ) : (
-                        <div className="container">
-                          <h1 className="section-title">Məhsul Tapılmadı</h1>
+                        <div className="flex  flex-col  justify-center items-center ">
+                          <h1 className="mb-[55px]  capitalize  text-center text-[2.5rem]">Məhsul Tapılmadı</h1>
                         </div>
                       )
                     }
 
-                    {products.length > recordsPerPage && <Pagination totalProducts={products.length} recordsPerPage={recordsPerPage} currentPage={currentPage} onPageChange={handlePageChange} prev={handlePrevPage} next={handleNextPage}  />}
+                    {products.length > recordsPerPage && <Pagination totalProducts={products.length} recordsPerPage={recordsPerPage} currentPage={currentPage} onPageChange={handlePageChange} prev={handlePrevPage} next={handleNextPage} />}
                   </div>
                 </div>
               </div>
