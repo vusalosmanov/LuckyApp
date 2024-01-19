@@ -191,7 +191,7 @@ const Detailes = () => {
                                 <img
                                     src={product.img}
                                     alt=""
-                                    className="w-[400px] cursor-pointer object-contain"
+                                    className="w-[400px] h-[200px] cursor-pointer object-contain"
                                 />
                             </div>
                         </div>

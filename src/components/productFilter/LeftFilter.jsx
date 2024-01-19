@@ -104,6 +104,7 @@ const LeftFilter = ({products, category, subCategoryFilterActive , setProducts }
 
 
   return (
+    <>
     <div className="flex justify-center flex-col w-[100%] items-center bg-white">
       <button className="bg-[#fc8410] text-[18px] mb-[30px] p-[15px] w-[100%] cursor-pointer rounded-lg text-[#fff] hidden" onClick={toggleFilter}>
         <span>Filterle</span>
@@ -174,11 +175,12 @@ const LeftFilter = ({products, category, subCategoryFilterActive , setProducts }
         <button
           type="submit"
           className="bg-[#fc8410] cursor-pointer rounded-lg text-[#fff] text-[18px] font-bold min-w-[150px] py-[15px] px-[25px] w-[100%] "
-        >
+          >
           Filterle
         </button>
       </form>
     </div>
+          </>
   );
 };
 

@@ -7,6 +7,7 @@ import heartIconFilled from '../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../assets/image/icon/heart-outline.svg';
 import { productArray } from "./data/ProductData";
 import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
 
 const Product = ({ id, isNew, productName }) => {
 
@@ -23,6 +24,9 @@ const Product = ({ id, isNew, productName }) => {
   const dispatch = useDispatch();
   const handleClick = () => {
     Alert()
+    toast.success("Məhsul səbətə əlavə olundu!", {
+      position: toast.POSITION.BOTTOM_RIGHT
+    })
     dispatch(
       AddCart({
         ...product
@@ -48,13 +52,11 @@ const Product = ({ id, isNew, productName }) => {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="flex bg-[#fff] w-[260px] pt-[7px] pr-[15px] pb-[20px] pl-[15px] items-center flex-col justify-center">
-        <div className="relative min-h-[40px] w-full flex justify-end z-50">
-          <div className="flex justify-start items-center w-full">
-            {isNew && <span className=" bg-[#fc8410] rounded-[8px] text-[white] px-[8px] py-[3px] text-[14px]">Yeni</span>}
-          </div>
-          <button className='icon-button' onClick={iconHandleClick}>
+    <>
+      <div className="max-w-[280px] w-[100%] bg-[#fff] flex  justify-center  items-center  flex-col py-[7px] px-[15px] pb-[20px]">
+        <div className=" relative min-h-[40px] w-[100%]">
+          {isNew && <span className=" bg-[#fc8410]  absolute top-[50%]  left-0 py-[5px] px-[14px] text-[13px] font-semibold text-[#fff]  rounded-[8px]  ">Yeni</span>}
+          <button className='icon-button flex justify-end w-[100%]' onClick={iconHandleClick} >
             <img
               src={wishlist ? heartIconFilled : heartIconOutline}
               alt="heart-icon"
@@ -64,29 +66,30 @@ const Product = ({ id, isNew, productName }) => {
         <Link to={`/detailes/${encodeURIComponent(productName)}`} className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px]">
           <img src={product.img} alt="" className="w-[100%] h-[100%] object-contain" />
         </Link>
-        <div className="flex items-center justify-center flex-col mb-[20px] text-center w-full z-50">
-          <div className="mb-[5px] min-h-[60px] px-[10px] flex justify-center items-center">
-            <p>{product.name}</p>
+        <div className="w-[100%] flex  justify-center items-center flex-col text-center mb-[20px]">
+          <div className="min-h-[60px] flex justify-center flex-row items-center mb-[5px] py-[0px] px-[10px] ">
+            {product.name}
           </div>
-          <div className="flex items-center justify-center flex-row">
+          <div className="flex justify-center flex-row items-center">
             {
               product.discount ? (
                 <>
-                  <p>{product.price.toFixed(2)}AZN</p>
-                  <p className=" line-through">{product.oldPrice.toFixed(2)}AZN</p>
+                  <span className="new">{product.price.toFixed(2)}Azn</span>
+                  <span className="old line-through ml-[15px] ">{product.oldPrice.toFixed(2)}Azn</span>
                 </>
               ) : (
-                <p>{product.price.toFixed(2)}AZN</p>
+                <span className="new">{product.price.toFixed(2)}Azn</span>
               )
             }
           </div>
         </div>
-        <button className="max-w-[150px] py-[10px] px-[20px] text-[black] w-full border-[1px] rounded hover:bg-lime-800 hover:text-[white] transition ease-in-out duration-200"
+        <button className="max-w-[150px] py-[10px] px-[20px] text-[black] w-[100%] border-[1px] rounded hover:bg-[#106853] hover:text-[white] transition ease-in-out duration-200"
           variant="success" onClick={handleClick}>
           Səbətə at
         </button>
       </div>
-    </div>
+      <ToastContainer/>
+    </>
   );
 };
 
