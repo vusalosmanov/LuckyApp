@@ -12,7 +12,6 @@ function Products() {
 
   const { categoryName, subCategoryName } = useParams();
 
-  // const product = productArray.find((product) => product.name === productName)
 
   const category = categoryName && categoryArray.find((category) => category.name === categoryName);
 
