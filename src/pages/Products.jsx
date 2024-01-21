@@ -12,6 +12,7 @@ function Products() {
 
   const { categoryName, subCategoryName } = useParams();
 
+  // const product = productArray.find((product) => product.name === productName)
 
   const category = categoryName && categoryArray.find((category) => category.name === categoryName);
 
@@ -122,7 +123,7 @@ function Products() {
                 <LeftFilter products={products} category={category} subCategoryFilterActive={subCategoryFilterActive} setProducts={setProducts} />
               </div>
             ) : null}
-            <div className="flex items-start flex-col justify-center mb-[40px] px-[10px] lg:max-w-[875px] w-full flex-wrap   ">
+            <div className="flex items-start flex-col  mb-[40px] px-[10px] lg:max-w-[875px] w-full flex-wrap ">
               <div className="inner flex  items-center flex-col justify-center w-[100%]">
                 <div className="product-row  flex flex-wrap justify-center w-full ">
                   {filterActive ? (
@@ -131,13 +132,10 @@ function Products() {
                   {
                     products.length > 0 ? (
                       <>
-                      {/* bu hisseni olculerine gore duzlet 1 mehsul 2 mehsul 3 mehsul olamsina gore */}
-                        <div className="lg:flex flex-wrap   gap-y-[5px] px-[3px]  mb-[40px] justify-around top-0"> 
+                        <div className="lg:flex flex-wrap  gap-y-[5px] gap-x-[3px] w-full max-w-[875px]  mb-[40px]  "> 
                           {currentRecord.map((product) => (
                             <ProductCart
-                              product={product}
                               productName={product.name}
-                              isNew={product.isNew}
                             />
                           ))}
                         </div>

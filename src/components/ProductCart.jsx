@@ -1,15 +1,24 @@
-import React, { useContext, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useContext} from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
 import { AddCart, AddToWishlist, RemoveFromWishlist } from "../redux/cartSystem";
 import heartIconFilled from '../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../assets/image/icon/heart-outline.svg';
-import { productArray } from "./data/ProductData";
 import Swal from "sweetalert2";
-import { ToastContainer, toast } from "react-toastify";
+import { AllContext } from "./context/AllContextProvider";
+const Product = ({ id, productName }) => {
 
-const Product = ({ id, isNew, productName }) => {
+  const { categoryArray, subcategoryArray , productArray } = useContext(AllContext)
+  const product = productArray.find((product) => product.name === productName);
+  const category = categoryArray.find((c) => c.id === product.categoryID)
+  const subcategory = subcategoryArray.find((c) => c.id === product.subcategoryID)
+
+  
+  const wishlistProducts = useSelector((state) => state.user.wishlist);
+  const isWishlist = Object.values(wishlistProducts);
+  const wishlist = isWishlist.find(item => item.id === id);
+
 
   const Alert = () => {
     Swal.fire({
@@ -24,20 +33,12 @@ const Product = ({ id, isNew, productName }) => {
   const dispatch = useDispatch();
   const handleClick = () => {
     Alert()
-    toast.success("Məhsul səbətə əlavə olundu!", {
-      position: toast.POSITION.BOTTOM_RIGHT
-    })
     dispatch(
       AddCart({
         ...product
       })
     );
   };
-
-  const product = productArray.find((product) => product.name === productName);
-  const wishlistProducts = useSelector((state) => state.user.wishlist);
-  const isWishlist = Object.values(wishlistProducts);
-  const wishlist = isWishlist.find(item => item.id === id);
 
   const iconHandleClick = () => {
     if (wishlist) {
@@ -55,7 +56,7 @@ const Product = ({ id, isNew, productName }) => {
     <>
       <div className="max-w-[280px] w-[100%] bg-[#fff] flex  justify-center  items-center  flex-col py-[7px] px-[15px] pb-[20px]">
         <div className=" relative min-h-[40px] w-[100%]">
-          {isNew && <span className=" bg-[#fc8410]  absolute top-[50%]  left-0 py-[5px] px-[14px] text-[13px] font-semibold text-[#fff]  rounded-[8px]  ">Yeni</span>}
+          {product.isNew && <span className=" bg-[#fc8410]  absolute top-[50%]  left-0 py-[5px] px-[14px] text-[13px] font-semibold text-[#fff]  rounded-[8px]  ">Yeni</span>}
           <button className='icon-button flex justify-end w-[100%]' onClick={iconHandleClick} >
             <img
               src={wishlist ? heartIconFilled : heartIconOutline}
@@ -63,7 +64,7 @@ const Product = ({ id, isNew, productName }) => {
             />
           </button>
         </div>
-        <Link to={`/detailes/${encodeURIComponent(productName)}`} className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px]">
+        <Link to={`/products/${encodeURIComponent(category?.name)}/${encodeURIComponent(subcategory?.name)}/${encodeURIComponent(productName)}`} className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px]">
           <img src={product.img} alt="" className="w-[100%] h-[100%] object-contain" />
         </Link>
         <div className="w-[100%] flex  justify-center items-center flex-col text-center mb-[20px]">
@@ -88,7 +89,6 @@ const Product = ({ id, isNew, productName }) => {
           Səbətə at
         </button>
       </div>
-      <ToastContainer/>
     </>
   );
 };

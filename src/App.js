@@ -37,10 +37,10 @@ function App() {
         <Route path="/products" element={<Products/>} />
         <Route path="/products/:categoryName" element={<Products/>} />
         <Route path="/products/:categoryName/:subCategoryName" element={<Products/>} />
+        <Route path="/products/:categoryName/:subCategoryName/:productName" element={<Detailes/>} />
         <Route path="/products/new" element={<Products />} />
         <Route path="/products/discounts" element={<Products />} />
         <Route path="/products/best-sellers" element={<Products />} />
-        <Route path="/detailes/:productName" element={<Detailes/>} />
         <Route path="/return" element={<Return />} />
         <Route path="*" element={<Navigate to='/404' />} />
       </Routes>
