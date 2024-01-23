@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import ProductCart from "../components/ProductCart"
+import ProductCart from "../components/product/ProductCart"
 
 function Wishlist() {
     const wishlistProducts = useSelector((state) => state.user.wishlist)

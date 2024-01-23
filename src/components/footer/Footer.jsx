@@ -2,8 +2,8 @@ import React from "react";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { BiLogoFacebook } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import logo from "../assets/image/logo/logo-footer.png";
-import { categoryArray } from "./data/CategoryData";
+import logo from "../../assets/image/logo/logo-footer.png";
+import { categoryArray } from "../data/CategoryData";
 const Footer = () => {
   return (
     <div className="bg-[#f2f2f2]">

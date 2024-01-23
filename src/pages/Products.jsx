@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import LeftFilter from "../components/productFilter/LeftFilter";
 import TopFilter from "../components/productFilter/TopFilter";
-import ProductCart from "../components/ProductCart";
+import ProductCart from "../components/product/ProductCart";
 import { AllContext } from "../components/context/AllContextProvider";
-import Pagination from "../components/Pagination";
+import Pagination from "../components/pagination/Pagination";
 
 function Products() {
 

@@ -2,11 +2,11 @@ import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
-import { AddCart, AddToWishlist, RemoveFromWishlist } from "../redux/cartSystem";
-import heartIconFilled from '../assets/image/icon/heart-filled.svg';
-import heartIconOutline from '../assets/image/icon/heart-outline.svg';
+import { AddCart, AddToWishlist, RemoveFromWishlist } from "../../redux/cartSystem";
+import heartIconFilled from '../../assets/image/icon/heart-filled.svg';
+import heartIconOutline from '../../assets/image/icon/heart-outline.svg';
 import Swal from "sweetalert2";
-import { AllContext } from "./context/AllContextProvider";
+import { AllContext } from "../context/AllContextProvider";
 const Product = ({ id, productName }) => {
 
   const { categoryArray, subcategoryArray , productArray } = useContext(AllContext)

@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/image/logo/logo-header.svg";
-import Input from "../components/search/Input";
-import category from "../assets/image/icon/category.svg";
-import heart from "../assets/image/icon/heart.svg";
-import shopping from "../assets/image/icon/cart.svg";
+import logo from "../../assets/image/logo/logo-header.svg";
+import Input from "../search/Input";
+import category from "../../assets/image/icon/category.svg";
+import heart from "../../assets/image/icon/heart.svg";
+import shopping from "../../assets/image/icon/cart.svg";
 import { BsChevronRight } from "react-icons/bs";
-import { AllContext } from "./context/AllContextProvider";
+import { AllContext } from "../context/AllContextProvider";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import CategoryMenu from "./menuCategory/CategoryMenu";
+import CategoryMenu from "../menuCategory/CategoryMenu";
 const Header = () => {
   const { subcategoryArray } = useContext(AllContext);
   const [subcategories, setSubcategories] = useState([]);

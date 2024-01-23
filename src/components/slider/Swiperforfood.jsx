@@ -6,7 +6,7 @@ import {
   Autoplay,
   Pagination,
 } from "swiper/modules";
-import ProductCart from "../ProductCart";
+import ProductCart from "../product/ProductCart";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
