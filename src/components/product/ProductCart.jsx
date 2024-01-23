@@ -7,7 +7,7 @@ import heartIconFilled from '../../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../../assets/image/icon/heart-outline.svg';
 import Swal from "sweetalert2";
 import { AllContext } from "../context/AllContextProvider";
-const Product = ({ id, productName }) => {
+const Product = ({ id, productName  }) => {
 
   const { categoryArray, subcategoryArray , productArray } = useContext(AllContext)
   const product = productArray.find((product) => product.name === productName);
