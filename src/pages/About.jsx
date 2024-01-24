@@ -1,6 +1,5 @@
 import React from "react";
 import aboutLogo from "../assets/image/logo/about-logo.jpeg"
-import { Link } from "react-router-dom";
 import Layout from "./Layout";
 import PageTitle from "../components/PageTitle";
 const About = () => {

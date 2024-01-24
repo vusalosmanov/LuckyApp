@@ -19,7 +19,7 @@ const Swipers = () => {
       >
         {bannerArr.map((img, index) => (
           <SwiperSlide key={index}>
-            <img src={img}/>
+            <img src={img} />
           </SwiperSlide>
         ))}
       </Swiper>

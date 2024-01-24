@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import CategoryMenu from "../menuCategory/CategoryMenu";
 const Header = () => {
   const { subcategoryArray } = useContext(AllContext);
+
   const [subcategories, setSubcategories] = useState([]);
 
   useEffect(() => {
@@ -55,16 +56,16 @@ const Header = () => {
                   />
                 </Link>
               </div>
-              <div>
+              <div className="mt-[10px]">
                 <Link
                   to="/login"
-                  className="mr-[20px] border-[2px] rounded-[5px] border-[white] text-[white] pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative hover:bg-[#106853]"
+                  className="mr-[20px] border-[2px] rounded-[5px] border-[white] text-[white] py-[12px] px-[20px] text-[16px] relative hover:bg-[#106853]"
                 >
                   Daxil ol
                 </Link>
                 <Link
                   to="/register"
-                  className=" rounded-[5px]  border-[white] text-[#106853] bg-white pt-[10px] pb-[10px] pr-[20px] pl-[20px] text-[16px] relative hover:bg-[#106853] hover:text-white"
+                  className=" rounded-[5px]  border-[white] text-[#106853] bg-white py-[14px] px-[20px] text-[16px] relative hover:bg-[#106853] hover:text-white"
                 >
                   Qeydiyyat
                 </Link>
@@ -190,7 +191,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="text-[18px] mr-[50px]">
-                  <Link className="anima relative py-[5px]"  to='/products/new'>
+                  <Link className="anima relative py-[5px]" to='/products/new'>
                     Yeni
                   </Link>
                 </li>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import TermLogo from '../assets/image/article/img-1.png'
 import Layout from "./Layout";
 import PageTitle from "../components/PageTitle";

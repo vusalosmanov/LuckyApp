@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ReturnLogo from '../assets/image/article/img-2.jpg'
 import Layout from "./Layout";
 import PageTitle from "../components/PageTitle";

@@ -1,5 +1,4 @@
 import React from 'react'
-import Slider from 'react-slick';
 import ProductCard from '../product/ProductCart';
 
 function SimiliarProducts({ similiarProducts }) {

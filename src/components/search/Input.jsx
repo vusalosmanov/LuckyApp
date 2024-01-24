@@ -50,7 +50,7 @@ const Input = () => {
         </div>
         <div>
           <input
-            className="bg-transparent border-[2px] border-white rounded-[5px] caret-white text-white text-18 min-h-55 outline-none px-5 w-full h-[55px] placeholder:text-[white] "
+            className="bg-transparent border-[2px] border-white rounded-[5px] caret-white text-white text-18 min-h-55 outline-none px-5 w-full h-[55px] placeholder:text-[white]  input"
             type="text"
             name="search"
             placeholder="Axtar"

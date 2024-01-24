@@ -20,11 +20,11 @@ const SearchCart = ({ productName, imageurl, price, id }) => {
     };
     return (
         <>
-            <div className="border-t-[1px] pb-[5px] h-auto ">
+            <div className="border-t-[1px] pb-[5px] h-auto  ">
                 <div className="flex  items-center p-[10px] w-full ">
                     <div className='w-[50%] flex justify-center items-center'>
-                        <Link to="" className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px]">
-                            <img src={imageurl} alt="" className="w-[100%] h-[100%] object-contain" />
+                        <Link to="" className="w-[100%] max-w-[200px] h-[200px] hover:scale-[1.1] image-hover mb-[20px] flex items-center justify-center border-[1px] border-[#c8c8c8] rounded-[5px]">
+                            <img src={imageurl} alt="" className="w-[100%] h-[100%] max-w-[150px] max-h-[150px] object-contain" />
                         </Link>
                     </div>
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -49,7 +48,7 @@ const Contact = () => {
                                 </div>
                             </div>
                             <div className='flex items-center justify-center mb-[40px] flex-row w-[50%] px-[12px]'>
-                                <form action="#" className='w-full'>
+                                <form action="#" className='w-full contact'>
                                     <h3 className='mb-[30px] text-[26px] text-center'>Müraciət Formu</h3>
                                     <div className="mb-[25px]  relative w-[100%]">
                                         <input type="text" className="px-[0.75rem] py-[1rem] w-full appearance-none bg-[#fff] border-[1px] rounded-lg text-[#212529] block text-[1rem] font-[400]  placeholder:text-[black]" id="fullname" placeholder="Ad, Soyad *" />

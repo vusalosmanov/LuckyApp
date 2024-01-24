@@ -17,10 +17,11 @@ const CategoryMenu = ({ isDropdownVisible, closeCatMenu }) => {
     return (
         <>
             <div className={`dropdown-menu absolute left-[150px] h-auto mt-[65px] z-[100] top-0 w-full max-w-[400px] ${isDropdownVisible ? ' ' : 'hidden'}`} >
-                <ul className="bg-white shadow flex flex-col items-start">
+                <ul className="bg-white shadow flex flex-col items-start" >
                     {categoryArray.length > 0
                         ? categoryArray.map((category) => (
                             <li
+                                key={category.id}
                                 className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un clas"
                                 onMouseEnter={() => openSubMenu(category.id)}
                                 onMouseLeave={() => { closeSubMenu() }}

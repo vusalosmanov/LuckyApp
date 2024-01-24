@@ -1,113 +1,117 @@
 section.account {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 60px 0;
+  .account-link {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0;
-    padding: 60px 0;
-    .account-link {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        a {
-            background-color: #fff;
-            color: #106853;
-            padding: 15px 20px;
-            width: 100%;
-            max-width: 240px;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-top: 30px;
-            font-size: 18px;
-            font-weight: 600;
+    width: 100%;
+    a {
+      background-color: #fff;
+      color: #106853;
+      padding: 15px 20px;
+      width: 100%;
+      max-width: 240px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 18px;
+      font-weight: 600;
 
-            &:hover {
-                background-color: #106853;
-                color: #fff;
-            }
-        }
+      &:hover {
+        background-color: #106853;
+        color: #fff;
+      }
+    }
+  }
+
+  .form-general {
+    max-width: 600px;
+
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+
+      a {
+        margin-top: 15px;
+        color: #106853;
+        font-weight: 600;
+      }
     }
 
-    .form-general {
-        max-width: 600px;
-
-        .links {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 40px;
-
-            a {
-                margin-top: 15px;
-                color: #106853;
-                font-weight: 600;
-            }
-        }
-
-        .submit-button {
-            max-width: 200px;
-        }
+    .submit-button {
+      max-width: 200px;
     }
+  }
 }
 
 @media only screen and (min-width: 576px) {
-    section.account {
-        .form-general {
-            .links {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
+  section.account {
+    .form-general {
+      .links {
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
+  }
 }
 
 @media only screen and (min-width: 992px) {
-    section.account {
-        background-color: #fc8410;
-        .form-general{
-            padding: 80px 0;
-            .row{
-                .col-12{
-                    align-items: flex-start;
-                }
-            }
+  section.account {
+    background-color: #fc8410;
+    .form-general {
+      padding: 80px 0;
+      .row {
+        .col-12 {
+          align-items: flex-start;
         }
-
-        .row {
-            .col-12{
-                margin-bottom: 0;
-            }
-            .account-col-right {
-                background-color: #fff;
-                border-top-left-radius: 20% 50%;
-                border-bottom-left-radius: 20% 50%;
-                box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
-            }
-        }
+      }
     }
+
+    .row {
+      .col-12 {
+        margin-bottom: 0;
+      }
+      .account-col-right {
+        background-color: #fff;
+        border-top-left-radius: 20% 50%;
+        border-bottom-left-radius: 20% 50%;
+        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
 }
 
-@media only screen and (min-width: 1200px){
-    section.account{
-        .form-general{
-            &.register{
-                max-width: 800px;
-                padding: 80px 30px;
-            }
-        }
+@media only screen and (min-width: 1200px) {
+  section.account {
+    .form-general {
+      &.register {
+        max-width: 800px;
+        padding: 80px 30px;
+      }
     }
+  }
 }
 /* Add this to your CSS */
 input:focus {
-    border-color: #fc8410;
-    outline: none;
-  }
-  
+  border-color: #fc8410;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #fff;
+  outline: none;
+}
