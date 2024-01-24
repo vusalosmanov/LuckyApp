@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { AddCart } from "../../redux/cartSystem";
 import { useDispatch } from 'react-redux';
-import Swal from "sweetalert2";
+import { toast } from 'react-toastify';
 
 const SearchCart = ({ productName, imageurl, price, id }) => {
     const dispatch = useDispatch()
 
     const handleClick = () => {
-        Alert()
+        toast.success('Məhsul səbətə əlavə olundu');
         dispatch(
             AddCart({
                 id,
@@ -17,16 +17,6 @@ const SearchCart = ({ productName, imageurl, price, id }) => {
                 price,
             })
         )
-    };
-
-    const Alert = () => {
-        Swal.fire({
-            position: "bottom-end",
-            icon: "success",
-            title: "Səbətə əlavə olundu",
-            showConfirmButton: false,
-            timer: 1500,
-        });
     };
     return (
         <>

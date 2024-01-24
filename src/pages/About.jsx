@@ -2,6 +2,7 @@ import React from "react";
 import aboutLogo from "../assets/image/logo/about-logo.jpeg"
 import { Link } from "react-router-dom";
 import Layout from "./Layout";
+import PageTitle from "../components/PageTitle";
 const About = () => {
   return (
     <>
@@ -12,10 +13,7 @@ const About = () => {
             <div className="w-[40px] h-[5px] bg-[#106853] rounded-lg mt-[10px] "></div>
           </div>
           <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex mt-[20px] justify-center items-center cursor-pointer">
-            <Link to="/">
-              Ana Seyife /
-            </Link>
-            <span>Haqqimizda</span>
+            <PageTitle title='Haqqımızda' />
           </div>
         </section>
         <section className="mt-[80px] mb-[80px]">

@@ -1,12 +1,10 @@
 import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import 'react-toastify/dist/ReactToastify.css';
 import { toast } from "react-toastify";
 import { AddCart, AddToWishlist, RemoveFromWishlist } from "../../redux/cartSystem";
 import heartIconFilled from '../../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../../assets/image/icon/heart-outline.svg';
-import Swal from "sweetalert2";
 import { AllContext } from "../context/AllContextProvider";
 const Product = ({ id, productName  }) => {
 
@@ -20,21 +18,9 @@ const Product = ({ id, productName  }) => {
   const isWishlist = Object.values(wishlistProducts);
   const wishlist = isWishlist.find(item => item.id === id);
 
-
-  const Alert = () => {
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Səbətə əlavə olundu",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  };
-
   const dispatch = useDispatch();
   const handleClick = () => {
     toast.success('Məhsul səbətə əlavə olundu');
-    // Alert()
     dispatch(
       AddCart({
         ...product

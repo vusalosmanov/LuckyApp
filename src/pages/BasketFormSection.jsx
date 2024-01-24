@@ -1,22 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 import Layout from './Layout';
 const BasketFormSection = () => {
-
-    const Alert = () => {
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Sifarişiniz təsdiqləndi",
-            showConfirmButton: false,
-            timer: 1500,
-        });
-    };
-
+    
     const handleClick = () => {
-        Alert()
+        toast.success('Məhsul səbətə əlavə olundu');
     }
 
     const cartObject = useSelector((state) => state.user.cart);

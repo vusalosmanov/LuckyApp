@@ -31,7 +31,7 @@ function Layout({ children }) {
             <main>
                 {children}
             </main>
-            {/* <ToastContainer position="bottom-right" theme="colored" autoClose={3000} /> */}
+            <ToastContainer position="bottom-right" theme="colored" autoClose={3000} />
             <Footer />
         </>
     );

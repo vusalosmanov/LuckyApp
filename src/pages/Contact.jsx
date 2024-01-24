@@ -4,7 +4,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import Layout from './Layout';
-
+import PageTitle from "../components/PageTitle";
 const Contact = () => {
     return (
         <>
@@ -16,9 +16,7 @@ const Contact = () => {
                             <h3 className='mb-[10px]  text-center  capitalize text-[26px]'>əlaqə</h3>
                             <div className="w-[40px]  h-[5px] rounded-lg bg-[#106853] "></div>
                             <div className='flex items-center flex-row py-[15px] w-full justify-center  gap-1' >
-                                <Link to='/'>Ana səhifə</Link>/
-                                <Link to='/contact'>Əlaqə</Link>
-
+                            <PageTitle title='Əlaqə' />
                             </div>
                         </div>
 

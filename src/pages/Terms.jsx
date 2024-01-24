@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TermLogo from '../assets/image/article/img-1.png'
 import Layout from "./Layout";
+import PageTitle from "../components/PageTitle";
 const Terms = () => {
   return (
     <>
@@ -12,8 +13,7 @@ const Terms = () => {
             <div className="w-[40px] h-[5px] bg-[#106853] rounded-lg mt-[px] "></div>
           </div>
           <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex mt-[20px] justify-center items-center cursor-pointer">
-            <Link to="/">Ana Seyife /</Link>
-            <span>Çatdırılma</span>
+            <PageTitle title='Çatdırılma'/>
           </div>
         </section>
         <section className="mt-[80px] mb-[80px]">

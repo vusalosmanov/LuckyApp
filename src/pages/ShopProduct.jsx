@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AddCart, DecreaseCart, RemoveFromCart } from '../redux/cartSystem';
 import { useDispatch } from 'react-redux';
-import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 import Layout from './Layout';
 const ShopProduct = () => {
     const cartObject = useSelector((state) => state.user.cart);
@@ -28,7 +28,7 @@ const ShopProduct = () => {
     };
 
     const handleRemoveFromCart = (productId) => {
-        RemoveAlert()
+        toast.success('Məhsul silindi');
         dispatch(RemoveFromCart({ id: productId }));
     };
 
@@ -49,24 +49,6 @@ const ShopProduct = () => {
     }, [sumPrice, minOrder, alert])
 
 
-    const Alert = () => {
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Sifarişiniz təsdiqləndi",
-            showConfirmButton: false,
-            timer: 1500,
-        });
-    };
-    const RemoveAlert = () => {
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Məhsul silindi",
-            showConfirmButton: false,
-            timer: 1500,
-        });
-    };
 
     const orderHandleClick = () => {
         if (sumPrice === 0) {
@@ -76,7 +58,6 @@ const ShopProduct = () => {
             setAlert(true);
             setAlertText(`Sifarişi təstiqləmək üçün minimum ${minOrder} Azn olmalıdır.`);
         } else {
-            Alert()
             setAlert(false);
             setOrderLinkPath('/shopproduct/order');
 

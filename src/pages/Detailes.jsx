@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { AddCart } from '../redux/cartSystem';
 import { useDispatch } from 'react-redux';
 import basketIcon from '../assets/image/icon/cart.svg';
-import Swal from 'sweetalert2';
+import { toast } from 'react-toastify';
 import { AllContext } from "../components/context/AllContextProvider";
 import SimiliarProducts from '../components/product/SimiliarProducts';
 import Layout from './Layout';
@@ -44,19 +44,10 @@ const Detailes = () => {
         setQuantity(parseInt(e.target.value))
     }
 
-    const Alert = () => {
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Səbətə əlavə olundu",
-            showConfirmButton: false,
-            timer: 1500,
-        });
-    };
 
     const handleClick = (e) => {
         e.preventDefault();
-        Alert();
+        toast.success('Məhsul səbətə əlavə olundu');
         dispatch(
             AddCart({
                 ...product,
