@@ -1,7 +1,8 @@
 import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 import { AddCart, AddToWishlist, RemoveFromWishlist } from "../../redux/cartSystem";
 import heartIconFilled from '../../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../../assets/image/icon/heart-outline.svg';
@@ -32,7 +33,8 @@ const Product = ({ id, productName  }) => {
 
   const dispatch = useDispatch();
   const handleClick = () => {
-    Alert()
+    toast.success('Məhsul səbətə əlavə olundu');
+    // Alert()
     dispatch(
       AddCart({
         ...product

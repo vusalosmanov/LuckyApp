@@ -1,9 +1,12 @@
 import React from "react";
 import RegisterSection from "../components/account/RegisterSecrion";
+import Layout from "./Layout";
 const Register = () => {
   return (
     <>
-      <RegisterSection/>
+      <Layout>  
+        <RegisterSection />
+      </Layout>
     </>
   );
 };

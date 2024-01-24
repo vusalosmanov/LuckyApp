@@ -47,7 +47,7 @@ const Header = () => {
           <div className="max-w-[1320px] w-full  mx-auto pr-[10px] pl-[10px] ">
             <div className="flex justify-between lg:justify-end flex-row items-center pt-[15px]  pb-[15px] w-[100%] ">
               <div className="relative  lg:hidden">
-                <Link to="">
+                <Link to="/">
                   <img
                     src={logo}
                     alt=""
@@ -76,7 +76,7 @@ const Header = () => {
           <div className="max-w-[1320px] w-full  mx-auto  pr-[10px] pl-[10px]">
             <div className="flex lg:justify-between items-center py-[15px] justify-center">
               <div className="relative lg:block hidden">
-                <Link to="">
+                <Link to="/">
                   <img
                     src={logo}
                     alt=""

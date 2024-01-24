@@ -23,7 +23,6 @@ function App() {
   }, [location])
   return (
     <>
-      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -44,7 +43,6 @@ function App() {
         <Route path="/return" element={<Return />} />
         <Route path="*" element={<Navigate to='/404' />} />
       </Routes>
-      <Footer />
     </>
   );
 }

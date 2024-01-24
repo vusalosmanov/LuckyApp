@@ -5,6 +5,7 @@ import TopFilter from "../components/productFilter/TopFilter";
 import ProductCart from "../components/product/ProductCart";
 import { AllContext } from "../components/context/AllContextProvider";
 import Pagination from "../components/pagination/Pagination";
+import Layout from "./Layout";
 
 function Products() {
 
@@ -113,46 +114,48 @@ function Products() {
 
   return (
     <>
-      <section className="bg-[#dfdfdf]">
-        <div className="max-w-[1320px] w-full mx-auto pl-[10px] pr-[10px] flex items-center flex-col justify-center  ">
-          <h1 className="mt-[20px] text-[35px] capitalize  ">{productsTitle}</h1>
-          <div className="w-[100%] flex flex-wrap  mt-[60px] relative">
-            {filterActive ? (
-              <div className={`flex items-start flex-row justify-center mb-[40px] w-[421px] px-[10px]`}>
-                <LeftFilter products={products} category={category} subCategoryFilterActive={subCategoryFilterActive} setProducts={setProducts} />
-              </div>
-            ) : null}
-            <div className="flex items-start flex-col  mb-[40px] px-[10px] lg:max-w-[875px] w-full flex-wrap ">
-              <div className="inner flex  items-center flex-col justify-center w-[100%]">
-                <div className="product-row  flex flex-wrap justify-center w-full ">
-                  {filterActive ? (
-                    <TopFilter changeProductsPerPage={changeProductsPerPage} setPriceSortValue={setPriceSortValue} />
-                  ) : null}
-                  {
-                    products.length > 0 ? (
-                      <>
-                        <div className="lg:flex flex-wrap  gap-y-[5px] gap-x-[3px] w-full max-w-[875px]  mb-[40px]  "> 
-                          {currentRecord.map((product) => (
-                            <ProductCart
-                              productName={product.name}
-                            />
-                          ))}
+      <Layout>
+        <section className="bg-[#dfdfdf]">
+          <div className="max-w-[1320px] w-full mx-auto pl-[10px] pr-[10px] flex items-center flex-col justify-center  ">
+            <h1 className="mt-[20px] text-[35px] capitalize  ">{productsTitle}</h1>
+            <div className="w-[100%] flex flex-wrap  mt-[60px] relative">
+              {filterActive ? (
+                <div className={`flex items-start flex-row justify-center mb-[40px] w-[421px] px-[10px]`}>
+                  <LeftFilter products={products} category={category} subCategoryFilterActive={subCategoryFilterActive} setProducts={setProducts} />
+                </div>
+              ) : null}
+              <div className="flex items-start flex-col  mb-[40px] px-[10px] lg:max-w-[875px] w-full flex-wrap ">
+                <div className="inner flex  items-center flex-col justify-center w-[100%]">
+                  <div className="product-row  flex flex-wrap justify-center w-full ">
+                    {filterActive ? (
+                      <TopFilter changeProductsPerPage={changeProductsPerPage} setPriceSortValue={setPriceSortValue} />
+                    ) : null}
+                    {
+                      products.length > 0 ? (
+                        <>
+                          <div className="lg:flex flex-wrap  gap-y-[5px] gap-x-[3px] w-full max-w-[875px]  mb-[40px]  ">
+                            {currentRecord.map((product) => (
+                              <ProductCart
+                                productName={product.name}
+                              />
+                            ))}
+                          </div>
+                        </>
+                      ) : (
+                        <div className="flex  flex-col  justify-center items-center ">
+                          <h1 className="mb-[55px]  capitalize  text-center text-[2.5rem]">Məhsul Tapılmadı</h1>
                         </div>
-                      </>
-                    ) : (
-                      <div className="flex  flex-col  justify-center items-center ">
-                        <h1 className="mb-[55px]  capitalize  text-center text-[2.5rem]">Məhsul Tapılmadı</h1>
-                      </div>
-                    )
-                  }
+                      )
+                    }
 
-                  {products.length > recordsPerPage && <Pagination totalProducts={products.length} recordsPerPage={recordsPerPage} currentPage={currentPage} onPageChange={handlePageChange} prev={handlePrevPage} next={handleNextPage} />}
+                    {products.length > recordsPerPage && <Pagination totalProducts={products.length} recordsPerPage={recordsPerPage} currentPage={currentPage} onPageChange={handlePageChange} prev={handlePrevPage} next={handleNextPage} />}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Layout>
     </>
   );
 }
