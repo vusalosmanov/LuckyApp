@@ -1,45 +1,62 @@
-import { Navigate, Route, Routes, useLocation  } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
 import Terms from "./pages/Terms";
 import Return from "./pages/Return";
 import Register from "./pages/Register";
-import ShopProduct from "./pages/ShopProduct"
+import ShopProduct from "./pages/ShopProduct";
 import Wishlist from "./pages/Wishlist";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import BasketFormSection from "./pages/BasketFormSection";
 import Login from "./pages/Login";
 import Detailes from "./pages/Detailes";
 import Contact from "./pages/Contact";
-
+import Loading from "./components/loading/Loading";
+// import { ClipLoader } from "react-spinners";
 
 function App() {
   const location = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [location])
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
   return (
     <>
+      <Loading loading={loading}/>
+      {/* {loading && <ClipLoader  loading={loading}  size={150} /> } */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/shopproduct" element={<ShopProduct/>} />
-        <Route path="/shopproduct/:order" element={<BasketFormSection/>} />
-        <Route path="/wishlist" element={<Wishlist/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/shopproduct" element={<ShopProduct />} />
+        <Route path="/shopproduct/:order" element={<BasketFormSection />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/terms" element={<Terms />} />
-        <Route path="/products" element={<Products/>} />
-        <Route path="/products/:categoryName" element={<Products/>} />
-        <Route path="/products/:categoryName/:subCategoryName" element={<Products/>} />
-        <Route path="/products/:categoryName/:subCategoryName/:productName" element={<Detailes/>} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:categoryName" element={<Products />} />
+        <Route
+          path="/products/:categoryName/:subCategoryName"
+          element={<Products />}
+        />
+        <Route
+          path="/products/:categoryName/:subCategoryName/:productName"
+          element={<Detailes />}
+        />
         <Route path="/products/new" element={<Products />} />
         <Route path="/products/discounts" element={<Products />} />
         <Route path="/products/best-sellers" element={<Products />} />
         <Route path="/return" element={<Return />} />
-        <Route path="*" element={<Navigate to='/404' />} />
+        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </>
   );
