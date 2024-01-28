@@ -15,9 +15,9 @@ function SubCategoryItem({ categoryID, subcategoryID, cover }) {
       <div className="subcategory-item">
         <Link
           to={`/products/${encodeURIComponent(category?.name)}/${encodeURIComponent(subcategory?.name)}`}>
-            <img src={cover} alt="category-cover" className=" h-[100%] object-contain max-w-[400px] " />
+            <img src={cover} alt="category-cover" />
           <div className="hover">
-            <span className="text-[black] capitalize absolute top-[15px] left-[15px] font-[600]">{subcategory?.name}</span>
+            <span className="name capitalize font-[600] ">{subcategory?.name}</span>
           </div>
         </Link>
       </div>

@@ -5,6 +5,7 @@
   list-style: none;
   text-decoration: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -47,7 +48,6 @@
   display: flex;
   justify-content: space-between;
 }
-
 .page-scroll-button {
   position: fixed;
   bottom: 15px;
@@ -59,10 +59,14 @@
   border: 1px solid #fff;
   color: #fff;
   z-index: 9999;
-  &:hover {
-    background-color: #106853;
-  }
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.page-scroll-button:hover {
+  background-color: #106853;
+}
+
 
 .loading-container {
   display: flex;
@@ -76,6 +80,7 @@
   background-color: rgba(229, 229, 229, 0);
   z-index: 1000;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
