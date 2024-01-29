@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -6,27 +6,39 @@ import { AddCart, AddToWishlist, RemoveFromWishlist } from "../../redux/cartSyst
 import heartIconFilled from '../../assets/image/icon/heart-filled.svg';
 import heartIconOutline from '../../assets/image/icon/heart-outline.svg';
 import { AllContext } from "../context/AllContextProvider";
-const Product = ({ id, productName  }) => {
+const Product = ({ id, productName }) => {
 
-  const { categoryArray, subcategoryArray , productArray } = useContext(AllContext)
+  const { categoryArray, subcategoryArray, productArray } = useContext(AllContext)
   const product = productArray.find((product) => product.name === productName);
   const category = categoryArray.find((c) => c.id === product.categoryID)
   const subcategory = subcategoryArray.find((c) => c.id === product.subcategoryID)
 
-  
+
   const wishlistProducts = useSelector((state) => state.user.wishlist);
   const isWishlist = Object.values(wishlistProducts);
   const wishlist = isWishlist.find(item => item.id === id);
 
   const dispatch = useDispatch();
+  
   const handleClick = () => {
     toast.success('Məhsul səbətə əlavə olundu');
-    dispatch(
-      AddCart({
-        ...product
-      })
-    );
+
+    dispatch(AddCart({
+      ...product
+    }));
+
+    const existingCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const itemInCart = existingCartItems.find((item) => item.id === id);
+
+    if (itemInCart) {
+      itemInCart.quantity += 1;
+    } else {
+      existingCartItems.push({ ...product, quantity: 1 });
+    }
+
+    localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
   };
+
 
   const iconHandleClick = () => {
     if (wishlist) {

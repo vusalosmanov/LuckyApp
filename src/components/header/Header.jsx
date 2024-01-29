@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/image/logo/logo-header.svg";
+import React from "react";
 import BottomNav from "./BottomNav";
 import MiddleNav from "./MiddleNav";
 import TopNav from "./TopNav";

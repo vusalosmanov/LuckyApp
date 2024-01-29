@@ -1,30 +1,10 @@
-import React from 'react'
-import { AllContext } from '../context/AllContextProvider';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React , { useState} from 'react'
 import { BsChevronRight } from "react-icons/bs";
 import category from "../../assets/image/icon/category.svg";
 import CategoryMenu from '../menuCategory/CategoryMenu';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+
 const BottomNav = () => {
-
-    const { subcategoryArray } = useContext(AllContext);
-
-    const [subcategories, setSubcategories] = useState([]);
-
-    useEffect(() => {
-        let filteredSubcategories = [];
-        if (category) {
-            filteredSubcategories = subcategoryArray.filter(
-                (item) => item.categoryID === category.id
-            );
-            filteredSubcategories = filteredSubcategories.sort((a, b) =>
-                a.name.localeCompare(b.name)
-            );
-        }
-        setSubcategories([...filteredSubcategories]);
-    }, [category, subcategoryArray]);
 
     const [isDropdownVisible, setIsDropdownVisible] = useState(false)
 
@@ -63,7 +43,7 @@ const BottomNav = () => {
                         </li>
                         <li className="text-[18px] mr-[50px]">
                             <Link to="/products/best-sellers" className="anima relative py-[5px]">
-                                Ən çox satılanlar{" "}
+                                Ən çox satılanlar
                             </Link>
                         </li>
                         <li className="text-[18px] mr-[50px] milidrop">
