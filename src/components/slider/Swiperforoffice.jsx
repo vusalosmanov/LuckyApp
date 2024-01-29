@@ -1,13 +1,13 @@
 import React from "react";
-import { Navigation, Mousewheel, Keyboard, Autoplay, Pagination,} from "swiper/modules";
-import ProductCart from "../product/ProductCart";
+import { Navigation, Mousewheel, Keyboard, Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import { productArray } from "../data/ProductData";
-const Swipers = () => {
+import ProductCart from "../product/ProductCart";
 
+const Swipers = () => {
   return (
     <>
       <Swiper
@@ -16,9 +16,9 @@ const Swipers = () => {
         keyboard={true}
         autoplay={true}
         modules={[Navigation, Mousewheel, Keyboard, Autoplay, Pagination]}
-        className="w-full "
+        className="w-full"
         breakpoints={{
-          640:{
+          640: {
             slidesPerView: 2,
           },
           1024: {
@@ -30,13 +30,12 @@ const Swipers = () => {
           productArray
             .filter((item) => item.bestSeller === true && item.categoryID === 1)
             .map((product) => (
-              <SwiperSlide>
+              <SwiperSlide key={product.id}>
                 <ProductCart
                   id={product.id}
                   productName={product.name}
                   price={product.price}
                   imageurl={product.img}
-                  key={product.id}
                   isNew={product.isNew}
                 />
               </SwiperSlide>

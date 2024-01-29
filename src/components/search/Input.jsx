@@ -24,12 +24,6 @@ const Input = () => {
   };
   return (
     <form action="" className="w-[650px] relative">
-      <label
-        htmlFor="search"
-        className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-      >
-        Search
-      </label>
       <div className="relative">
         <div className="absolute inset-y-0 right-0 flex items-center pr-[5px] pointer-events-none">
           <svg

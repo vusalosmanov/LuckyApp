@@ -67,7 +67,6 @@
   background-color: #106853;
 }
 
-
 .loading-container {
   display: flex;
   align-items: center;
@@ -79,6 +78,18 @@
   width: 100%;
   background-color: rgba(229, 229, 229, 0);
   z-index: 1000;
+}
+/* Add this style to make the navigation bar sticky */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Add this style to hide the dropdown when the navigation bar is not sticky */
+.sticky-nav .dropdown {
+  display: none;
 }
 
 @tailwind base;
