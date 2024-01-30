@@ -56,7 +56,7 @@ function App() {
         <Route path="/products/discounts" element={<Products />} />
         <Route path="/products/best-sellers" element={<Products />} />
         <Route path="/return" element={<Return />} />
-        {/* <Route path="*" element={<Navigate to="/404" />} /> */}
+        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </>
   );
