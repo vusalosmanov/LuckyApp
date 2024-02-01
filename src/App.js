@@ -5,7 +5,6 @@ import Products from "./pages/Products";
 import Terms from "./pages/Terms";
 import Return from "./pages/Return";
 import Register from "./pages/Register";
-import ShopProduct from "./pages/ShopProduct";
 import Wishlist from "./pages/Wishlist";
 import { useEffect, useState } from "react";
 import BasketFormSection from "./pages/BasketFormSection";
@@ -13,7 +12,7 @@ import Login from "./pages/Login";
 import Detailes from "./pages/Detailes";
 import Contact from "./pages/Contact";
 import Loading from "./components/loading/Loading";
-// import { ClipLoader } from "react-spinners";
+import Shoping from "./pages/Shoping";
 
 function App() {
   const location = useLocation();
@@ -30,15 +29,14 @@ function App() {
   }, []);
   return (
     <>
-      <Loading loading={loading} />
-      {/* {loading && <ClipLoader  loading={loading}  size={150} /> } */}
+      {/* <Loading loading={loading} /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/shopproduct" element={<ShopProduct />} />
+        <Route path="/shoping" element={<Shoping />} />
         <Route path="/shopproduct/:order" element={<BasketFormSection />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/terms" element={<Terms />} />

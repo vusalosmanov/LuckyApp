@@ -124,7 +124,6 @@ const LeftFilter = ({products, category, subCategoryFilterActive , setProducts }
             <div className="range-inputs">
               <input type="range" value={rangeMin} onChange={(e) => { setRangeMin(e.target.value) }} onBlur={(e) => { setRangeMin(e.target.value) }} min={0} max={2000} step={1} />
               <input type="range" value={rangeMax} onChange={(e) => { setRangeMax(e.target.value) }} onBlur={(e) => { setRangeMax(e.target.value) }} min={0} max={2000} step={1} />
-
             </div>
             <div className='result-inputs'>
               <div className="item">

@@ -6,7 +6,7 @@ import { AddCart, DecreaseCart, RemoveFromCart } from '../redux/cartSystem';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import Layout from './Layout';
-const ShopProduct = () => {
+const Shoping = () => {
     const cartObject = useSelector((state) => state.user.cart);
     const cart = Object.values(cartObject);
 
@@ -159,4 +159,4 @@ const ShopProduct = () => {
     )
 }
 
-export default ShopProduct
+export default Shoping

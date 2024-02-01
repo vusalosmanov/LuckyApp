@@ -9,6 +9,13 @@
   transition: width 0.3s ease-in-out;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.milidrop:hover .mindrop {
+  display: block;
+}
 .anima:hover::after {
   width: 100%;
   transition: width 0.3s ease-in-out;
@@ -23,8 +30,7 @@
 }
 
 .un {
-  background: 
-    linear-gradient(to right, #1068540c, #1068540c),
+  background: linear-gradient(to right, #1068540c, #1068540c),
     linear-gradient(to right, #106853, #106853);
   background-size: 100% 0.1em, 0 0.1em;
   background-position: 100% 100%, 0 100%;
@@ -35,8 +41,8 @@
 .un:hover {
   background-size: 0 0.1em, 100% 0.1em;
 }
-.gridd{
+.gridd {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 10px;
 }
