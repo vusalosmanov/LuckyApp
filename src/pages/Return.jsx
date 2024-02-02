@@ -7,18 +7,18 @@ const Return = () => {
     <>
       <Layout>
         <section>
-          <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex justify-center items-center flex-col mt-[50px] text-[32px]">
+          <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex justify-center items-center flex-col mt-[50px] lg:text-[32px] text-[24px]">
             <h3>Geri Qaytarılma Və Dəyişdirilmə</h3>
             <div className="w-[40px] h-[5px] bg-[#106853] rounded-lg mt-[10px] "></div>
           </div>
-          <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex mt-[20px] justify-center items-center cursor-pointer">
-            <PageTitle title='Geri Qaytarılma Və Dəyişdirilmə'/>
+          <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex mt-[20px] justify-center items-center cursor-pointer">
+            <PageTitle title='Geri Qaytarılma Və Dəyişdirilmə' />
           </div>
         </section>
         <section className="mt-[80px] mb-[80px]">
-          <div className="w-[1320px] mx-auto pr-[10px] pl-[10px] flex justify-center items-center">
-            <div className="flex justify-center items-center w-[100%]">
-              <div className="w-[50%]">
+          <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex justify-center items-center ">
+            <div className="flg:flex lg:justify-center lg:items-center w-full">
+              <div className="la:w-[50%] w-full">
                 <div className="text-[18px] gap-y-[10px]  leading-8 ">
                   <div className="content">
                     <p>
@@ -53,9 +53,9 @@ const Return = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[50%] flex justify-center">
+              <div className="lg:w-[50%] flex justify-center w-full">
                 <div className="w-[100%] max-w-[500px]">
-                  <img src={ReturnLogo} alt="" />
+                  <img src={ReturnLogo} alt="logo" className="w-[100%] object-contain"  />
                 </div>
               </div>
             </div>

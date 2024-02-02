@@ -7,7 +7,7 @@ import { categoryArray } from "../data/CategoryData";
 const Footer = () => {
   return (
     <div className="bg-[#f2f2f2]">
-      <div className=" flex flex-col gap-[12px] mt-[20px] items-center justify-center lg:hidden  ">
+      <div className=" flex flex-col gap-[12px]  items-center justify-center lg:hidden  ">
         <div className="logo w-28  h-28 flex items-center ">
           <img src={logo} alt="" />
         </div>

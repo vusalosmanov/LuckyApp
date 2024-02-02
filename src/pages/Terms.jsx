@@ -7,7 +7,7 @@ const Terms = () => {
     <>
       <Layout>
         <section>
-          <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex justify-center items-center flex-col mt-[50px] text-[32px]">
+          <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex justify-center items-center flex-col mt-[50px] lg:text-[32px] text-[24px]">
             <h3>Çatdırılma</h3>
             <div className="w-[40px] h-[5px] bg-[#106853] rounded-lg mt-[px] "></div>
           </div>

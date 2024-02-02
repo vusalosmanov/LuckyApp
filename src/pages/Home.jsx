@@ -24,7 +24,7 @@ const Home = () => {
               <div className="w-[35px] h-[4px] bg-[#106853] absolute left-[50%] bottom-[-18px] rounded"></div>
             </div>
           </div>
-          <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px]">
+          <div className="max-w-[1320px]  w-full mx-auto pr-[10px] pl-[10px]">
             <Swiperforoffice />
           </div>
         </section>

@@ -16,7 +16,7 @@ const About = () => {
           </div>
         </section>
         <section className="mt-[80px] mb-[80px]">
-          <div className="max-w-[1320px] w-full mx-auto lg:px-[10px] px-[20px]  flex justify-center items-center">
+          <div className="max-w-[1320px] w-full mx-auto lg:px-[10px] px-[20px]  flex justify-center items-center ">
             <div className="lg:flex lg:justify-center lg:items-center w-full ">
               <div className="lg:w-[50%] w-full">
                 <div className="text-[18px] gap-y-[10px]  leading-8 ">

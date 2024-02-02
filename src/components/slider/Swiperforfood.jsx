@@ -36,7 +36,7 @@ const Swipers = () => {
           productArray
             .filter((item) => item.bestSeller === true && item.categoryID === 2)
             .map((product) => (
-              <SwiperSlide>
+              <SwiperSlide key={product.id} className="flex justify-center items-center" >
                 <ProductCart
                   id={product.id}
                   productName={product.name}

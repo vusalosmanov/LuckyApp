@@ -8,19 +8,37 @@
   scroll-behavior: smooth;
 }
 
+/* Varsayılan değerler */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #fc8410;
+  background-color: hsl(29, 98%, 53%);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background-color: #fff;
 }
+
+/* Responsive Tasarım */
+@media screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Daha fazla media query ekleyebilirsiniz... */
 
 .header {
   width: 100%;
