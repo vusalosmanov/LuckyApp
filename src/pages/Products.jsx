@@ -38,7 +38,7 @@ function Products() {
       setProductsTitle('Mehsullar');
       updatedFilteredProducts = [...allProducts];
     } else if (location.pathname === '/products/new') {
-      setFilterActive(true);
+      setFilterActive(false);
       setProductsTitle('new product');
       updatedFilteredProducts = allProducts.filter((product) => product.isNew);
     } else if (location.pathname === '/products/discounts') {
@@ -118,26 +118,27 @@ function Products() {
         <section className="bg-[#dfdfdf]">
           <div className="max-w-[1320px] w-full mx-auto pl-[10px] pr-[10px] flex items-center flex-col justify-center  ">
             <h1 className="mt-[20px] text-[35px] capitalize  ">{productsTitle}</h1>
-            <div className="w-[100%] flex flex-wrap  mt-[60px] relative">
+            <div className="w-[100%] flex mt-[40px] relative justify-center max-w-[1320px] ">
               {filterActive ? (
-                <div className={`flex items-start flex-row justify-center mb-[40px] w-[421px] px-[10px]`}>
+                <div className={`flex items-start flex-row justify-center mb-[40px] max-w-[421px] w-full px-[10px]`}>
                   <LeftFilter products={products} category={category} subCategoryFilterActive={subCategoryFilterActive} setProducts={setProducts} />
                 </div>
               ) : null}
-              <div className="flex items-start flex-col  mb-[40px] px-[10px] lg:max-w-[875px] w-full flex-wrap ">
-                <div className="inner flex  items-center flex-col justify-center w-[100%]">
-                  <div className="product-row  flex flex-wrap justify-center w-full ">
+              <div className="flex items-start flex-col  mb-[40px] px-[10px]  ">
+                <div className="inner flex  items-center flex-col  w-[100%] justify-center  ">
+                  <div className="product-row ">
                     {filterActive ? (
                       <TopFilter changeProductsPerPage={changeProductsPerPage} setPriceSortValue={setPriceSortValue} />
                     ) : null}
                     {
                       products.length > 0 ? (
                         <>
-                          <div className="lg:flex flex-wrap  gap-y-[5px] gap-x-[3px] w-full max-w-[875px]  mb-[40px]  ">
+                          <div className="flex flex-wrap  gap-y-[5px] gap-x-[3px] w-full max-w-[875px]  lg:justify-start justify-center  mb-[40px]  ">
                             {currentRecord.map((product) => (
                               <ProductCart
                                 productName={product.name}
                               />
+
                             ))}
                           </div>
                         </>
@@ -155,7 +156,7 @@ function Products() {
             </div>
           </div>
         </section>
-      </Layout>
+      </Layout >
     </>
   );
 }

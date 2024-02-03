@@ -56,7 +56,7 @@ const Product = ({ id, productName }) => {
     <>
       <div className="max-w-[280px] w-[100%] bg-[#fff] flex  justify-center  items-center  flex-col py-[7px] px-[15px] pb-[20px]">
         <div className=" relative min-h-[40px] w-[100%]">
-          {product.isNew && <span className=" bg-[#fc8410]  absolute top-[50%]  left-0 py-[5px] px-[14px] text-[13px] font-semibold text-[#fff]  rounded-[8px]  ">Yeni</span>}
+          {product.isNew && <span className=" bg-[#fc8410]  absolute top-[50%]  left-0 py-[5px] px-[14px] text-[13px] font-semibold text-[#fff]  rounded-[8px] z-[9] ">Yeni</span>}
           <button className='icon-button flex justify-end w-[100%]' onClick={iconHandleClick} >
             <img
               src={wishlist ? heartIconFilled : heartIconOutline}
