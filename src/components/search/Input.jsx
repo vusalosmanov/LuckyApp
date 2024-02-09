@@ -53,7 +53,7 @@ const Input = () => {
         </div>
         <div
           style={borderedDivStyle}
-          className="w-full  gap-[50px] absolute z-[99999999999] bg-white hidden ">
+          className="w-full  gap-[50px] absolute z-[99999999999] bg-white hidden rounded-t-[5px]  ">
           {searchInputValues.map((product) => (
             <SearchCart
               id={product.id}
