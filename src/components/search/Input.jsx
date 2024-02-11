@@ -49,6 +49,7 @@ const Input = () => {
             name="search"
             placeholder="Axtar"
             onChange={searchData}
+            autoComplete="off"
           />
         </div>
         <div
