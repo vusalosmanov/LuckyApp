@@ -77,7 +77,7 @@ const BasketFormSection = () => {
                                                         <span className="value">{totalPrice.toFixed(2)} Azn</span>
                                                     </div>
                                                 </div>
-                                                <div className='flex flex-row  justify-between  items-center shadow-lg mb-[40px] min-h-[80px] px-[30px] py-[20px] w-[100%] '>
+                                                <div className='flex lg:flex-row flex-col  justify-between  items-center shadow-lg mb-[40px] min-h-[80px] px-[30px] py-[20px] w-[100%] '>
                                                     <label htmlFor="radio-1" className=' cursor-pointer'>
                                                         Nağd <input className=' appearance-none bg-white bg-center bg-no-repeat bg-contain border border-solid border-rgba-0-0-0-25 h-4 mt-1 print-exact align-top w-4 rounded-[50%]' name='payment' type="radio" id='radio-1' />
                                                     </label>
@@ -95,7 +95,7 @@ const BasketFormSection = () => {
                                 </form>
                             ) : (<>
                                 <h3 className="mb-[55px]  relative text-center   capitalize text-[1.75rem] ">Sifarişi təsdiqləmək mümkün deyil</h3>
-                                <Link className='flex items-center bg-[#fc8410] rounded-[5px] text-white flex-row text-[20px] font-semibold justify-center max-w-[250px] px-[20px] py-[15px] text-center w-full  hover:bg-[#106853]' to='/shopproduct'><span>Səbətə get</span></Link>
+                                <Link className='flex items-center bg-[#fc8410] rounded-[5px] text-white flex-row text-[20px] font-semibold justify-center max-w-[250px] px-[20px] py-[15px] text-center w-full  hover:bg-[#106853]' to='/'><span>Ana Səhifə</span></Link>
                             </>)
                         }
                     </div>

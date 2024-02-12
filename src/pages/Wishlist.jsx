@@ -16,7 +16,7 @@ function Wishlist() {
                     <div className="w-[40px] mt-[10px] h-[5px] rounded-lg bg-[#106853] "></div>
                 </div>
                 {wishlist.length > 0 ? (
-                    <div className='lg:w-[1320px] w-full  my-0 mx-auto  pr-[10px] pl-[10px] mt-[20px] flex justify-start flex-wrap mb-[40px] '>
+                    <div className='lg:max-w-[1320px] w-full  my-0 mx-auto  pr-[10px] pl-[10px] mt-[20px] flex flex-wrap mb-[40px]   lg:justify-evenly  justify-center '>
                         {wishlist.map(product => (
                             <div key={product.id}>
                                 <ProductCart
