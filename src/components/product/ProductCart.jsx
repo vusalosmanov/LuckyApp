@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, json } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { AddCart, AddToWishlist, RemoveFromWishlist } from "../../redux/cartSystem";
@@ -19,7 +19,7 @@ const Product = ({ id, productName }) => {
   const wishlist = isWishlist.find(item => item.id === id);
 
   const dispatch = useDispatch();
-  
+
   const handleClick = () => {
     toast.success('Məhsul səbətə əlavə olundu');
 
@@ -38,7 +38,6 @@ const Product = ({ id, productName }) => {
 
     localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
   };
-
 
   const iconHandleClick = () => {
     if (wishlist) {

@@ -213,7 +213,7 @@ export const productArray = [
     {
         id: 5,
         categoryID: 1,
-        subcategoryID: 2,
+        subcategoryID: 2,   
         name: 'Spirallı dəftər 96v (A5)',
         price: 2.10,
         img: officeProduct_2_1,

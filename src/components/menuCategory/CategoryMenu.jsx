@@ -27,7 +27,7 @@ const CategoryMenu = ({ isDropdownVisible, closeCatMenu }) => {
                                 onMouseLeave={() => { closeSubMenu() }}
                             >
                                 <Link
-                                    to={`/products/${encodeURIComponent(category.name)}`}
+                                    to={`/products/${encodeURIComponent(category.name)}`}   
                                     onClick={() => closeCatMenu()}
                                     className="flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans"
                                 >

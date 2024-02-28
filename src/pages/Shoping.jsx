@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import Layout from './Layout';
 const Shoping = () => {
     const cartObject = useSelector((state) => state.user.cart);
+
     const cart = Object.values(cartObject);
 
     const dispatch = useDispatch();
