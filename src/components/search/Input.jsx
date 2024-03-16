@@ -23,7 +23,7 @@ const Input = () => {
     display: searchInputValues.length === 0 ? "none" : "block",
   };
   return (
-    <form action="" className="w-[650px] relative">
+    <form className="w-[650px] relative">
       <div className="relative">
         <div className="absolute inset-y-0 right-0 flex items-center pr-[5px] pointer-events-none">
           <svg

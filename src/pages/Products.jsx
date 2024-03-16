@@ -118,7 +118,7 @@ function Products() {
         <section className="bg-[#dfdfdf]">
           <div className="max-w-[1320px] w-full mx-auto pl-[10px] pr-[10px] flex items-center flex-col justify-center  ">
             <h1 className="mt-[20px] text-[35px] capitalize  ">{productsTitle}</h1>
-            <div className="w-[100%] flex mt-[40px] relative justify-center max-w-[1320px] ">
+            <div className="w-[100%] flex mt-[40px] relative justify-center max-w-[1320px]  lg:flex-row flex-col">
               {filterActive ? (
                 <div className={`flex items-start flex-row justify-center mb-[40px] max-w-[421px] w-full px-[10px]`}>
                   <LeftFilter products={products} category={category} subCategoryFilterActive={subCategoryFilterActive} setProducts={setProducts} />
@@ -128,7 +128,7 @@ function Products() {
                 <div className="inner flex  items-center flex-col  w-[100%] justify-center  ">
                   <div className="product-row ">
                     {filterActive ? (
-                      <TopFilter changeProductsPerPage={changeProductsPerPage} setPriceSortValue={setPriceSortValue} />
+                        <TopFilter changeProductsPerPage={changeProductsPerPage} setPriceSortValue={setPriceSortValue} />
                     ) : null}
                     {
                       products.length > 0 ? (

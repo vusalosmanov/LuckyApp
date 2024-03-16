@@ -48,3 +48,66 @@
 }
 @media only screen and (min-width: 330px), (max-width: 1024px) {
 }
+
+// Burger Menu scss
+
+.burger-menu {
+  width: 4em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+}
+
+.burger-bar {
+  width: 4em;
+  height: 0.5em;
+  background-color:white;
+  border-radius: 0.5em;
+}
+
+.menu {
+  width: 100%;
+  height: 600px;
+  background-color: #fc8410;
+  position: absolute;
+  top: 285px;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+}
+
+// sliding menu
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: inherit;
+}
+
+//  animation
+
+.burger-bar.clicked:nth-child(1) {
+  transform: rotate(45deg) translate(0.75em, 1.25em);
+  transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(2) {
+  transform: scale(0.1);
+  transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(3) {
+  transform: rotate(135deg) translate(-0.5em, 1em);
+  transition: ease-out 0.5s;
+}
+
+.burger-bar.unclicked {
+  transform: rotate(0) translate(0);
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}

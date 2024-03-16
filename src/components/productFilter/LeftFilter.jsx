@@ -112,10 +112,7 @@ const LeftFilter = ({ products, category, subCategoryFilterActive, setProducts }
         <button className="bg-[#fc8410] text-[18px] mb-[30px] p-[15px] w-[100%] cursor-pointer rounded-lg text-[#fff] hidden" onClick={toggleFilter}>
           <span>Filterle</span>
         </button>
-        <form
-          action=""
-          className="py-[35px] px-[30px] flex flex-col justify-center items-center w-[100%] shadow-lg"
-          onSubmit={handleSubmit}
+        <form className="py-[35px] px-[30px] flex flex-col justify-center items-center w-[100%] shadow-lg" onSubmit={handleSubmit}
         >
           <div className="w-[100%] h-[1px] bg-gray-400 "></div>
           <div className="price-filter mb-[50px] w-full">
