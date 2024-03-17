@@ -13,10 +13,8 @@ const MiddleNav = () => {
                         <Link to='/'>
                             <img src={logo} alt="logo" className='w-[100%]  object-contain max-w-[125px] ' />
                         </Link>
-                        <div className='hidden lg:block'>
-                            <div className='w-[100%] flex  flex-row justify-center  items-center '>
-                                <Input />
-                            </div>
+                        <div className='w-[100%] flex  flex-row justify-center items-center search'>
+                            <Input />
                         </div>
                         <div className='hidden lg:block'>
                             <GeneralIcon />

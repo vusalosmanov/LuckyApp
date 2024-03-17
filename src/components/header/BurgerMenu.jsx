@@ -31,10 +31,8 @@ const BurgerMenu = () => {
             </div>
 
             <div className={menu_class} >
-                <div className='max-w-[200px]'>
-                    {/* <Input/> */}
-                </div>
-                <div className='flex flex-col w-[100%] justify-center items-center text-center text-[white] my-[20px]'>
+                <div className='flex flex-col w-[100%] justify-center items-center text-center text-[white]  p-[30px]'>
+                    <Input />
                     <ul>
                         <li className="text-[18px] my-[20px]">
                             <Link to="/about" className="anima relative py-[5px]">
