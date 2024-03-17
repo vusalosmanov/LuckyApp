@@ -29,7 +29,7 @@ const SearchCart = ({ productName, imageurl, price, id }) => {
                     </div>
 
                     <div className="w-[50%]  text-left products_text flex justify-center items-center flex-col">
-                        <Link className="mb-[5px] min-h-[60px] px-[10px] flex justify-center items-center text-center">
+                        <Link className="mb-[5px] min-h-[60px] px-[10px] flex justify-center items-center text-center text-black">
                             <p>{productName}</p>
                         </Link>
                         <div className="flex items-center justify-center flex-row">

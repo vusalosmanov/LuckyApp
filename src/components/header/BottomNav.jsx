@@ -17,8 +17,8 @@ const BottomNav = () => {
     return (
         <>
             <nav className="flex  w-[100%] justify-start items-center ">
-                <div className="max-w-[550px] w-full dropdown  relative ">
-                    <div className="flex  items-center text-[#ffff] bg-[#106853]  cursor-pointer flex-row text-[20px]  justify-center min-h-[65px] w-[100%] tracking-wide" onMouseMove={openCatMenu} onMouseLeave={closeCatMenu}>
+                <div className="lg:max-w-[550px] w-full lg:dropdown  relative ">
+                    <div className="flex items-center text-[#ffff] bg-[#106853]  cursor-pointer flex-row text-[20px]  justify-center min-h-[65px] w-[100%] tracking-wide" onMouseMove={openCatMenu} onMouseLeave={closeCatMenu}>
                         <img src={category} alt="category" className='mr-[15px]' />
                         <Link to="">Kataqoriya</Link>
                     </div>
