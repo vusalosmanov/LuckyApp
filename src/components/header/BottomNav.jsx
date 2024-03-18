@@ -20,9 +20,9 @@ const BottomNav = () => {
                 <div className="lg:max-w-[550px] w-full lg:dropdown  relative ">
                     <div className="flex items-center text-[#ffff] bg-[#106853]  cursor-pointer flex-row text-[20px]  justify-center min-h-[65px] w-[100%] tracking-wide" onMouseMove={openCatMenu} onMouseLeave={closeCatMenu}>
                         <img src={category} alt="category" className='mr-[15px]' />
-                        <Link to="">Kataqoriya</Link>
+                        <Link to="">Kateqoriyalar</Link>
+                        <CategoryMenu openCatMenu={openCatMenu} isDropdownVisible={isDropdownVisible} closeCatMenu={closeCatMenu} />
                     </div>
-                    <CategoryMenu openCatMenu={openCatMenu} isDropdownVisible={isDropdownVisible} closeCatMenu={closeCatMenu} />
                 </div>
                 <div className='hidden lg:block'>
                     <div className="flex justify-center w-[100%] pl-[40px] ">

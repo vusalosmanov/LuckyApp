@@ -8,31 +8,31 @@ const CategoryMenu = ({ isDropdownVisible, closeCatMenu }) => {
     const { categoryArray } = useContext(AllContext);
     const [activeCategoryID, setActiveCategoryID] = useState(null);
 
-    const openSubMenu = (categoryId) => {
-        setActiveCategoryID(categoryId)
+    const toggleCategory = (categoryId) => {
+        if (activeCategoryID === categoryId) {
+            setActiveCategoryID(null);
+        } else {
+            setActiveCategoryID(categoryId);
+        }
     }
-    const closeSubMenu = () => {
-        setActiveCategoryID(null)
-    }
+    const openSubMenu = (categoryId) => setActiveCategoryID(categoryId)
+    const closeSubMenu = () => setActiveCategoryID(null)
     return (
         <>
-            <div className={`dropdown-menu absolute left-[150px] h-auto mt-[65px] z-[100] top-0 w-full max-w-[400px] ${isDropdownVisible ? ' ' : 'hidden'}`} >
-                <ul className="bg-white shadow flex flex-col items-start" >
+            <div className={`dropdown-menu absolute lg:left-[150px] h-auto mt-[65px] z-[100] top-0 w-full lg:max-w-[400px] ${isDropdownVisible ? ' ' : 'hidden'}`} >
+                <ul className="lg:bg-white bg-[#106853] shadow flex flex-col items-start" >
                     {categoryArray.length > 0
                         ? categoryArray.map((category) => (
-                            <li
-                                key={category.id}
-                                className="py-[4px] px-12 border-b-[1px] w-full flex onedrop un clas"
-                                onMouseEnter={() => openSubMenu(category.id)}
-                                onMouseLeave={() => { closeSubMenu() }}
-                            >
-                                <Link
-                                    to={`/products/${encodeURIComponent(category.name)}`}   
-                                    onClick={() => closeCatMenu()}
-                                    className="flex gap-2 items-center py-[10px] text-[18px] text-[#303030] font-montserrat font-sans"
-                                >
-                                    <img src={category.icon} alt="" className="w-[20px] h-[20px]" />
-                                    <span>{category.name}</span>
+                            <div key={category.id}
+                                className="py-[4px] lg:px-12 px-6  lg:border-b-[1px] w-full flex onedrop un clas"
+                                onMouseMove={() => openSubMenu(category.id)}
+                                onMouseLeave={() => { closeSubMenu(category.id) }}>
+                                <div className='text-[16px] lg:text-[#303030] text-[#fff] font-montserrat font-sans w-full flex justify-between flex-row capitalize'>
+                                    <Link to={`/products/${encodeURIComponent(category.name)}`} onClick={() => closeCatMenu()} className="flex gap-2 items-center py-[10px]  ">
+                                        <img src={category.icon} alt="" className=" lg:block hidden w-[20px] h-[20px]" />
+                                        <span>{category.name}</span>
+                                    </Link>
+                                    <button className='lg:hidden block' onClick={() => toggleCategory(category.id)}><i className={activeCategoryID === category.id ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-right'}></i></button>
                                     <div
                                         className={`${activeCategoryID === category.id
                                             ? "flex absolute bottom-0 left-[400px] top-0"
@@ -40,14 +40,14 @@ const CategoryMenu = ({ isDropdownVisible, closeCatMenu }) => {
                                             }`}
                                     >
                                         <div className="grid grid-cols-3 gap-4">
-                                            <SubCategotyList
+                                            {/* <SubCategotyList
                                                 category={category}
                                                 closeSumMenu={closeSubMenu}
-                                            />
+                                            /> */}
                                         </div>
                                     </div>
-                                </Link>
-                            </li>
+                                </div>
+                            </div>
                         ))
                         : null}
                 </ul>
