@@ -17,7 +17,7 @@ const Home = () => {
         <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] mt-[30px] mb-[80px]">
           <Swiper />
         </div>
-        <section className="bg-[#f8f8f8] py-[100px] bgimage ">
+        <section className="bg-[#f8f8f8] py-[60px] bgimage ">
           <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] ">
             <div className="flex justify-center mb-[55px] relative">
               <h2 className="text-[30px]">Ofis Ləvazimatları</h2>
@@ -31,7 +31,7 @@ const Home = () => {
         <section className="bg-[#fc8410] py-[100px]">
           <CategoryCartOrange />
         </section>
-        <section className="bg-[#f8f8f8] py-[100px] bgimage ">
+        <section className="bg-[#f8f8f8] py-[60px] bgimage ">
           <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] ">
             <div className="flex justify-center mb-[55px] relative">
               <h2 className="text-[30px]">Qida və İckilər</h2>

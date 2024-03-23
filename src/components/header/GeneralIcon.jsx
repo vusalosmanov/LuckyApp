@@ -13,14 +13,14 @@ const GeneralIcon = () => {
                 <div className="icon">
                     <div className="flex gap-5">
                         <Link to="/shoping" className="relative" key={cart.id}>
-                            <img src={shopping} alt="" className="w-[50px] " />
-                            <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
+                            <img src={shopping} alt="" className="lg:w-[50px] " />
+                            <div className="absolute top-[-9px] left-7 lg:w-[25px] lg:h-[25px] w-[20px] h-[20px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
                                 {cart.length}
                             </div>
                         </Link>
                         <Link to="/wishlist" className="relative">
-                            <img src={heart} alt="" className="w-[50px]" />
-                            <div className="absolute top-[-9px] left-7 w-[25px] h-[25px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
+                            <img src={heart} alt="" className="lg:w-[50px]" />
+                            <div className="absolute top-[-9px] lg:left-7 left-6 lg:w-[25px] lg:h-[25px] w-[20px] h-[20px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
                                 {wishlistProducts.length}
                             </div>
                         </Link>
