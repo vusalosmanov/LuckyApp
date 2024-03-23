@@ -22,6 +22,12 @@ const BurgerMenu = () => {
         }
         setIsMenuClicked(!isMenuClicked)
     }
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
     return (
         <>
             <div className="burger-menu" onClick={updateMenu}>
@@ -54,25 +60,22 @@ const BurgerMenu = () => {
                                 Ən çox satılanlar
                             </Link>
                         </li>
-                        <li className="text-[18px] my-[20px] milidrop flex justify-center">
-                            <Link
-                                to=""
-                                className="flex items-center gap-2 py-[5px]  anima relative "
-                            >
-                                Şərtlər <BsChevronRight />
-                            </Link>
-                            <ul className="absolute shadow-lg bg-white  hidden mindrop z-50 ">
-                                <div className="p-[10px] text-[#000000]">
-                                    <li className="p-[5px]">
-                                        <Link to="/terms">Catdirilma </Link>
-                                    </li>
-                                    <li className="p-[5px]">
-                                        <Link to="/return">
-                                            Geri Qaytarilma ve <br /> deyisdirimle{" "}
-                                        </Link>
-                                    </li>
-                                </div>
-                            </ul>
+                        <li className="text-[18px] my-[20px] milidrop flex justify-center relative">
+                            <div onClick={toggleDropdown} className="flex items-center gap-2 py-[5px] anima">
+                                Şərtlər {isOpen ? <i className='fa-solid fa-chevron-down'></i> : <i className='fa-solid fa-chevron-right'></i>}
+                            </div>
+                            {isOpen && (
+                                <ul className="absolute shadow-lg bg-white top-10 w-[200px]  hidden mindrop z-50">
+                                    <div className="p-[10px] text-[#000000]">
+                                        <li className="p-[5px]">
+                                            <Link to="/terms">Catdirilma </Link>
+                                        </li>
+                                        <li className="p-[5px]">
+                                            <Link to="/return">Geri Qaytarilma ve <br /> deyisdirimle </Link>
+                                        </li>
+                                    </div>
+                                </ul>
+                            )}
                         </li>
                         <li className="text-[18px] my-[20px]">
                             <Link to="/contact" className="relative  anima py-[5px]">

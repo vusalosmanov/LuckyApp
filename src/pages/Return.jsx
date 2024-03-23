@@ -8,7 +8,7 @@ const Return = () => {
       <Layout>
         <section>
           <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex justify-center items-center flex-col mt-[50px] lg:text-[32px] text-[24px]">
-            <h3>Geri Qaytarılma Və Dəyişdirilmə</h3>
+            <h3 className=" text-center">Geri Qaytarılma Və Dəyişdirilmə</h3>
             <div className="w-[40px] h-[5px] bg-[#106853] rounded-lg mt-[10px] "></div>
           </div>
           <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex mt-[20px] justify-center items-center cursor-pointer">

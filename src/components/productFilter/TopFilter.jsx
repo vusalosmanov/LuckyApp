@@ -3,7 +3,7 @@ import React from "react";
 const TopFilter = ({ setPriceSortValue, changeProductsPerPage }) => {
   return (
     <>
-      <div className="w-[100%] lg:flex  flex-row  justify-center items-center bg-[#fff] shadow-lg  py-[20px] px-[15px] mb-[30px]">
+      <div className=" w-full lg:flex  flex-row  justify-center items-center bg-[#fff] shadow-lg  py-[20px] px-[15px] mb-[30px]">
         <div className="w-full flex flex-col lg:flex lg:flex-row justify-center items-center">
           <span className="mr-[10px]">Saya Gore</span>
           <select defaultValue={12} onChange={(e) => changeProductsPerPage(e.target.value)}

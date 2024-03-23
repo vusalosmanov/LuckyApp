@@ -7,8 +7,6 @@
   font-family: Montserrat, sans-serif;
   scroll-behavior: smooth;
 }
-
-/* Varsayılan değerler */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -23,7 +21,7 @@
   background-color: #fff;
 }
 
-/* Responsive Tasarım */
+/* Responsive  */
 @media screen and (max-width: 600px) {
   ::-webkit-scrollbar {
     width: 5px;
@@ -37,8 +35,6 @@
     height: 6px;
   }
 }
-
-/* Daha fazla media query ekleyebilirsiniz... */
 
 .header {
   width: 100%;
