@@ -28,22 +28,36 @@ const CategoryMenu = ({ isDropdownVisible, closeCatMenu }) => {
                                 onMouseMove={() => openSubMenu(category.id)}
                                 onMouseLeave={() => { closeSubMenu(category.id) }}>
                                 <div className='text-[16px] lg:text-[#303030] text-[#fff] font-montserrat font-sans w-full flex justify-between flex-row capitalize'>
-                                    <Link to={`/products/${encodeURIComponent(category.name)}`} onClick={() => closeCatMenu()} className="flex gap-2 items-center py-[10px]  ">
-                                        <img src={category.icon} alt="" className=" lg:block hidden w-[20px] h-[20px]" />
-                                        <span>{category.name}</span>
-                                    </Link>
-                                    <button className='lg:hidden block' onClick={() => toggleCategory(category.id)}><i className={activeCategoryID === category.id ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-right'}></i></button>
+                                    <div className='flex flex-col w-full'>
+                                        <div className='flex justify-between w-full'>
+                                            <Link to={`/products/${encodeURIComponent(category.name)}`} onClick={() => closeCatMenu()} className="flex gap-2 items-center py-[10px]">
+                                                <img src={category.icon} alt="" className="lg:block hidden w-[20px] h-[20px]" />
+                                                <span>{category.name}</span>
+                                            </Link>
+                                            <button className='lg:hidden block' onClick={() => toggleCategory(category.id)}>
+                                                <i className={activeCategoryID === category.id ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-right'}></i>
+                                            </button>
+                                        </div>
+                                        {activeCategoryID === category.id && (
+                                            <div className="lg:hidden w-full">
+                                                <SubCategotyList
+                                                    category={category}
+                                                    closeSubMenu={() => setActiveCategoryID(null)}
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
                                     <div
                                         className={`${activeCategoryID === category.id
                                             ? "flex absolute bottom-0 left-[400px] top-0"
                                             : "hidden absolute bottom-0 left-[500px]"
                                             }`}
                                     >
-                                        <div className="grid grid-cols-3 gap-4">
-                                            {/* <SubCategotyList
+                                        <div className="grid-cols-3 gap-4 lg:block hidden">
+                                            <SubCategotyList
                                                 category={category}
                                                 closeSumMenu={closeSubMenu}
-                                            /> */}
+                                            />
                                         </div>
                                     </div>
                                 </div>

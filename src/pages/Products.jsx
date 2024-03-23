@@ -120,12 +120,12 @@ function Products() {
             <h1 className="mt-[20px] text-[35px] capitalize  ">{productsTitle}</h1>
             <div className="w-[100%] flex mt-[40px] relative justify-center max-w-[1320px]  lg:flex-row flex-col">
               {filterActive ? (
-                <div className={`flex items-start flex-row justify-center mb-[40px] max-w-[421px] w-full px-[10px]`}>
+                <div className={`flex items-start flex-row justify-center mb-[40px] lg:max-w-[421px] w-full lg:px-[10px] md:px-[40px]`}>
                   <LeftFilter products={products} category={category} subCategoryFilterActive={subCategoryFilterActive} setProducts={setProducts} />
                 </div>
               ) : null}
-              <div className="flex items-start flex-col  mb-[40px] px-[10px]  ">
-                <div className="inner flex  items-center flex-col  w-[100%] justify-center  ">
+              <div className="flex items-start flex-col  mb-[40px] lg:px-[10px]  md:px-[40px] ">
+                <div className="inner flex  items-center flex-col  w-[100%] justify-center ">
                   <div className="product-row ">
                     {filterActive ? (
                         <TopFilter changeProductsPerPage={changeProductsPerPage} setPriceSortValue={setPriceSortValue} />
@@ -133,7 +133,7 @@ function Products() {
                     {
                       products.length > 0 ? (
                         <>
-                          <div className="flex flex-wrap  gap-y-[5px] gap-x-[3px] w-full max-w-[875px]  lg:justify-start justify-center  mb-[40px]  ">
+                          <div className="flex flex-wrap  lg:gap-y-[5px] lg:gap-x-[3px] md:gap-y-[40px]  md:gap-x-[25 px] w-full lg:max-w-[875px]  lg:justify-start justify-center  mb-[40px]  ">
                             {currentRecord.map((product) => (
                               <ProductCart
                                 productName={product.name}
