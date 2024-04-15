@@ -13,6 +13,7 @@ import Detailes from "./pages/Detailes";
 import Contact from "./pages/Contact";
 import Loading from "./components/loading/Loading";
 import Shoping from "./pages/Shoping";
+import Comparison from "./pages/Comparison";
 
 function App() {
   const location = useLocation();
@@ -41,6 +42,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:comparison" element={<Comparison />} />
         <Route path="/products/:categoryName" element={<Products />} />
         <Route
           path="/products/:categoryName/:subCategoryName"
