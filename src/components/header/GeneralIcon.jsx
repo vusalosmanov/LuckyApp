@@ -13,12 +13,6 @@ const GeneralIcon = () => {
             <div className='flex flex-row  justify-between items-center'>
                 <div className="icon">
                     <div className="flex gap-5 items-center">
-                        <div className="relative">
-                            <Link to="/products/comparison" className='lg:w-[50%]  text-[43px] text-[white]'><LiaBalanceScaleSolid /></Link>
-                            <div className="absolute  top-[-1px] lg:left-8 left-6 lg:w-[25px] lg:h-[25px] w-[20px] h-[20px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">
-                                {wishlistProducts.length}
-                            </div>
-                        </div>
                         <Link to="/wishlist" className="relative">
                             <img src={heart} alt="" className="lg:w-[50px] w-[40px]" />
                             <div className="absolute top-[-9px] lg:left-7 left-6 lg:w-[25px] lg:h-[25px] w-[20px] h-[20px] bg-[#ff0000] rounded-[50%] flex items-center text-white  justify-center">

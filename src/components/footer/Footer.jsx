@@ -25,7 +25,7 @@ const Footer = () => {
       <div className="max-w-[1320px] w-full mx-auto pr-[10px] pl-[10px] flex  flex-col ">
         <div className="flex justify-between mb-[40px] pt-[35px]">
           <div className=" flex flex-col gap-[12px] items-center justify-center lg:block hidden ">
-            <div className="logo w-28  h-28 flex items-center ">
+            <div className="logo w-28  h-28 flex items-center cursor-pointer ">
               <img src={logo} alt="" />
             </div>
             <div className=" flex gap-[12px]">
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
           <div className="lg:flex lg:justify-evenly w-full ">
             <div>
-              <h4 className=" text-[#fc8410] mb-[15px] text-[24px]">
+              <h4 className=" text-[#fc8410] mb-[15px] text-[24px]  cursor-pointer">
                 Kategoriyalar
               </h4>
               <ul className=" flex flex-col gap-[15px]  capitalize  ">
@@ -53,7 +53,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className=" text-[#fc8410] mb-[14px] text-[24px]">Menyular</h4>
+              <h4 className=" text-[#fc8410] mb-[14px] text-[24px] cursor-pointer">Menyular</h4>
               <ul className=" flex flex-col gap-[15px]">
                 <Link to='/about' className="font-thin text-[#303030] unf">Haqqımızda</Link>
                 <li className="font-thin text-[#303030] unf">
@@ -68,7 +68,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className=" text-[#fc8410] mb-[14px] text-[24px]">Əlaqə</h4>
+              <h4 className=" text-[#fc8410] mb-[14px] text-[24px] cursor-pointer">Əlaqə</h4>
               <ul className=" flex flex-col gap-[15px]">
                 <li className="font-thin text-[#303030] unf">
                   {" "}
@@ -102,7 +102,7 @@ const Footer = () => {
           </p>
           <p className="text-[18px] text-[#212529]">
             Powered by{" "}
-            <span className=" text-[18px] text-[#fc8410]">Vüsal</span>{" "}
+            <span className=" text-[18px] text-[#fc8410]">Vüsal Osmanov</span>{" "}
           </p>
         </div>
       </div>

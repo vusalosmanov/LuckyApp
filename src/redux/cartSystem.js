@@ -13,6 +13,7 @@ const initialState = {
   cart: [],
   quantity: 0,
   wishlist: [],
+  comparison: [],
 };
 
 const cartSystem = createSlice({
@@ -62,6 +63,17 @@ const cartSystem = createSlice({
         state.wishlist.splice(index, 1);
       }
     },
+    AddtoComparison: (state, action) => {
+      const find = state.comparison.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (find >= 0) {
+        state.comparison[find].quantity += 1;
+      } else {
+        const newItem = { ...action.payload, quantity: 1 };
+        state.comparison.push(newItem);
+      }
+    },
   },
 });
 
@@ -71,6 +83,7 @@ export const {
   RemoveFromCart,
   AddToWishlist,
   RemoveFromWishlist,
+  AddtoComparison,
 } = cartSystem.actions;
 
 export default cartSystem.reducer;
